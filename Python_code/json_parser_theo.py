@@ -15,8 +15,16 @@ def flatten_messages(data) -> list:
         return [msg for item in data for msg in flatten_messages(item)]
     return []  # Alles andere (str, int, …) ignorieren
 
+#normalize quotes in fuctions otherwise there are potential problems
+def normalize_quotes(raw: str) -> str:
+    return (raw
+        .replace('\u201c', '"')   # " (öffnendes doppeltes Anführungszeichen)
+        .replace('\u201d', '"')   # " (schließendes doppeltes Anführungszeichen)
+        .replace('\u2018', "'")   # ' (öffnendes einfaches Anführungszeichen)
+        .replace('\u2019', "'"))  # ' (schließendes einfaches Anführungszeichen)
 
 def extract_messages(raw: str) -> list:
+    raw = normalize_quotes(raw)
     stripped = raw.strip()
 
     # ── Fall 1: Datei endet mit ] aber fängt nicht mit [ an
@@ -83,8 +91,8 @@ def load_chats_from_folder(folder_path: str) -> pd.DataFrame:
             continue
 
         dfs.append(pd.DataFrame({
-            "file_name": path.stem,
             "chat_id":   chat_id,
+            "file_name": path.stem,
             "turn":      range(1, len(messages) + 1),
             "role":      [m["role"]    for m in messages],
             "content":   [m["content"] for m in messages],
