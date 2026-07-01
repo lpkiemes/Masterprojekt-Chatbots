@@ -1,6 +1,6 @@
 """
 Schnellstart
-from chat_extractor import extract, to_dataframe, to_json
+from paser_chatti_html import extract, to_dataframe, to_json
 
 # Als Liste von Dicts zurückgeben
 history = extract("mein_chat.html")
