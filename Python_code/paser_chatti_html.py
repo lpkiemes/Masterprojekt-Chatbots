@@ -1,29 +1,16 @@
 """
-chat_extractor.py
------------------
-Extrahiert Chat-Verläufe aus ChatGPT-HTML-Exporten und gibt sie als
-Python-Objekte zurück – optimiert für den Einsatz in Jupyter Notebooks.
-
 Schnellstart
-------------
-    from chat_extractor import extract, to_dataframe, to_json
+from chat_extractor import extract, to_dataframe, to_json
 
-    # Als Liste von Dicts zurückgeben
-    history = extract("mein_chat.html")
+# Als Liste von Dicts zurückgeben
+history = extract("mein_chat.html")
 
-    # Als pandas DataFrame
-    df = to_dataframe("mein_chat.html")
+# Als pandas DataFrame
+df = to_dataframe("mein_chat.html")
 
-    # In JSON-Datei speichern
-    to_json("mein_chat.html", "output.json")
+# In JSON-Datei speichern
+to_json("mein_chat.html", "output.json")
 
-Hinweise zum HTML-Export
-------------------------
-ChatGPT lädt Nachrichten im Browser lazy – Turns, die beim Speichern
-nicht sichtbar waren, werden im HTML als leere Platzhalter-Sections
-gespeichert. Diese werden beim Extrahieren übersprungen und als Warnung
-ausgegeben. Um alle Nachrichten zu erhalten, vor dem Export bis ganz
-oben und unten scrollen, damit alle Nachrichten gerendert wurden.
 """
 
 from __future__ import annotations
@@ -39,18 +26,12 @@ from bs4 import BeautifulSoup, NavigableString, Tag
 logger = logging.getLogger(__name__)
 
 
-# ---------------------------------------------------------------------------
-# Interne Hilfsfunktionen
-# ---------------------------------------------------------------------------
+#Hilfsfunktionen
 
 def _code_text_from_viewer(cm_pre: Tag) -> str:
-    """
-    Rekonstruiert Code-Text aus dem ChatGPT Code-Viewer.
 
-    ChatGPT speichert Code als Folge von <span>-Token, getrennt durch <br>-Tags.
-    get_text() liefert dabei kaputte Einrückung – wir iterieren stattdessen
-    über alle direkten Kind-Elemente des <code>-Tags.
-    """
+   #Rekonstruiert Code-Text aus dem ChatGPT Code-Viewer.
+
     code_tag = cm_pre.find("code")
     if not code_tag:
         # Fallback: einfaches get_text mit Newline-Separator
@@ -70,12 +51,11 @@ def _code_text_from_viewer(cm_pre: Tag) -> str:
 
 
 def _lang_from_code_block(outer_pre: Tag) -> str:
-    """
-    Liest das Sprachkürzel aus dem Code-Block-Header.
 
-    Struktur: outer <pre> → div.justify-between → linke div mit font-medium → Text + SVG.
-    Wir nehmen nur den Text-Node (nicht das SVG-Icon).
-    """
+    #Liest das Sprachkürzel aus dem Code-Block-Header.
+    #Struktur: outer <pre> → div.justify-between → linke div mit font-medium → Text + SVG.
+    #Wir nehmen nur den Text-Node (nicht das SVG-Icon).
+
     header = outer_pre.find("div", class_=lambda c: "justify-between" in (c or ""))
     if not header:
         return ""
@@ -92,7 +72,7 @@ def _lang_from_code_block(outer_pre: Tag) -> str:
 
 
 def _parse_chatgpt_code_block(outer_pre: Tag) -> str:
-    """Wandelt einen ChatGPT-Code-Block (<pre class='overflow-visible!'>) in Markdown um."""
+    #Wandelt einen ChatGPT-Code-Block (<pre class='overflow-visible!'>) in Markdown um
     lang = _lang_from_code_block(outer_pre)
     cm_pre = outer_pre.find("pre", class_=lambda c: "cm-content" in (c or ""))
     if cm_pre:
@@ -104,12 +84,11 @@ def _parse_chatgpt_code_block(outer_pre: Tag) -> str:
 
 
 def _parse_markdown_div(md_div: Tag) -> str:
-    """
-    Wandelt den Markdown-Div einer Assistenten-Nachricht in lesbaren Text um.
 
-    Unterstützt: Absätze, Überschriften, Listen, Blockquotes, Tabellen,
-    Trennlinien und ChatGPT-spezifische Code-Viewer-Blöcke.
-    """
+    #Wandelt den Markdown-Div einer Assistenten-Nachricht in lesbaren Text um.
+    #Unterstützt: Absätze, Überschriften, Listen, Blockquotes, Tabellen,
+    #Trennlinien und ChatGPT-spezifische Code-Viewer-Blöcke.
+
     parts: List[str] = []
 
     for element in md_div.children:
@@ -161,7 +140,7 @@ def _parse_markdown_div(md_div: Tag) -> str:
 
 
 def _parse_table(table_element: Tag) -> str:
-    """Konvertiert eine HTML-Tabelle in Markdown-Format."""
+    #Konvertiert eine HTML-Tabelle in Markdown-Format.
     md_rows: List[str] = []
 
     thead = table_element.find("thead")
@@ -189,21 +168,12 @@ def _parse_table(table_element: Tag) -> str:
     return "\n".join(md_rows)
 
 
-# ---------------------------------------------------------------------------
-# Kern-Parser
-# ---------------------------------------------------------------------------
+# Main Funktion
 
 def _parse_html(html_content: str) -> Dict:
-    """
-    Parst den HTML-Inhalt und gibt Metadaten + Nachrichten zurück.
+  #Parst den HTML-Inhalt und gibt Metadaten + Nachrichten zurück.
 
-    Rückgabe
-    --------
-    dict mit:
-        "title"    : str – Titel des Chats (aus <title>)
-        "messages" : List[Dict] – Liste der Nachrichten
-        "skipped"  : int – Anzahl übersprungener (nicht gerenderte) Turns
-    """
+
     soup = BeautifulSoup(html_content, "html.parser")
 
     # Titel
@@ -215,6 +185,7 @@ def _parse_html(html_content: str) -> Dict:
 
     # --- Primäre Methode: <section data-testid="conversation-turn-N"> ---
     # Neues ChatGPT-Export-Format (seit ~2024): sections statt articles
+
     sections = soup.find_all(
         "section",
         attrs={"data-testid": lambda x: x and x.startswith("conversation-turn-")},
@@ -232,8 +203,7 @@ def _parse_html(html_content: str) -> Dict:
             if not msg_div:
                 turn_id = section.get("data-testid", "?")
                 logger.warning(
-                    "Überspringe Turn '%s' (nicht gerendert beim Export). "
-                    "Scroll vor dem Speichern bis zum Seitenanfang/-ende.",
+                    "Überspringe Turn '%s' (nicht gerendert beim Export)",
                     turn_id,
                 )
                 skipped += 1
@@ -296,38 +266,12 @@ def _parse_html(html_content: str) -> Dict:
     return {"title": chat_title, "messages": messages, "skipped": skipped}
 
 
-# ---------------------------------------------------------------------------
-# Öffentliche API
-# ---------------------------------------------------------------------------
+# API
 
 def extract(html_path: str | Path) -> List[Dict[str, str]]:
-    """
-    Liest eine HTML-Datei und gibt den Chat-Verlauf als Liste von Dicts zurück.
 
-    Parameter
-    ---------
-    html_path : str oder Path
-        Pfad zur HTML-Datei.
+    #Liest eine HTML-Datei und gibt den Chat-Verlauf als Liste von Dicts zurück.
 
-    Rückgabe
-    --------
-    List[Dict[str, str]]
-        Liste mit Einträgen der Form ``{"speaker": "user"|"assistant", "text": "..."}``.
-
-    Raises
-    ------
-    FileNotFoundError
-        Wenn die Datei nicht gefunden wurde.
-
-    Notes
-    -----
-    ChatGPT rendert Nachrichten lazy im Browser. Turns, die beim Speichern
-    des HTML nicht sichtbar waren, werden übersprungen und als Warnung geloggt
-    (Logging-Level WARNING). Aktiviere Logging, um diese Warnungen zu sehen::
-
-        import logging
-        logging.basicConfig(level=logging.WARNING)
-    """
     html_path = Path(html_path)
     if not html_path.exists():
         raise FileNotFoundError(f"HTML-Datei nicht gefunden: {html_path}")
@@ -338,26 +282,10 @@ def extract(html_path: str | Path) -> List[Dict[str, str]]:
 
 
 def extract_with_meta(html_path: str | Path) -> Dict:
-    """
-    Wie ``extract()``, gibt aber auch Metadaten zurück.
 
-    Rückgabe
-    --------
-    dict mit:
-        "title"    : str  – Titel des Chats
-        "messages" : list – Nachrichten (wie bei extract())
-        "skipped"  : int  – Anzahl übersprungener Turns (lazy-loaded)
+    #Wie ``extract()``, gibt aber auch Metadaten zurück.
 
-    Beispiel
-    --------
-    ::
 
-        result = extract_with_meta("chat.html")
-        print(result["title"])
-        print(f"{result['skipped']} Turns wurden übersprungen.")
-        for msg in result["messages"]:
-            print(msg["speaker"], msg["text"][:80])
-    """
     html_path = Path(html_path)
     if not html_path.exists():
         raise FileNotFoundError(f"HTML-Datei nicht gefunden: {html_path}")
@@ -374,29 +302,9 @@ def to_json(
     ensure_ascii: bool = False,
     include_meta: bool = False,
 ) -> Path:
-    """
-    Extrahiert den Chat-Verlauf und speichert ihn als JSON-Datei.
 
-    Parameter
-    ---------
-    html_path : str oder Path
-        Pfad zur HTML-Quelldatei.
-    json_path : str, Path oder None
-        Zielpfad für die JSON-Datei. Wenn None, wird der gleiche Dateiname
-        wie die HTML-Datei mit der Endung ``.json`` verwendet.
-    indent : int
-        Einrückung für die JSON-Ausgabe (Standard: 2).
-    ensure_ascii : bool
-        Wenn False, werden Unicode-Zeichen direkt geschrieben (Standard: False).
-    include_meta : bool
-        Wenn True, wird das komplette Meta-Dict (inkl. Titel und skipped-Zähler)
-        gespeichert statt nur die Nachrichten-Liste.
+    #Extrahiert den Chat-Verlauf und speichert ihn als JSON-Datei
 
-    Rückgabe
-    --------
-    Path
-        Pfad zur geschriebenen JSON-Datei.
-    """
     html_path = Path(html_path)
     if json_path is None:
         json_path = html_path.with_suffix(".json")
@@ -413,30 +321,14 @@ def to_json(
 
 
 def to_dataframe(html_path: str | Path):
-    """
-    Extrahiert den Chat-Verlauf und gibt ihn als ``pandas.DataFrame`` zurück.
 
-    Spalten: ``turn`` (beginnt bei 1), ``speaker``, ``text``.
+    #Extrahiert den Chat-Verlauf und gibt ihn als ``pandas.DataFrame`` zurück.
 
-    Parameter
-    ---------
-    html_path : str oder Path
-        Pfad zur HTML-Quelldatei.
-
-    Rückgabe
-    --------
-    pandas.DataFrame
-
-    Raises
-    ------
-    ImportError
-        Wenn pandas nicht installiert ist.
-    """
     try:
         import pandas as pd
     except ImportError as exc:
         raise ImportError(
-            "pandas ist nicht installiert. Bitte mit 'pip install pandas' nachinstallieren."
+            "pandas ist nicht installiert"
         ) from exc
 
     history = extract(html_path)
