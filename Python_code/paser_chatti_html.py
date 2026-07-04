@@ -322,7 +322,7 @@ def to_json(
 
 def to_dataframe(html_path: str | Path):
 
-    #Extrahiert den Chat-Verlauf und gibt ihn als ``pandas.DataFrame`` zurück.
+    #Extrahiert den Chat-Verlauf und gibt ihn als DataFrame zurück.
 
     try:
         import pandas as pd
