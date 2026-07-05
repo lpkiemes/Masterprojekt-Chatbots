@@ -108,3 +108,4 @@ def load_chats_from_folder(folder_path: str) -> pd.DataFrame:
         raise FileNotFoundError(f"Keine verwertbaren JSON-Dateien in '{folder_path}'.")
 
     return pd.concat(dfs, ignore_index=True)  # Alle Teil-DataFrames zu einem zusammenführen
+
