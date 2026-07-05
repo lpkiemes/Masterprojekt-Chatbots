@@ -1,76 +1,7 @@
 #Daten laden
 
+data <- read.csv("/home/theo/PycharmProjects/Masterprojekt-Chatbots/data/processed/analysis_dataset.csv")
 
-#test_Data mit claude generiert 
-
-data <- data.frame(
-  # ---- Demografie ----
-  id     = c(1,2,3,4,5,6,7,8,9,10),
-  gender = c(1,2,1,2,3,1,2,1,2,-1),        # 1=maennlich,2=weiblich,3=non-binaer,-1=keine Angabe
-  age    = c(22,24,21,23,26,20,29,22,25,23),
-  degree = c(1,2,1,1,2,1,1,2,1,1),          # 1=Bachelor,2=Master
-  field  = c(3,8,5,1,4,8,3,2,5,7),          # Faechergruppen-Code 1-11
-
-  # ---- Soziale Erwuenschtheit (6 Items, 1-5; Item 4-6 sind PQ-, noch nicht umgepolt) ----
-  sd_1 = c(4,3,5,3,4,2,4,3,5,3),
-  sd_2 = c(4,3,5,2,3,3,4,3,4,4),
-  sd_3 = c(5,4,5,3,4,3,4,3,5,3),
-  #Umpoolen
-  sd_4 = c(2,2,1,3,2,4,2,3,1,2),
-  sd_5 = c(1,2,1,3,2,3,1,2,2,2),
-  sd_6 = c(2,3,1,3,2,4,2,3,1,3),
-
-  # ---- Nutzungsvoraussetzungen ----
-  ai_experience = c(4,3,5,2,4,3,5,3,4,2),
-  uses_gemini   = c(1,0,1,0,0,1,1,0,0,0),
-  uses_copilot  = c(0,1,0,0,1,0,0,0,1,0),
-  uses_deepseek = c(0,0,1,0,0,0,1,0,0,0),
-  uses_claude   = c(1,0,0,0,0,1,0,0,1,0),
-
-  # ---- Nutzungshaeufigkeit (2-6, da "1=nie" zu Screenout fuehrt) ----
-  freq = c(5,4,6,3,5,4,6,3,5,2),
-
-  # ---- Informationsnutzung ----
-  info_literacy_where = c(4,3,5,2,4,4,5,3,4,2),
-  info_literacy_how   = c(4,4,5,3,4,3,5,3,4,3),
-
-  # info_use_1..5 = Info, Schreiben, Praktisch, Technisch, Lernen (je 1-5)
-  info_use_1 = c(4,3,5,2,4,4,5,3,4,2),
-  info_use_2 = c(5,3,4,2,5,3,4,4,3,2),
-  info_use_3 = c(3,4,3,2,3,4,3,3,4,2),
-  info_use_4 = c(2,2,4,1,2,5,2,2,1,1),
-  info_use_5 = c(4,3,4,3,3,2,4,3,4,3),
-
-  # ---- Interaktionspraktiken & kritische Pruefung (Selbstauskunft) ----
-  inter_style       = c(1,2,2,3,1,4,2,3,1,2),   # 1=sehr freundlich...5=sehr unfreundlich
-  crit_visible_chat = c(4,2,3,1,4,3,2,2,4,1),   # 1=stimme gar nicht zu...4=stimme voll zu
-
-  # ============================================================
-  # Chatlog-Rohdaten (unaggregiert, VOR Normierung/Reskalierung)
-  # ============================================================
-  n_chats_valid = c(5,5,5,5,5,4,5,5,4,5),       # P6 & P9: nur 4 statt 5 gueltige Chats
-
-  # Inhalt: Rohcounts je Kategorie, Summe = n_chats_valid
-  obs_info_n       = c(1,2,1,1,2,0,1,1,1,0),
-  obs_schreiben_n  = c(2,1,1,0,2,1,1,2,1,1),
-  obs_praktisch_n  = c(1,1,1,1,0,1,1,1,1,1),
-  obs_technisch_n  = c(0,0,2,0,0,2,0,0,0,0),
-  obs_lernen_n     = c(1,1,0,3,1,0,2,1,1,3),
-
-  # Sentiment: Rohcounts je Kategorie, Summe = n_chats_valid
-  obs_sent_freundlich_n   = c(4,2,3,1,4,0,2,1,1,2),
-  obs_sent_neutral_n      = c(1,2,2,3,1,2,2,2,2,3),
-  obs_sent_unfreundlich_n = c(0,1,0,1,0,2,1,2,1,0),
-
-  # Kritisches Nachfragen: Rohcounts, Summe = n_chats_valid
-  obs_kritisch_ja_n   = c(4,1,2,0,3,1,1,2,1,0),
-  obs_kritisch_nein_n = c(1,4,3,5,2,3,4,3,3,5),
-
-  # ---- Selbsteinschaetzung eigener Angaben (nur bei Chatlog-Upload, 1-5) ----
-  self_assess_1 = c(4,3,5,2,4,3,4,3,5,2),  # "Angaben spiegeln tatsaechliche Nutzung gut wider"
-  self_assess_2 = c(3,4,2,4,3,4,2,3,2,4),  # "Nutzung unterscheidet sich stark je Aufgabe"
-  self_assess_3 = c(4,3,4,3,4,3,4,3,5,2)   # "Chatlogs spiegeln typische Nutzung gut wider"
-)
 
 # Konsistenzcheck: Rohcounts muessen sich zu n_chats_valid summieren
 stopifnot(all(rowSums(data[,c("obs_info_n","obs_schreiben_n","obs_praktisch_n",
@@ -401,4 +332,17 @@ data <- data[data$n_chats_valid == 5, ]
 cat("n vorher:", n_vorher, "-> n nachher:", nrow(data))
 
 
+
+#Data for clustering 
+
+
+cluster_data <- data.frame(
+  D_info       = data$D_info,
+  D_schreiben  = data$D_schreiben,
+  D_praktisch  = data$D_praktisch,
+  D_technisch  = data$D_technisch,
+  D_lernen     = data$D_lernen,
+  S_Diskrepanz = data$S_Diskrepanz_Label,  # bereits ordered factor
+  K_Diskrepanz = factor(data$K_Diskrepanz, levels = c(-1,0,1), ordered = TRUE)
+)
 
