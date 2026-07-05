@@ -4,18 +4,22 @@ from json_repair import repair_json
 
 # ── Hilfsfunktion: Extrahiert alle {role, content}-Dicts aus beliebig
 #    verschachtelten Listen/Dicts (rekursiv, Tiefensuche)
+JSON_EXPORT_PATTERN = "gesamten sichtbaren bisherigen Dialog"
+
 def flatten_messages(data) -> list:
     if isinstance(data, dict):
         # Gültiger Message-Node: muss role=user/assistant UND content haben
         if data.get("role") in ("user", "assistant") and "content" in data:
+            # Export-Prompt herausfiltern (kein echter Chat-Inhalt)
+            if JSON_EXPORT_PATTERN in str(data.get("content", "")):
+                return []
             return [data]
         return []
     if isinstance(data, list):
-        # Für jedes Element rekursiv aufrufen und Ergebnisse zusammenführen
         return [msg for item in data for msg in flatten_messages(item)]
-    return []  # Alles andere (str, int, …) ignorieren
+    return []
 
-#normalize quotes in fuctions otherwise there are potential problems
+#normalize quotes in fuctions otherwise there are potential pwill die jsons die hochgeladen wurden mit der funktion json parser verarbeiten. seperat dazu will ich die htmls parsen und danaroblems
 def normalize_quotes(raw: str) -> str:
     return (raw
         .replace('\u201c', '"')   # " (öffnendes doppeltes Anführungszeichen)
