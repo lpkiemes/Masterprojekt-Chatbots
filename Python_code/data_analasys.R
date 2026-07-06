@@ -1,348 +1,363 @@
+##########################################
+### Datenanalyse Skript###################
+##########################################
+base_path   <- "/home/theo/PycharmProjects/Masterprojekt-Chatbots"
+data_path   <- file.path(base_path, "data/processed/analysis_dataset.rds")
+plot_dir    <- file.path(base_path, "plots")
+
 #Daten laden
 
-data <- read.csv("/home/theo/PycharmProjects/Masterprojekt-Chatbots/data/processed/analysis_dataset.csv")
+data <- readRDS(data_path)
+   
+############################
+#Packete installieren######
+###########################
 
+pakete <- c("cluster", "ggplot2", "patchwork", "labelled")
 
-# Konsistenzcheck: Rohcounts muessen sich zu n_chats_valid summieren
-stopifnot(all(rowSums(data[,c("obs_info_n","obs_schreiben_n","obs_praktisch_n",
-                                "obs_technisch_n","obs_lernen_n")]) == data$n_chats_valid))
-stopifnot(all(rowSums(data[,c("obs_sent_freundlich_n","obs_sent_neutral_n",
-                                "obs_sent_unfreundlich_n")]) == data$n_chats_valid))
-stopifnot(all(data$obs_kritisch_ja_n + data$obs_kritisch_nein_n == data$n_chats_valid))
-
-
-################################
-#Aggregation der Chat_varibalen#
-################################
-
-###Aufgaben###
-n_chats_derived <- rowSums(data[, c("obs_info_n","obs_schreiben_n","obs_praktisch_n",
-                                    "obs_technisch_n","obs_lernen_n")])
-stopifnot(all(n_chats_derived == data$n_chats_valid))
-
-data$n_chats_valid <- n_chats_derived
-
-#Inhalt: Rohcounts -> Anteile (BE_i)
-data$BE_info       <- data$obs_info_n       / data$n_chats_valid
-data$BE_schreiben  <- data$obs_schreiben_n  / data$n_chats_valid
-data$BE_praktisch  <- data$obs_praktisch_n  / data$n_chats_valid
-data$BE_technisch  <- data$obs_technisch_n  / data$n_chats_valid
-data$BE_lernen     <- data$obs_lernen_n     / data$n_chats_valid
-
-
-###Sentiment####
-
-#codeirung von sentiment 0 ist neutral
-sent_codes <- c(-1, 0, 1)
-
-get_modus_sentiment <- function(counts) {
-  max_n <- max(counts)
-  tied  <- which(counts == max_n)
-  if (length(tied) == 1) {
-    return(sent_codes[tied])
+for (p in pakete) {
+  if (!requireNamespace(p, quietly = TRUE)) {
+    install.packages(p)
   }
-  # Tie-Break: neutraö 0 wählen
-  dists <- abs(sent_codes[tied])
-  if (length(unique(dists)) == 1) return(0)
-  sent_codes[tied][which.min(dists)]
+  library(p, character.only = TRUE)
 }
 
+library(cluster)
+library(ggplot2)
 
-sent_counts <- data[, c("obs_sent_freundlich_n","obs_sent_neutral_n","obs_sent_unfreundlich_n")]
-data$Modus_Sentiment <- apply(sent_counts, 1, get_modus_sentiment)
-data$Modus_Sentiment_Label <- factor(data$Modus_Sentiment, levels = c(-1,0,1),
-                                     labels = c("freundlich","neutral","unfreundlich"),
-                                     ordered = TRUE)
+# Ausgabeordner für Grafiken
+dir.create("plots", showWarnings = FALSE)
+SEED <- 404
+# =====================================================================
+# 0) STICHPROBENBESCHREIBUNG
+# =====================================================================
+library(patchwork)
 
+# Faktoren mit lesbaren Labels versehen
+data$gender_f <- factor(data$gender, levels = c(1,2,3,-1),
+                        labels = c("männlich","weiblich","non-binär/divers","keine Angabe"))
+data$degree_f <- factor(data$degree, levels = c(1,2,3,4,5),
+                        labels = c("Bachelor","Master","Staatsex./Lehramt","Promotion","anderer"))
+field_labels <- c("Geistes-/Kultur","Sprach-/Lit.","Sozialwiss.","Recht/Wirtschaft",
+                  "Mathe/Naturwiss.","Medizin/Gesundheit","Ingenieurwiss.","Informatik",
+                  "Kunst/Musik","Lehramt","anderes")
+data$field_f <- factor(data$field, levels = 1:11, labels = field_labels)
 
-###Kritisches Nachfragen###
+BLUE <- "#4C72B0"
 
-get_modus_kritik <- function(ja, nein) {
-  if (ja > nein)  return(1)
-  if (nein > ja)  return(0)
-  return(NA)   
-}
+p1 <- ggplot(data, aes(x = gender_f)) +
+  geom_bar(fill = BLUE) +
+  geom_text(stat = "count", aes(label = after_stat(count)), vjust = -0.3, size = 3.5) +
+  labs(title = "Geschlecht", x = NULL, y = "Anzahl") +
+  theme_minimal(base_size = 11) +
+  theme(axis.text.x = element_text(angle = 20, hjust = 1))
 
-data$Modus_Kritik <- mapply(get_modus_kritik, data$obs_kritisch_ja_n, data$obs_kritisch_nein_n)
-data$Modus_Kritik_Label <- factor(data$Modus_Kritik, levels = c(0,1), labels = c("Nein","Ja"))
+p2 <- ggplot(data, aes(x = age)) +
+  geom_histogram(binwidth = 1, fill = BLUE, colour = "white") +
+  labs(title = paste0("Alter (M = ", round(mean(data$age),1),
+                      ", SD = ", round(sd(data$age),1), ")"),
+       x = "Alter in Jahren", y = "Anzahl") +
+  theme_minimal(base_size = 11)
 
-# Wie viele Cases waren nicht eindeutig
-n_tied_sentiment <- sum(apply(sent_counts, 1, function(x) sum(x == max(x)) > 1))
-n_tied_kritik     <- sum(is.na(data$Modus_Kritik))
-cat("Gleichstaende bei Sentiment:", n_tied_sentiment, "von", nrow(data), "\n")
-cat("Gleichstaende bei Kritik:   ", n_tied_kritik, "von", nrow(data), "\n")
+p3 <- ggplot(data, aes(y = field_f)) +
+  geom_bar(fill = BLUE) +
+  geom_text(stat = "count", aes(label = after_stat(count)), hjust = -0.3, size = 3) +
+  labs(title = "Fächergruppe", x = "Anzahl", y = NULL) +
+  theme_minimal(base_size = 11)
 
-data[, c("id","n_chats_valid","Modus_Sentiment_Label","Modus_Kritik_Label")]
+p4 <- ggplot(data, aes(x = degree_f)) +
+  geom_bar(fill = BLUE) +
+  geom_text(stat = "count", aes(label = after_stat(count)), vjust = -0.3, size = 3.5) +
+  labs(title = "Angestrebter Abschluss", x = NULL, y = "Anzahl") +
+  theme_minimal(base_size = 11) +
+  theme(axis.text.x = element_text(angle = 20, hjust = 1))
 
+combined <- (p1 | p2) / (p3 | p4) +
+  plot_annotation(title = paste0("Stichprobenbeschreibung (N = ", nrow(data), ")"),
+                  theme = theme(plot.title = element_text(size = 15, face = "bold")))
 
-###########################
-# Diskrepanzmaße berechnen#
-###########################
+ggsave("plots/00_stichprobe.png", combined, width = 11, height = 8, dpi = 150)
+# =====================================================================
+# 1) DESKRIPTIVE STATISTIK
+# =====================================================================
 
+## 1a) Mittlere (vorzeichenbehaftete) Diskrepanz + MAD pro Person -------
+D_cols <- c("D_info","D_schreiben","D_praktisch","D_technisch","D_lernen")
+data$D_mean <- rowMeans(data[, D_cols])                 # Richtung (Ueber-/Unterschaetzung)
+data$D_MAD  <- rowMeans(abs(data[, D_cols]))            # Ausmass, ohne Neutralisierung
 
-####Aufgaben/Inhalt######
+## 1b) Verteilung von D_mean und MAD (Histogramme) ---------------------
+p_dmean <- ggplot(data, aes(x = D_mean)) +
+  geom_histogram(bins = 15, fill = "#4C72B0", colour = "white") +
+  geom_vline(xintercept = 0, linetype = "dashed", colour = "grey30") +
+  labs(title = "Mittlere Diskrepanz pro Person (SA - BE)",
+       subtitle = "> 0: Ueberschaetzung, < 0: Unterschaetzung",
+       x = "Mittlere Diskrepanz", y = "Anzahl Personen") +
+  theme_minimal(base_size = 12)
+ggsave("plots/01_hist_Dmean.png", p_dmean, width = 7, height = 4.5, dpi = 150)
 
-#SAi Reskalieren
-data$SA_info      <- (data$info_use_1 - 1) / 4
-data$SA_schreiben <- (data$info_use_2 - 1) / 4
-data$SA_praktisch <- (data$info_use_3 - 1) / 4
-data$SA_technisch <- (data$info_use_4 - 1) / 4
-data$SA_lernen    <- (data$info_use_5 - 1) / 4
+p_mad <- ggplot(data, aes(x = D_MAD)) +
+  geom_histogram(bins = 15, fill = "#C44E52", colour = "white") +
+  labs(title = "Mittlere absolute Diskrepanz (MAD) pro Person",
+       x = "MAD", y = "Anzahl Personen") +
+  theme_minimal(base_size = 12)
+ggsave("plots/02_hist_MAD.png", p_mad, width = 7, height = 4.5, dpi = 150)
 
-#D_i = SA_i - BE_i, je Inhaltskategorie ----
-data$D_info      <- data$SA_info      - data$BE_info
-data$D_schreiben <- data$SA_schreiben - data$BE_schreiben
-data$D_praktisch <- data$SA_praktisch - data$BE_praktisch
-data$D_technisch <- data$SA_technisch - data$BE_technisch
-data$D_lernen    <- data$SA_lernen    - data$BE_lernen
-
-
-####Sentiment####
-
-# SA auf dieselbe 3-Kategorien kodiern wie Modus_Sentiment
-data$SA_sent_code <- cut(data$inter_style,
-                         breaks = c(-Inf, 2, 3, Inf),
-                         labels = c(-1, 0, 1))
-data$SA_sent_code <- as.numeric(as.character(data$SA_sent_code))
-
-data$S_Diskrepanz <- sign(data$SA_sent_code - data$Modus_Sentiment)
-data$S_Diskrepanz_Label <- factor(data$S_Diskrepanz, levels = c(-1, 0, 1),
-                                  labels = c("unfreundlicher", "korrekt", "freundlicher"),
-                                  ordered = TRUE)
-
-#########Kritisches Nachfragen##
-
-
-# SA: crit_visible_chat (1-4) dichotomisieren (1-2 -> Nein, 3-4 -> Ja)
-data$SA_krit_code <- ifelse(data$crit_visible_chat >= 3, 1, 0)
-
-# -1 = falsches positiv (SA=Ja, BE=Nein), 
-# 0 = korrekt, 
-# 1 = falsches negativ (SA=Nein, BE=Ja)
-
-data$K_Diskrepanz <- data$Modus_Kritik - data$SA_krit_code
-data$K_Diskrepanz_Label <- factor(data$K_Diskrepanz, levels = c(-1, 0, 1),
-                                  labels = c("falsches positiv", "korrekt", "falsches negativ"))
-
-data[, c("id", "D_info","D_schreiben","D_praktisch","D_technisch","D_lernen",
-         "S_Diskrepanz_Label","K_Diskrepanz_Label")]
-
-########################
-#soziale Erwünschtheit#
-#######################
-
-# Negativ kodierte Items umpolen 
-data$sd_4_rec <- 6 - data$sd_4
-data$sd_5_rec <- 6 - data$sd_5
-data$sd_6_rec <- 6 - data$sd_6
-
-# Summen- und Mittelwertscore über alle 6 Items
-data$social_desir_sum  <- data$sd_1 + data$sd_2 + data$sd_3 +
-  data$sd_4_rec + data$sd_5_rec + data$sd_6_rec
-data$social_desir_mean <- data$social_desir_sum / 6
-
-# install.packages("psych")  # falls nicht vorhanden
-#library(psych)
-#alpha(data[, c("sd_1","sd_2","sd_3","sd_4_rec","sd_5_rec","sd_6_rec")])
-
-
-
-
-######################
-# Variablenlabels#
-#######################
-#install.packages("labelled")  # falls noch nicht installiert
-library(labelled)
-
-var_labels_list <- list(
-  id     = "Personen-ID",
-  gender = "Geschlecht",
-  age    = "Alter in Jahren",
-  degree = "Angestrebter Studienabschluss",
-  field  = "Fächergruppe des Studienfachs",
-  
-  sd_1 = "Soz. Erwünschtheit: sachlich im Streit (PQ+)",
-  sd_2 = "Soz. Erwünschtheit: freundlich trotz Stress (PQ+)",
-  sd_3 = "Soz. Erwünschtheit: aufmerksames Zuhören (PQ+)",
-  sd_4 = "Soz. Erwünschtheit: jemanden ausgenutzt (PQ-)",
-  sd_5 = "Soz. Erwünschtheit: Müll weggeworfen (PQ-)",
-  sd_6 = "Soz. Erwünschtheit: Hilfe nur mit Gegenleistung (PQ-)",
-  
-  sd_4_rec = "Soz. Erwünschtheit: jemanden ausgenutzt, umgepolt",
-  sd_5_rec ="Soz. Erwünschtheit: Müll weggeworfen, umgepolt",
-  sd_6_rec = "Soz. Erwünschtheit: Hilfe nur mit Gegenleistung, umgepolt",
-  social_desir_sum = "Soziale Erwünschtheit: Summenscore (6 Items, Range 6-30)",
-  social_desir_mean ="Soziale Erwünschtheit: Mittelwert (6 Items, Range 1-5)",
-  
-  ai_experience = "Vertrautheit mit generativen KI-Chatbots",
-  uses_gemini   = "Nutzung Google Gemini",
-  uses_copilot  = "Nutzung Microsoft/Bing Copilot",
-  uses_deepseek = "Nutzung DeepSeek",
-  uses_claude   = "Nutzung Claude",
-  
-  freq = "Nutzungshäufigkeit von ChatGPT im Studium",
-  
-  info_literacy_where = "Weiß, wo/wie relevante Infos mit KI zu finden sind",
-  info_literacy_how   = "Weiß, wie Eingaben zu formulieren sind",
-  
-  info_use_1 = "SA Nutzungszweck: Informationssuche und Verständnis",
-  info_use_2 = "SA Nutzungszweck: Schreiben und Textarbeit",
-  info_use_3 = "SA Nutzungszweck: Praktische Unterstützung/Strukturierung",
-  info_use_4 = "SA Nutzungszweck: Technische/analytische Unterstützung",
-  info_use_5 = "SA Nutzungszweck: Lernen und Prüfungsvorbereitung",
-  
-  inter_style       = "SA: typischer Interaktionsstil",
-  crit_visible_chat = "SA: fordert Hinweise zur kritischen Prüfung ein",
-  
-  n_chats_valid = "Anzahl gültiger gespendeter Chats",
-  
-  obs_info_n      = "Rohcount: Chats = Informationssuche",
-  obs_schreiben_n = "Rohcount: Chats = Schreiben/Textarbeit",
-  obs_praktisch_n = "Rohcount: Chats = Praktische Unterstützung",
-  obs_technisch_n = "Rohcount: Chats = Technische Unterstützung",
-  obs_lernen_n    = "Rohcount: Chats = Lernen/Prüfungsvorbereitung",
-  
-  obs_sent_freundlich_n   = "Rohcount: Chats mit Sentiment freundlich",
-  obs_sent_neutral_n      = "Rohcount: Chats mit Sentiment neutral",
-  obs_sent_unfreundlich_n = "Rohcount: Chats mit Sentiment unfreundlich",
-  
-  obs_kritisch_ja_n   = "Rohcount: Chats mit kritischem Nachfragen = Ja",
-  obs_kritisch_nein_n = "Rohcount: Chats mit kritischem Nachfragen = Nein",
-  
-  self_assess_1 = "SE: Angaben spiegeln tatsächl. Nutzung gut wider",
-  self_assess_2 = "SE: Nutzung unterscheidet sich stark je Aufgabe",
-  self_assess_3 = "SE: Chatlogs spiegeln typische Nutzung gut wider",
-  
-  BE_info = "Beobachteter Anteil: Informationssuche",
-  BE_schreiben = "Beobachteter Anteil: Schreiben/Textarbeit",
-  BE_praktisch = "Beobachteter Anteil: Praktische Unterstützung",
-  BE_technisch = "Beobachteter Anteil: Technische Unterstützung",
-  BE_lernen = "Beobachteter Anteil: Lernen/Prüfungsvorbereitung",
-  BE_sent_freundlich = "Beobachteter Anteil: Sentiment freundlich",
-  BE_sent_neutral = "Beobachteter Anteil: Sentiment neutral",
-  BE_sent_unfreundlich = "Beobachteter Anteil: Sentiment unfreundlich",
-  BE_kritisch = "Beobachteter Anteil: kritisches Nachfragen = Ja",
-  
-  Modus_Sentiment       = "Modus-Sentiment über alle Chats",
-  Modus_Sentiment_Label = "Modus-Sentiment über alle Chats (Faktor, geordnet)",
-  Modus_Kritik          = "Modus kritisches Nachfragen über alle Chats",
-  Modus_Kritik_Label    = "Modus kritisches Nachfragen über alle Chats (Faktor)",
-  
-  SA_info      = "SA reskaliert [0,1]: Informationssuche",
-  SA_schreiben = "SA reskaliert [0,1]: Schreiben/Textarbeit",
-  SA_praktisch = "SA reskaliert [0,1]: Praktische Unterstützung",
-  SA_technisch = "SA reskaliert [0,1]: Technische Unterstützung",
-  SA_lernen    = "SA reskaliert [0,1]: Lernen/Prüfungsvorbereitung",
-  
-  D_info      = "Diskrepanz (SA-BE): Informationssuche",
-  D_schreiben = "Diskrepanz (SA-BE): Schreiben/Textarbeit",
-  D_praktisch = "Diskrepanz (SA-BE): Praktische Unterstützung",
-  D_technisch = "Diskrepanz (SA-BE): Technische Unterstützung",
-  D_lernen    = "Diskrepanz (SA-BE): Lernen/Prüfungsvorbereitung",
-  
-  SA_sent_code = "SA-Sentiment, 3-kategorial kodiert (-1/0/1)",
-  S_Diskrepanz = "Diskrepanz Sentiment (kategorial)",
-  S_Diskrepanz_Label = "Diskrepanz Sentiment: Richtung der Abweichung",
-  
-  SA_krit_code = "SA kritisches Nachfragen, dichotomisiert (0=Nein,1=Ja)",
-  K_Diskrepanz = "Diskrepanz kritisches Nachfragen (kategorial)",
-  K_Diskrepanz_Label = "Diskrepanz kritisches Nachfragen: Fehlertyp"
-  
+## 1c) Diskrepanz je Aufgabe (Boxplots, alle 5 Kategorien) -------------
+D_long <- data.frame(
+  id   = rep(data$id, times = length(D_cols)),
+  task = factor(rep(c("Info","Schreiben","Praktisch","Technisch","Lernen"),
+                    each = nrow(data)),
+                levels = c("Info","Schreiben","Praktisch","Technisch","Lernen")),
+  D    = unlist(data[, D_cols])
 )
+p_box <- ggplot(D_long, aes(x = task, y = D, fill = task)) +
+  geom_boxplot(alpha = 0.7, outlier.size = 1) +
+  geom_hline(yintercept = 0, linetype = "dashed", colour = "grey30") +
+  labs(title = "Diskrepanz je Aufgabentyp", x = NULL, y = "Diskrepanz (SA - BE)") +
+  theme_minimal(base_size = 12) + theme(legend.position = "none")
+ggsave("plots/03_box_tasks.png", p_box, width = 8, height = 4.5, dpi = 150)
 
-# Nur Labels fuer tatsaechlich vorhandene Spalten setzen
-var_label(data) <- var_labels_list[names(var_labels_list) %in% names(data)]
+## 1d) Verteilung der kategorialen Diskrepanzen (Balken) ---------------
+p_sent <- ggplot(data, aes(x = S_Diskrepanz_Label)) +
+  geom_bar(fill = "#55A868") +
+  labs(title = "Sentiment-Diskrepanz", x = NULL, y = "Anzahl Personen") +
+  theme_minimal(base_size = 12)
+ggsave("plots/04_bar_sentiment.png", p_sent, width = 6, height = 4, dpi = 150)
 
+p_krit <- ggplot(data, aes(x = K_Diskrepanz_Label)) +
+  geom_bar(fill = "#8172B3") +
+  labs(title = "Kritik-Diskrepanz", x = NULL, y = "Anzahl Personen") +
+  theme_minimal(base_size = 12)
+ggsave("plots/05_bar_kritik.png", p_krit, width = 6, height = 4, dpi = 150)
 
-###################
-#Ausprägungslables#
-###################
+cat("Deskriptiv: D_mean Range [", round(min(data$D_mean),2), ",",
+    round(max(data$D_mean),2), "], MAD Mittel", round(mean(data$D_MAD),2), "\n")
 
-zustimmung_5 <- c("stimme überhaupt nicht zu"=1, "stimme eher nicht zu"=2,
-                  "teils/teils"=3, "stimme eher zu"=4, "stimme voll und ganz zu"=5)
-trifft_zu_5  <- c("trifft gar nicht zu"=1, "trifft eher nicht zu"=2,
-                  "teils/teils"=3, "trifft eher zu"=4, "trifft voll und ganz zu"=5)
+# =====================================================================
+# 2) PAM-CLUSTERANALYSE (Gower-Distanz)
+# =====================================================================
 
-#hilfsfunktion zum setzen von labels nur wenn diese auch im Datensatz sind
-
-setzen_falls_vorhanden <- function(df, var, labels) {
-  if (var %in% names(df)) val_labels(df[[var]]) <- labels
-  df
-}
-
-data <- setzen_falls_vorhanden(data, "gender",
-                               c("männlich"=1,"weiblich"=2,"non-binär/divers"=3,"keine Angabe"=-1))
-data <- setzen_falls_vorhanden(data, "degree",
-                               c("Bachelor"=1,"Master"=2,"Staatsexamen/Lehramt"=3,"Promotion"=4,"anderer Abschluss"=5))
-data <- setzen_falls_vorhanden(data, "field",
-                               c("Geistes-/Kulturwiss."=1,"Sprach-/Literaturwiss."=2,"Sozialwiss."=3,
-                                 "Rechts-/Wirtschaftswiss."=4,"Mathematik/Naturwiss."=5,"Medizin/Gesundheitswiss."=6,
-                                 "Ingenieurwiss."=7,"Informatik"=8,"Kunst/Musik/Gestaltung"=9,"Lehramt"=10,"anderes Fach"=11))
-
-for (v in c("sd_1","sd_2","sd_3","sd_4","sd_5","sd_6")) data <- setzen_falls_vorhanden(data, v, trifft_zu_5)
-
-data <- setzen_falls_vorhanden(data, "ai_experience",
-                               c("gar nicht vertraut"=1,"eher nicht vertraut"=2,"teils/teils"=3,
-                                 "eher vertraut"=4,"sehr vertraut"=5))
-
-for (v in c("uses_gemini","uses_copilot","uses_deepseek","uses_claude"))
-  data <- setzen_falls_vorhanden(data, v, c("nein"=0,"ja"=1))
-
-data <- setzen_falls_vorhanden(data, "freq",
-                               c("seltener als 1x/Monat"=2,"1-3x/Monat"=3,"1x/Woche bis mehrmals/Woche"=4,
-                                 "täglich/fast täglich"=5,"mehrmals täglich"=6))
-
-for (v in c("info_literacy_where","info_literacy_how","info_use_1","info_use_2",
-            "info_use_3","info_use_4","info_use_5","self_assess_1","self_assess_2","self_assess_3"))
-  data <- setzen_falls_vorhanden(data, v, zustimmung_5)
-
-data <- setzen_falls_vorhanden(data, "inter_style",
-                               c("sehr freundlich"=1,"eher freundlich"=2,"neutral"=3,"eher unfreundlich"=4,"sehr unfreundlich"=5))
-
-data <- setzen_falls_vorhanden(data, "crit_visible_chat",
-                               c("stimme überhaupt nicht zu"=1,"stimme eher nicht zu"=2,
-                                 "stimme eher zu"=3,"stimme voll und ganz zu"=4))
-
-data <- setzen_falls_vorhanden(data, "Modus_Sentiment", c("freundlich"=-1,"neutral"=0,"unfreundlich"=1))
-data <- setzen_falls_vorhanden(data, "Modus_Kritik", c("Nein"=0,"Ja"=1))
-
-val_label(data$S_Diskrepanz, -1) <- "unfreundlicher"
-val_label(data$S_Diskrepanz, 0)  <- "korrekt"
-val_label(data$S_Diskrepanz, 1)  <- "freundlicher"
-
-val_label(data$K_Diskrepanz, -1) <- "falsches positiv"
-val_label(data$K_Diskrepanz, 0)  <- "korrekt"
-val_label(data$K_Diskrepanz, 1)  <- "falsches negativ"
-
-val_label(data$SA_krit_code, 0) <- "Nein"
-val_label(data$SA_krit_code, 1) <- "Ja"
-
-
-
-#################
-#Sampling########
-#################
-
-###Fälle ausschließen die keine 5 gültgen Chats haben 
-n_vorher <- nrow(data)
-ausgeschlossen <- data[data$n_chats_valid < 5, "id"]
-
-data <- data[data$n_chats_valid == 5, ]
-
-cat("n vorher:", n_vorher, "-> n nachher:", nrow(data))
-
-
-
-#Data for clustering 
-
-
-cluster_data <- data.frame(
+## 2a) Cluster-Input: 5 kontinuierlich + 2 ordinal (geordnete Faktoren)
+cluster_df <- data.frame(
   D_info       = data$D_info,
   D_schreiben  = data$D_schreiben,
   D_praktisch  = data$D_praktisch,
   D_technisch  = data$D_technisch,
   D_lernen     = data$D_lernen,
-  S_Diskrepanz = data$S_Diskrepanz_Label,  # bereits ordered factor
+  S_Diskrepanz = factor(data$S_Diskrepanz, levels = c(-1,0,1), ordered = TRUE),
   K_Diskrepanz = factor(data$K_Diskrepanz, levels = c(-1,0,1), ordered = TRUE)
 )
+
+## 2b) Gewichtung: 5 Aufgaben je 0.2, Sentiment & Kritik je 1
+gower_weights <- c(0.2, 0.2, 0.2, 0.2, 0.2, 1, 1)
+
+gower_dist <- daisy(cluster_df, metric = "gower", weights = gower_weights)
+
+## 2c) Optimales k ueber durchschnittliche Silhouette (k = 2..6) -------
+sil_avg <- sapply(2:6, function(k) {
+  pm <- pam(gower_dist, k = k, diss = TRUE)
+  pm$silinfo$avg.width
+})
+names(sil_avg) <- 2:6
+k_opt <- as.integer(names(which.max(sil_avg)))
+
+sil_df <- data.frame(k = 2:6, silhouette = sil_avg)
+p_sil <- ggplot(sil_df, aes(x = k, y = silhouette)) +
+  geom_line(colour = "grey50") +
+  geom_point(size = 3, colour = "#4C72B0") +
+  geom_point(data = sil_df[sil_df$k == k_opt, ], size = 5, colour = "#C44E52") +
+  geom_hline(yintercept = c(0.5, 0.7), linetype = "dotted", colour = "grey60") +
+  scale_x_continuous(breaks = 2:6) +
+  labs(title = "Durchschnittliche Silhouette je Clusterzahl",
+       subtitle = paste("Gewaehltes k =", k_opt),
+       x = "Anzahl Cluster (k)", y = "Durchschnittliche Silhouettenweite") +
+  theme_minimal(base_size = 12)
+ggsave("plots/06_silhouette_k.png", p_sil, width = 7, height = 4.5, dpi = 150)
+
+## 2d) Finales PAM-Modell ---------------------------------------------
+set.seed(SEED)
+pam_fit <- pam(gower_dist, k = k_opt, diss = TRUE)
+data$cluster <- factor(pam_fit$clustering)
+
+cat("Optimales k:", k_opt, "| avg. Silhouette:", round(max(sil_avg),3),
+    "| Clustergroessen:", paste(table(data$cluster), collapse="/"), "\n")
+
+## 2e) Silhouette-Plot pro Person -------------------------------------
+sil_obj <- silhouette(pam_fit$clustering, gower_dist)
+sil_pdf <- data.frame(cluster = factor(sil_obj[,1]),
+                      sil_width = sil_obj[,3])
+sil_pdf <- sil_pdf[order(sil_pdf$cluster, sil_pdf$sil_width), ]
+sil_pdf$idx <- 1:nrow(sil_pdf)
+p_silperson <- ggplot(sil_pdf, aes(x = idx, y = sil_width, fill = cluster)) +
+  geom_col() +
+  geom_hline(yintercept = 0, colour = "grey30") +
+  coord_flip() +
+  labs(title = "Silhouettenwerte pro Person",
+       x = "Person (nach Cluster sortiert)", y = "Silhouettenweite") +
+  theme_minimal(base_size = 12)
+ggsave("plots/07_silhouette_person.png", p_silperson, width = 7, height = 6, dpi = 150)
+
+## 2f) Cluster-Profile: mittlere Diskrepanz je Variable (Heatmap) -----
+prof <- aggregate(cbind(D_info, D_schreiben, D_praktisch, D_technisch, D_lernen) ~ cluster,
+                  data = data, FUN = mean)
+prof_long <- reshape(prof, direction = "long",
+                     varying = D_cols, v.names = "value",
+                     timevar = "variable", times = D_cols, idvar = "cluster")
+p_heat <- ggplot(prof_long, aes(x = variable, y = cluster, fill = value)) +
+  geom_tile(colour = "white") +
+  geom_text(aes(label = round(value, 2)), size = 3.5) +
+  scale_fill_gradient2(low = "#3B4CC0", mid = "white", high = "#B40426", midpoint = 0) +
+  labs(title = "Cluster-Profile: mittlere Diskrepanz je Aufgabe",
+       x = NULL, y = "Cluster", fill = "Mittl.\nDiskrepanz") +
+  theme_minimal(base_size = 12) +
+  theme(axis.text.x = element_text(angle = 30, hjust = 1))
+ggsave("plots/08_cluster_heatmap.png", p_heat, width = 8, height = 4.5, dpi = 150)
+
+## 2g) MDS-Projektion der Distanzmatrix, eingefaerbt nach Cluste
+mds <- cmdscale(gower_dist, k = 2)
+mds_df <- data.frame(Dim1 = mds[,1], Dim2 = mds[,2], cluster = data$cluster)
+medoid_idx <- pam_fit$id.med
+p_mds <- ggplot(mds_df, aes(Dim1, Dim2, colour = cluster)) +
+  geom_point(size = 3, alpha = 0.8) +
+  geom_point(data = mds_df[medoid_idx, ], size = 6, shape = 1, stroke = 1.5,
+             colour = "black") +
+  labs(title = "MDS-Projektion der Gower-Distanzen",
+       subtitle = "Umkreiste Punkte = Medoide (Cluster-Zentren)",
+       x = "MDS-Dimension 1", y = "MDS-Dimension 2") +
+  theme_minimal(base_size = 12)
+ggsave("plots/09_mds.png", p_mds, width = 7, height = 5, dpi = 150)
+
+## 2h) Kategoriale Diskrepanzen je Cluster (gestapelte Balken) --------
+p_sent_cl <- ggplot(data, aes(x = cluster, fill = S_Diskrepanz_Label)) +
+  geom_bar(position = "fill") +
+  labs(title = "Sentiment-Diskrepanz je Cluster", x = "Cluster",
+       y = "Anteil", fill = "Sentiment-\nDiskrepanz") +
+  theme_minimal(base_size = 12)
+ggsave("plots/10_sentiment_cluster.png", p_sent_cl, width = 7, height = 4.5, dpi = 150)
+
+p_krit_cl <- ggplot(data, aes(x = cluster, fill = K_Diskrepanz_Label)) +
+  geom_bar(position = "fill") +
+  labs(title = "Kritik-Diskrepanz je Cluster", x = "Cluster",
+       y = "Anteil", fill = "Kritik-\nDiskrepanz") +
+  theme_minimal(base_size = 12)
+ggsave("plots/11_kritik_cluster.png", p_krit_cl, width = 7, height = 4.5, dpi = 150)
+
+# =====================================================================
+# 3) CLUSTERVERGLEICH: Kontextvariablen (nicht im Clustering verwendet)
+# =====================================================================
+
+## Hilfsfunktion: p-Wert dezent formatieren
+fmt_p <- function(p) ifelse(p < 0.001, "< 0.001", sprintf("%.3f", p))
+
+## 3a) Soziale Erwuenschtheit (metrisch-nah) -> ANOVA + Boxplot -------
+aov_sd <- oneway.test(social_desir_mean ~ cluster, data = data, var.equal = FALSE)
+p_sd <- ggplot(data, aes(x = cluster, y = social_desir_mean, fill = cluster)) +
+  geom_boxplot(alpha = 0.7) +
+  geom_jitter(width = 0.15, size = 1.5, alpha = 0.6) +
+  labs(title = "Soziale Erwuenschtheit je Cluster",
+       subtitle = paste0("Welch-ANOVA: p = ", fmt_p(aov_sd$p.value)),
+       x = "Cluster", y = "Soziale Erwuenschtheit (Mittelwert)") +
+  theme_minimal(base_size = 12) + theme(legend.position = "none")
+ggsave("plots/12_context_socialdesir.png", p_sd, width = 7, height = 4.5, dpi = 150)
+
+## 3b) Ordinale Variablen -> Kruskal-Wallis + Boxplots ---------------
+ord_vars <- c("ai_experience","freq","info_literacy_where","info_literacy_how")
+ord_labels <- c("KI-Erfahrung","Nutzungshaeufigkeit","Info-Literacy (wo)","Info-Literacy (wie)")
+
+for (i in seq_along(ord_vars)) {
+  v <- ord_vars[i]
+  kw <- kruskal.test(data[[v]] ~ data$cluster)
+  p_ord <- ggplot(data, aes(x = cluster, y = .data[[v]], fill = cluster)) +
+    geom_boxplot(alpha = 0.7) +
+    geom_jitter(width = 0.15, size = 1.5, alpha = 0.6) +
+    labs(title = paste(ord_labels[i], "je Cluster"),
+         subtitle = paste0("Kruskal-Wallis: p = ", fmt_p(kw$p.value)),
+         x = "Cluster", y = ord_labels[i]) +
+    theme_minimal(base_size = 12) + theme(legend.position = "none")
+  ggsave(sprintf("plots/13_context_%s.png", v), p_ord, width = 7, height = 4.5, dpi = 150)
+}
+
+## 3c) Nominale Variablen -> Chi-Quadrat + Mosaik/Balken -------------
+nom_vars <- c("gender","field","degree")
+nom_labels <- c("Geschlecht","Faechergruppe","Abschluss")
+
+for (i in seq_along(nom_vars)) {
+  v <- nom_vars[i]
+  tab <- table(data$cluster, data[[v]])
+  # Chi-Quadrat mit simuliertem p-Wert (robust bei kleinen erwarteten Haeufigkeiten)
+  chi <- suppressWarnings(chisq.test(tab, simulate.p.value = TRUE, B = 2000))
+  p_nom <- ggplot(data, aes(x = cluster, fill = factor(.data[[v]]))) +
+    geom_bar(position = "fill") +
+    labs(title = paste(nom_labels[i], "je Cluster"),
+         subtitle = paste0("Chi-Quadrat (simuliert): p = ", fmt_p(chi$p.value)),
+         x = "Cluster", y = "Anteil", fill = nom_labels[i]) +
+    theme_minimal(base_size = 12)
+  ggsave(sprintf("plots/14_context_%s.png", v), p_nom, width = 7, height = 4.5, dpi = 150)
+}
+
+cat("Clustervergleich: Grafiken erstellt (soz. Erwuenschtheit, 4 ordinale, 3 nominale)\n")
+
+# =====================================================================
+# 4) ROBUSTHEITSCHECKS
+# =====================================================================
+
+## 4a) Ausschluss uneindeutiger Sentiment-Faelle ----------------------
+# uneindeutig = Gleichstand in den Sentiment-Rohcounts
+tie_sent <- apply(data[, c("obs_sent_freundlich_n","obs_sent_neutral_n",
+                           "obs_sent_unfreundlich_n")], 1,
+                  function(x) sum(x == max(x)) > 1)
+data_r1 <- data[!tie_sent, ]
+
+cl_r1 <- data.frame(
+  data_r1$D_info, data_r1$D_schreiben, data_r1$D_praktisch,
+  data_r1$D_technisch, data_r1$D_lernen,
+  S = factor(data_r1$S_Diskrepanz, levels=c(-1,0,1), ordered=TRUE),
+  K = factor(data_r1$K_Diskrepanz, levels=c(-1,0,1), ordered=TRUE)
+)
+gd_r1 <- daisy(cl_r1, metric = "gower", weights = gower_weights)
+set.seed(SEED)
+pam_r1 <- pam(gd_r1, k = k_opt, diss = TRUE)
+cat("Robustheit 1 (ohne", sum(tie_sent), "Tie-Sentiment):",
+    "avg.sil =", round(pam_r1$silinfo$avg.width, 3), "\n")
+
+## 4b) Ohne Gewichtung der Aufgaben-Diskrepanzen ----------------------
+gd_r2 <- daisy(cluster_df, metric = "gower")   # Default: alle Variablen gleich
+sil_r2 <- sapply(2:6, function(k) pam(gd_r2, k=k, diss=TRUE)$silinfo$avg.width)
+k_r2 <- (2:6)[which.max(sil_r2)]
+set.seed(SEED)
+pam_r2 <- pam(gd_r2, k = k_r2, diss = TRUE)
+# Vergleich mit Hauptloesung: Uebereinstimmung der Clusterzuordnung
+tab_r2 <- table(Haupt = data$cluster, Ungewichtet = factor(pam_r2$clustering))
+cat("Robustheit 2 (ohne Gewichtung): k =", k_r2,
+    "| avg.sil =", round(max(sil_r2),3), "\n")
+
+## 4c) Hierarchisches Clustering (average linkage) --------------------
+hc <- hclust(gower_dist, method = "average")
+hc_cl <- cutree(hc, k = k_opt)
+tab_hc <- table(PAM = data$cluster, Hierarchisch = hc_cl)
+
+# Dendrogramm als Grafik
+png("plots/15_dendrogram_average.png", width = 900, height = 550, res = 120)
+plot(hc, labels = data$id, main = "Hierarchisches Clustering (Average Linkage, Gower)",
+     xlab = "", sub = "", cex = 0.7)
+rect.hclust(hc, k = k_opt, border = "#C44E52")
+dev.off()
+
+# Uebereinstimmung PAM vs. hierarchisch als Kreuztabellen-Grafik
+tab_df <- as.data.frame(tab_hc)
+p_agree <- ggplot(tab_df, aes(x = PAM, y = factor(Hierarchisch), fill = Freq)) +
+  geom_tile(colour = "white") +
+  geom_text(aes(label = Freq), size = 4) +
+  scale_fill_gradient(low = "white", high = "#4C72B0") +
+  labs(title = "Uebereinstimmung: PAM vs. Average-Linkage",
+       x = "PAM-Cluster", y = "Hierarchisches Cluster", fill = "Anzahl") +
+  theme_minimal(base_size = 12)
+ggsave("plots/16_agreement_pam_hc.png", p_agree, width = 6.5, height = 5, dpi = 150)
+
+cat("Robustheit 3 (Average-Linkage): Dendrogramm + Uebereinstimmung erstellt\n")
+
+cat("\n=== ANALYSE ABGESCHLOSSEN. Grafiken in plots/ ===\n")
+cat("Erzeugte Grafiken:", length(list.files("plots")), "\n")
+
 
