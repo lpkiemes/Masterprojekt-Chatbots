@@ -81,12 +81,12 @@ ggsave("plots/00_stichprobe.png", combined, width = 11, height = 8, dpi = 150)
 
 #descriptives der diskrepanzmaße
 
-## 1a) Mittlere Diskrepanz + MAD pro Person -------
+## 1a) Mittlere Diskrepanz + MAD pro Persom
 D_cols <- c("D_info","D_schreiben","D_praktisch","D_technisch","D_lernen")
 data$D_mean <- rowMeans(data[, D_cols])                 # Richtung (Ueber-/Unterschaetzung)
 data$D_MAD  <- rowMeans(abs(data[, D_cols]))            # Ausmass, ohne Neutralisierung
 
-## 1b) Verteilung von D_mean und MAD (Histogramme) ---------------------
+## 1b) Verteilung von D_mean und MAD (Histogramme)
 p_dmean <- ggplot(data, aes(x = D_mean)) +
   geom_histogram(bins = 15, fill = "#4C72B0", colour = "white") +
   geom_vline(xintercept = 0, linetype = "dashed", colour = "grey30") +
@@ -103,7 +103,7 @@ p_mad <- ggplot(data, aes(x = D_MAD)) +
   theme_minimal(base_size = 12)
 ggsave("plots/02_hist_MAD.png", p_mad, width = 7, height = 4.5, dpi = 150)
 
-## 1c) Diskrepanz je Aufgabe (Boxplots, alle 5 Kategorien) -------------
+## 1c) Diskrepanz je Aufgabe (Boxplots, alle 5 Kategorienn)
 D_long <- data.frame(
   id   = rep(data$id, times = length(D_cols)),
   task = factor(rep(c("Info","Schreiben","Praktisch","Technisch","Lernen"),
@@ -118,7 +118,7 @@ p_box <- ggplot(D_long, aes(x = task, y = D, fill = task)) +
   theme_minimal(base_size = 12) + theme(legend.position = "none")
 ggsave("plots/03_box_tasks.png", p_box, width = 8, height = 4.5, dpi = 150)
 
-## 1d) Verteilung der kategorialen Diskrepanzen (Balken) ---------------
+## 1d) Verteilung der kategorialen Diskrepanzen (Balken)
 p_sent <- ggplot(data, aes(x = S_Diskrepanz_Label)) +
   geom_bar(fill = "#55A868") +
   labs(title = "Sentiment-Diskrepanz", x = NULL, y = "Anzahl Personen") +
@@ -154,7 +154,11 @@ gower_weights <- c(0.2, 0.2, 0.2, 0.2, 0.2, 1, 1)
 
 gower_dist <- daisy(cluster_df, metric = "gower", weights = gower_weights)
 
-## 2c) Optimales k ueber durchschnittliche Silhouette (k = 2..6) -------
+## 2c) Optimales k ueber durchschnittliche Silhouette (k = 2..10)
+#??? musss man sich nichmal anschauen wie hoch k sein soll
+#optimum muss nicht automatisch das beste sein
+#villeicht geringeres k wählen wenn dafür keine kleinen cluster entstehen
+
 sil_avg <- sapply(2:10, function(k) {
   pm <- pam(gower_dist, k = k, diss = TRUE)
   pm$silinfo$avg.width
@@ -175,7 +179,7 @@ p_sil <- ggplot(sil_df, aes(x = k, y = silhouette)) +
   theme_minimal(base_size = 12)
 ggsave("plots/06_silhouette_k.png", p_sil, width = 7, height = 4.5, dpi = 150)
 
-## 2d) Finales PAM-Modell ---------------------------------------------
+## 2d) Finales PAM-Modell
 set.seed(SEED)
 pam_fit <- pam(gower_dist, k = k_opt, diss = TRUE)
 data$cluster <- factor(pam_fit$clustering)
@@ -183,7 +187,7 @@ data$cluster <- factor(pam_fit$clustering)
 cat("Optimales k:", k_opt, "| avg. Silhouette:", round(max(sil_avg),3),
     "| Clustergroessen:", paste(table(data$cluster), collapse="/"), "\n")
 
-## 2e) Silhouette-Plot pro Person -------------------------------------
+## 2e) Silhouette-Plot pro Person
 sil_obj <- silhouette(pam_fit$clustering, gower_dist)
 sil_pdf <- data.frame(cluster = factor(sil_obj[,1]),
                       sil_width = sil_obj[,3])
@@ -228,7 +232,7 @@ p_mds <- ggplot(mds_df, aes(Dim1, Dim2, colour = cluster)) +
   theme_minimal(base_size = 12)
 ggsave("plots/09_mds.png", p_mds, width = 7, height = 5, dpi = 150)
 
-## 2h) Kategoriale Diskrepanzen je Cluster (gestapelte Balken) --------
+## 2h) Kategoriale Diskrepanzen je Cluster (gestapelte Balken)
 p_sent_cl <- ggplot(data, aes(x = cluster, fill = S_Diskrepanz_Label)) +
   geom_bar(position = "fill") +
   labs(title = "Sentiment-Diskrepanz je Cluster", x = "Cluster",
@@ -261,7 +265,7 @@ p_sd <- ggplot(data, aes(x = cluster, y = social_desir_mean, fill = cluster)) +
   theme_minimal(base_size = 12) + theme(legend.position = "none")
 ggsave("plots/12_context_socialdesir.png", p_sd, width = 7, height = 4.5, dpi = 150)
 
-## 3b) Ordinale Variablen -> Kruskal-Wallis + Boxplots ---------------
+## 3b) Ordinale Variablen -> Kruskal-Wallis + Boxplots
 ord_vars <- c("ai_experience","freq","info_literacy_where","info_literacy_how")
 ord_labels <- c("KI-Erfahrung","Nutzungshaeufigkeit","Info-Literacy (wo)","Info-Literacy (wie)")
 
@@ -278,7 +282,7 @@ for (i in seq_along(ord_vars)) {
   ggsave(sprintf("plots/13_context_%s.png", v), p_ord, width = 7, height = 4.5, dpi = 150)
 }
 
-## 3c) Nominale Variablen -> Chi-Quadrat + Mosaik/Balken -------------
+## 3c) Nominale Variablen -> Chi-Quadrat + Mosaik/Balken
 nom_vars <- c("gender","field","degree")
 nom_labels <- c("Geschlecht","Faechergruppe","Abschluss")
 
@@ -302,7 +306,7 @@ cat("Clustervergleich: Grafiken erstellt (soz. Erwuenschtheit, 4 ordinale, 3 nom
 # 4) ROBUSTHEITSCHECKS
 # =====================================================================
 
-## 4a) Ausschluss uneindeutiger Sentiment-Faelle ----------------------
+## 4a) Ausschluss uneindeutiger Sentiment-Faelle
 # uneindeutig = Gleichstand in den Sentiment-Rohcounts
 tie_sent <- apply(data[, c("obs_sent_freundlich_n","obs_sent_neutral_n",
                            "obs_sent_unfreundlich_n")], 1,
@@ -321,7 +325,7 @@ pam_r1 <- pam(gd_r1, k = k_opt, diss = TRUE)
 cat("Robustheit 1 (ohne", sum(tie_sent), "Tie-Sentiment):",
     "avg.sil =", round(pam_r1$silinfo$avg.width, 3), "\n")
 
-## 4b) Ohne Gewichtung der Aufgaben-Diskrepanzen ----------------------
+## 4b) Ohne Gewichtung der Aufgaben-Diskrepanzen
 gd_r2 <- daisy(cluster_df, metric = "gower")   # Default: alle Variablen gleich
 sil_r2 <- sapply(2:6, function(k) pam(gd_r2, k=k, diss=TRUE)$silinfo$avg.width)
 k_r2 <- (2:6)[which.max(sil_r2)]
@@ -332,7 +336,7 @@ tab_r2 <- table(Haupt = data$cluster, Ungewichtet = factor(pam_r2$clustering))
 cat("Robustheit 2 (ohne Gewichtung): k =", k_r2,
     "| avg.sil =", round(max(sil_r2),3), "\n")
 
-## 4c) Hierarchisches Clustering (average linkage) --------------------
+## 4c) Hierarchisches Clustering (average linkage
 hc <- hclust(gower_dist, method = "average")
 hc_cl <- cutree(hc, k = k_opt)
 tab_hc <- table(PAM = data$cluster, Hierarchisch = hc_cl)
