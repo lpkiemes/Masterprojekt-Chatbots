@@ -49,12 +49,13 @@ def _code_text_from_viewer(cm_pre: Tag) -> str:
 
     return "".join(parts).strip()
 
+#_lang_from_code_block
+# Liest das Sprachkürzel aus dem Code-Block-Header.
+# Struktur: outer <pre> → div.justify-between → linke div mit font-medium → Text + SVG.
+# Wir nehmen nur den Text-Node (nicht das SVG-Icon).
 
 def _lang_from_code_block(outer_pre: Tag) -> str:
 
-    #Liest das Sprachkürzel aus dem Code-Block-Header.
-    #Struktur: outer <pre> → div.justify-between → linke div mit font-medium → Text + SVG.
-    #Wir nehmen nur den Text-Node (nicht das SVG-Icon).
 
     header = outer_pre.find("div", class_=lambda c: "justify-between" in (c or ""))
     if not header:
@@ -71,8 +72,8 @@ def _lang_from_code_block(outer_pre: Tag) -> str:
     return text_parts[0] if text_parts else lang_div.get_text(strip=True)
 
 
+#Wandelt einen ChatGPT-Code-Block (<pre class='overflow-visible!'>) in Markdown um
 def _parse_chatgpt_code_block(outer_pre: Tag) -> str:
-    #Wandelt einen ChatGPT-Code-Block (<pre class='overflow-visible!'>) in Markdown um
     lang = _lang_from_code_block(outer_pre)
     cm_pre = outer_pre.find("pre", class_=lambda c: "cm-content" in (c or ""))
     if cm_pre:
@@ -82,12 +83,12 @@ def _parse_chatgpt_code_block(outer_pre: Tag) -> str:
         code = outer_pre.get_text(separator="\n", strip=True)
     return f"```{lang}\n{code}\n```"
 
-
+#Wandelt den Markdown-Div einer Assistenten-Nachricht in lesbaren Text um.
+#Unterstützt: Absätze, Überschriften, Listen, Blockquotes, Tabellen,
+#Trennlinien und ChatGPT-spezifische Code-Viewer-Blöcke.
 def _parse_markdown_div(md_div: Tag) -> str:
 
-    #Wandelt den Markdown-Div einer Assistenten-Nachricht in lesbaren Text um.
-    #Unterstützt: Absätze, Überschriften, Listen, Blockquotes, Tabellen,
-    #Trennlinien und ChatGPT-spezifische Code-Viewer-Blöcke.
+
 
     parts: List[str] = []
 
@@ -139,8 +140,8 @@ def _parse_markdown_div(md_div: Tag) -> str:
     return "\n\n".join(p.strip() for p in parts if p.strip())
 
 
+#Konvertiert eine HTML-Tabelle in Markdown-Format.
 def _parse_table(table_element: Tag) -> str:
-    #Konvertiert eine HTML-Tabelle in Markdown-Format.
     md_rows: List[str] = []
 
     thead = table_element.find("thead")
@@ -169,9 +170,8 @@ def _parse_table(table_element: Tag) -> str:
 
 
 # Main Funktion
-
+#Parst den HTML-Inhalt und gibt Metadaten + Nachrichten zurück.
 def _parse_html(html_content: str) -> Dict:
-  #Parst den HTML-Inhalt und gibt Metadaten + Nachrichten zurück.
 
 
     soup = BeautifulSoup(html_content, "html.parser")
@@ -183,7 +183,7 @@ def _parse_html(html_content: str) -> Dict:
     messages: List[Dict[str, str]] = []
     skipped = 0
 
-    # --- Primäre Methode: <section data-testid="conversation-turn-N"> ---
+    #Primäre Methode: <section data-testid="conversation-turn-N">
     # Neues ChatGPT-Export-Format (seit ~2024): sections statt articles
 
     sections = soup.find_all(
@@ -222,7 +222,7 @@ def _parse_html(html_content: str) -> Dict:
                     messages.append({"speaker": "assistant", "text": text})
 
     else:
-        # --- Fallback-Methode 1: <article data-testid="conversation-turn-N"> ---
+        #Fallback-Methode 1: <article data-testid="conversation-turn-N"> ---
         # Älteres Format
         turns = soup.find_all(
             "article",
@@ -247,7 +247,7 @@ def _parse_html(html_content: str) -> Dict:
                         messages.append({"speaker": "assistant", "text": text})
 
         else:
-            # --- Fallback-Methode 2: data-message-author-role direkt ---
+            #Fallback-Methode 2: data-message-author-role direkt
             containers = soup.find_all("div", attrs={"data-message-author-role": True})
             for container in containers:
                 role = container.get("data-message-author-role")
@@ -267,10 +267,10 @@ def _parse_html(html_content: str) -> Dict:
 
 
 # API
+#Liest eine HTML-Datei und gibt den Chat-Verlauf als Liste von Dicts zurück.
 
 def extract(html_path: str | Path) -> List[Dict[str, str]]:
 
-    #Liest eine HTML-Datei und gibt den Chat-Verlauf als Liste von Dicts zurück.
 
     html_path = Path(html_path)
     if not html_path.exists():
@@ -280,10 +280,9 @@ def extract(html_path: str | Path) -> List[Dict[str, str]]:
     result = _parse_html(html_content)
     return result["messages"]
 
-
+#Wie ``extract()``, gibt aber auch Metadaten zurück.
 def extract_with_meta(html_path: str | Path) -> Dict:
 
-    #Wie ``extract()``, gibt aber auch Metadaten zurück.
 
 
     html_path = Path(html_path)
@@ -293,6 +292,8 @@ def extract_with_meta(html_path: str | Path) -> Dict:
     html_content = html_path.read_text(encoding="utf-8")
     return _parse_html(html_content)
 
+#function we use for pipline
+#Extrahiert den Chat-Verlauf und speichert ihn als JSON-Datei
 
 def to_json(
     html_path: str | Path,
@@ -303,7 +304,6 @@ def to_json(
     include_meta: bool = False,
 ) -> Path:
 
-    #Extrahiert den Chat-Verlauf und speichert ihn als JSON-Datei
 
     html_path = Path(html_path)
     if json_path is None:
@@ -319,10 +319,12 @@ def to_json(
     )
     return json_path
 
+#Extrahiert den Chat-Verlauf und gibt ihn als DataFrame zurück.
+#alternative option, aber leichter im workflow mit to_json
+#da json_parser eh zu alle jsons zu df umwandelt
 
 def to_dataframe(html_path: str | Path):
 
-    #Extrahiert den Chat-Verlauf und gibt ihn als DataFrame zurück.
 
     try:
         import pandas as pd

@@ -4,7 +4,7 @@
 base_path   <- "/home/theo/PycharmProjects/Masterprojekt-Chatbots"
 data_path   <- file.path(base_path, "data/processed/analysis_dataset.rds")
 plot_dir    <- file.path(base_path, "plots")
-
+setwd(base_path)
 #Daten laden
 
 data <- readRDS(data_path)
@@ -28,9 +28,10 @@ library(ggplot2)
 # Ausgabeordner für Grafiken
 dir.create("plots", showWarnings = FALSE)
 SEED <- 404
-# =====================================================================
-# 0) STICHPROBENBESCHREIBUNG
-# =====================================================================
+#################################
+# 0) STICHPROBENBESCHREIBUNG#####
+#############################
+
 library(patchwork)
 
 # Faktoren mit lesbaren Labels versehen
@@ -77,11 +78,10 @@ combined <- (p1 | p2) / (p3 | p4) +
                   theme = theme(plot.title = element_text(size = 15, face = "bold")))
 
 ggsave("plots/00_stichprobe.png", combined, width = 11, height = 8, dpi = 150)
-# =====================================================================
-# 1) DESKRIPTIVE STATISTIK
-# =====================================================================
 
-## 1a) Mittlere (vorzeichenbehaftete) Diskrepanz + MAD pro Person -------
+#descriptives der diskrepanzmaße
+
+## 1a) Mittlere Diskrepanz + MAD pro Person -------
 D_cols <- c("D_info","D_schreiben","D_praktisch","D_technisch","D_lernen")
 data$D_mean <- rowMeans(data[, D_cols])                 # Richtung (Ueber-/Unterschaetzung)
 data$D_MAD  <- rowMeans(abs(data[, D_cols]))            # Ausmass, ohne Neutralisierung
@@ -134,9 +134,9 @@ ggsave("plots/05_bar_kritik.png", p_krit, width = 6, height = 4, dpi = 150)
 cat("Deskriptiv: D_mean Range [", round(min(data$D_mean),2), ",",
     round(max(data$D_mean),2), "], MAD Mittel", round(mean(data$D_MAD),2), "\n")
 
-# =====================================================================
-# 2) PAM-CLUSTERANALYSE (Gower-Distanz)
-# =====================================================================
+############################################
+# 2) PAM-CLUSTERANALYSE (Gower-Distanz)#####
+###########################################
 
 ## 2a) Cluster-Input: 5 kontinuierlich + 2 ordinal (geordnete Faktoren)
 cluster_df <- data.frame(
@@ -155,14 +155,14 @@ gower_weights <- c(0.2, 0.2, 0.2, 0.2, 0.2, 1, 1)
 gower_dist <- daisy(cluster_df, metric = "gower", weights = gower_weights)
 
 ## 2c) Optimales k ueber durchschnittliche Silhouette (k = 2..6) -------
-sil_avg <- sapply(2:6, function(k) {
+sil_avg <- sapply(2:10, function(k) {
   pm <- pam(gower_dist, k = k, diss = TRUE)
   pm$silinfo$avg.width
 })
-names(sil_avg) <- 2:6
+names(sil_avg) <- 2:10
 k_opt <- as.integer(names(which.max(sil_avg)))
 
-sil_df <- data.frame(k = 2:6, silhouette = sil_avg)
+sil_df <- data.frame(k = 2:10, silhouette = sil_avg)
 p_sil <- ggplot(sil_df, aes(x = k, y = silhouette)) +
   geom_line(colour = "grey50") +
   geom_point(size = 3, colour = "#4C72B0") +
@@ -357,7 +357,89 @@ ggsave("plots/16_agreement_pam_hc.png", p_agree, width = 6.5, height = 5, dpi = 
 
 cat("Robustheit 3 (Average-Linkage): Dendrogramm + Uebereinstimmung erstellt\n")
 
-cat("\n=== ANALYSE ABGESCHLOSSEN. Grafiken in plots/ ===\n")
 cat("Erzeugte Grafiken:", length(list.files("plots")), "\n")
+
+#######################################
+# ANHANG: TABELLEN ZU ALLEN GRAFIKEN##
+######################################
+tab_dir <- file.path(base_path, "tabs")
+dir.create(tab_dir, showWarnings = FALSE, recursive = TRUE)
+
+save_tab <- function(df, name) {
+  write.csv(df, file.path(tab_dir, name), row.names = FALSE)
+  cat("  ", name, "\n")
+}
+
+##Stichprobe (zu Grafik 00) 
+save_tab(as.data.frame(table(Geschlecht = data$gender_f)), "T00a_geschlecht.csv")
+save_tab(as.data.frame(table(Abschluss  = data$degree_f)), "T00b_abschluss.csv")
+save_tab(as.data.frame(table(Fach       = data$field_f)),  "T00c_fach.csv")
+save_tab(data.frame(Statistik = c("N","Mittelwert","SD","Min","Max"),
+                    Alter = c(nrow(data), round(mean(data$age),1), round(sd(data$age),1),
+                              min(data$age), max(data$age))), "T00d_alter.csv")
+
+### Diskrepanz (zu Grafiken 01-05)
+save_tab(data.frame(id = data$id, D_mean = round(data$D_mean,3),
+                    D_MAD = round(data$D_MAD,3)), "T01_dmean_mad_person.csv")
+save_tab(data.frame(
+  Aufgabe = c("Info","Schreiben","Praktisch","Technisch","Lernen"),
+  Mittel  = round(sapply(data[,D_cols], mean),3),
+  SD      = round(sapply(data[,D_cols], sd),3),
+  Median  = round(sapply(data[,D_cols], median),3),
+  Min     = round(sapply(data[,D_cols], min),3),
+  Max     = round(sapply(data[,D_cols], max),3)), "T03_diskrepanz_je_aufgabe.csv")
+save_tab(as.data.frame(table(Sentiment_Diskrepanz = data$S_Diskrepanz_Label)), "T04_sentiment_diskrepanz.csv")
+save_tab(as.data.frame(table(Kritik_Diskrepanz    = data$K_Diskrepanz_Label)), "T05_kritik_diskrepanz.csv")
+
+###Clustering (zu Grafiken 06-11)
+save_tab(data.frame(k = 2:6, avg_silhouette = round(sil_avg,3)), "T06_silhouette_k.csv")
+save_tab(data.frame(id = data$id, cluster = data$cluster,
+                    silhouette = round(sil_obj[,3],3)), "T07_silhouette_person.csv")
+save_tab(aggregate(cbind(D_info,D_schreiben,D_praktisch,D_technisch,D_lernen) ~ cluster,
+                   data = data, FUN = function(x) round(mean(x),3)), "T08_cluster_profile.csv")
+save_tab(data.frame(cluster = levels(data$cluster),
+                    groesse = as.integer(table(data$cluster)),
+                    medoid_id = data$id[pam_fit$id.med]), "T08b_cluster_groessen.csv")
+save_tab(cbind(cluster = rownames(table(data$cluster, data$S_Diskrepanz_Label)),
+               as.data.frame.matrix(table(data$cluster, data$S_Diskrepanz_Label))),
+         "T10_sentiment_je_cluster.csv")
+save_tab(cbind(cluster = rownames(table(data$cluster, data$K_Diskrepanz_Label)),
+               as.data.frame.matrix(table(data$cluster, data$K_Diskrepanz_Label))),
+         "T11_kritik_je_cluster.csv")
+
+### Clustervergleich (zu Grafiken 12-14) ----
+sd_summary <- aggregate(social_desir_mean ~ cluster, data = data,
+                        FUN = function(x) round(c(M = mean(x), SD = sd(x), n = length(x)),2))
+sd_out <- data.frame(cluster = sd_summary$cluster, sd_summary$social_desir_mean)
+sd_out$Welch_p <- round(aov_sd$p.value, 4)
+save_tab(sd_out, "T12_socialdesir_cluster.csv")
+
+ord_res <- do.call(rbind, lapply(ord_vars, function(v) {
+  kw <- kruskal.test(data[[v]] ~ data$cluster)
+  data.frame(Variable = v, Chi2 = round(kw$statistic,3),
+             df = kw$parameter, KW_p = round(kw$p.value,4))
+}))
+save_tab(ord_res, "T13_ordinale_kruskal.csv")
+
+nom_res <- do.call(rbind, lapply(nom_vars, function(v) {
+  chi <- suppressWarnings(chisq.test(table(data$cluster, data[[v]]),
+                                     simulate.p.value = TRUE, B = 2000))
+  data.frame(Variable = v, Chi2 = round(chi$statistic,3),
+             Chi_p_sim = round(chi$p.value,4))
+}))
+save_tab(nom_res, "T14_nominale_chi2.csv")
+
+### Robustheit (zu Grafiken 15-16)##
+
+save_tab(data.frame(
+  Check = c("1: ohne Tie-Sentiment","2: ohne Gewichtung","3: Average-Linkage"),
+  Beschreibung = c(paste(sum(tie_sent),"Faelle ausgeschlossen"),
+                   paste("k =", k_r2), paste("k =", k_opt)),
+  avg_silhouette = c(round(pam_r1$silinfo$avg.width,3), round(max(sil_r2),3), NA)),
+  "T15_robustheit_uebersicht.csv")
+save_tab(as.data.frame(table(PAM = data$cluster, Ungewichtet = pam_r2$clustering)),
+         "T15b_pam_vs_ungewichtet.csv")
+save_tab(as.data.frame(table(PAM = data$cluster, Hierarchisch = hc_cl)),
+         "T16_pam_vs_hierarchisch.csv")
 
 
