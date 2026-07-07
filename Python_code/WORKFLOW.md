@@ -331,23 +331,6 @@ formatiert und beschriftet in **`tabs/tabellen_report.md`**.
 
 ---
 
-## 8. Reproduktion — Reihenfolge & Befehle
-
-```bash
-cd Python_code
-
-# PHASE A (einmalig, vor der Erhebung): Goldstandard + Evaluation
-PYTHONPATH=.. jupyter nbconvert --to notebook --execute --inplace Gold_standard.ipynb
-PYTHONPATH=.. jupyter nbconvert --to notebook --execute --inplace llm_pipeline_openai_gold.ipynb
-
-# PHASE B: Haupt-Pipeline (braucht SoSci- + OpenAI-Keys)
-#    In PyCharm/Jupyter öffnen und Zellen von oben nach unten ausführen, oder:
-PYTHONPATH=.. jupyter nbconvert --to notebook --execute --inplace Data_pipeline.ipynb
-
-# PHASE B: R-Analyse
-Rscript data_prep.R
-Rscript data_analasys.R
-```
 
 ### Wichtigste Zwischen- und Endprodukte
 
@@ -366,24 +349,3 @@ Rscript data_analasys.R
 | `tabs/T00…T16_*.csv`, `tabs/tabellen_report.md` | data_analasys.R | Alle Tabellen |
 
 ---
-
-## 9. Bekannte Stolpersteine
-
-- **Arbeitsverzeichnis:** Alle Notebooks erwarten `Python_code/` als CWD
-  (Pfade via `Path(".").resolve().parent`). Headless zusätzlich
-  `PYTHONPATH=<Repo-Wurzel>` setzen.
-- **Leere HTML-Turns:** ChatGPT rendert lange Chats beim Export teils nicht
-  vollständig; solche Turns fehlen im HTML und werden übersprungen (Warnung im
-  Log). Beim Datensammeln: vor dem Speichern einmal komplett durchscrollen.
-- **Runde-2-Codierbögen ohne `task`:** In `control_hannah_2.csv`, `round_2.csv`
-  und `control_laura_runde2.csv` ist `task` leer — `task`-Reliabilität immer
-  aus den Runde-1-Dateien berechnen.
-- **`unknown`-Labels:** Chats, die der Klassifikator nicht zuordnen kann,
-  werden vor der Aggregation entfernt; die Warnungen im Log zeigen, wie viele.
-- **Kosten:** Data_pipeline Zelle 3 und die Evaluations-Pipeline rufen die
-  OpenAI-API auf (1 Call pro Chat bzw. 4 Calls pro Goldstandard-Chat).
-- **`data_prep.R`:** derzeit simulierte Daten — vor der echten Auswertung auf
-  `perp_dataset.csv` umstellen (Abschnitt 7.1).
-- **Cluster-Anzahl:** Das Silhouette-Optimum wird automatisch gewählt; bei
-  sehr kleinen Clustern ggf. manuell ein kleineres k begründen (Kommentar im
-  Skript).
