@@ -38,9 +38,9 @@ Nachfragen).
  ┌───────────────────────  Data_pipeline.ipynb  ───────────────────────┐
  │ 1. Download Survey-CSV + hochgeladene HTML-Chatlogs                 │
  │ 2. Survey bereinigen  ->  survey_clean.csv                          │
- │ 3. Chats parsen (JSON aus CSV + HTML-Uploads) -> chats_long.csv     │                     ┌───────────────────────┐
- │ 4. Chats klassifizieren (validierter Prompt aus Phase A,            │ ------------------> | Zweite LLM-Evautazion |
- │    modules/classify_chats.py)  ->  chats_labeled.csv                │                     └───────────────────────┘
+ │ 3. Chats parsen (JSON aus CSV + HTML-Uploads) -> chats_long.csv     │                  ┌───────────────────────┐
+ │ 4. Chats klassifizieren (validierter Prompt aus Phase A,            │ ---------------> | Zweite LLM-Evautazion |
+ │    modules/classify_chats.py)  ->  chats_labeled.csv                │                  └───────────────────────┘
  │ 5. Auf Personenebene aggregieren + mit Survey mergen                │
  │    -> perp_dataset.csv                                              │
  └────────────────────────────────┬────────────────────────────────────┘
