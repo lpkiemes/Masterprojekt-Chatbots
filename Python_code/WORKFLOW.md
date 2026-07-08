@@ -4,8 +4,9 @@ Diese Datei beschreibt den kompletten Daten- und Analyse-Workflow des Projekts.
 Er besteht aus zwei Phasen: Zuerst wird der LLM-Klassifikator entwickelt
 und validiert (Goldstandard + Evaluations-Pipeline), danachläuft die
 eigentliche Erhebung über SoSci Survey mit Parsing, Klassifikation und
-statistischer Analyse in R. Ziel des Projekts ist der Vergleich von
-**Selbstauskunft (SA)** und **beobachtetem Verhalten (BE)** bei der
+statistischer Analyse in R. Hier werden die LLM-Outputs ebensfalls,
+an einer zufälligen Stichproben validiert. Ziel des Projekts ist der Vergleich 
+von **Selbstauskunft (SA)** und **beobachtetem Verhalten (BE)** bei der
 ChatGPT-Nutzung Studierender (Aufgabentypen, Ton/Sentiment, kritisches
 Nachfragen).
 
