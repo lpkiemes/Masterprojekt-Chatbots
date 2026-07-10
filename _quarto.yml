@@ -1,5 +1,8 @@
 project:
   type: manuscript
+  render:
+    - "*.qmd"
+    - "!Python_code/"
 
 manuscript:
   article: index.qmd

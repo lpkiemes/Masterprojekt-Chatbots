@@ -1,12 +1,51 @@
 ---
 title: Masterprojekt-Chatbots
 authors:
-  - name: Norah Jones
-    affiliation: The University
+  - name: Laura Kiemes
+    affiliation: Ludwig-Maximilians-Universität München
     roles: writing
+    email: l.kiemes@campus.lmu.de
     corresponding: true
+  - name: Hannah Laier
+    affiliation: Ludwig-Maximilians-Universität München
+    roles: writing
+  - name: Theo Wiesholler
+    affiliation: Ludwig-Maximilians-Universität München
+    roles: writing
 bibliography: references.bib
+zotero: Masterprojekt Informationsnutzung von KI-Chatbots
+csl: "apa.csl"
+date: last-modified
+date-format: "DD. MMMM YYYY"
+abstract: |
+  Aliqua cupidatat reprehenderit velit magna. Ad nulla aute ex voluptate occaecat quis consequat aliquip ipsum. Labore occaecat ad culpa ut proident officia ea magna nostrud. Consectetur officia consectetur reprehenderit magna cillum nostrud exercitation. Aute ex proident sunt eiusmod reprehenderit aute cillum. Commodo non aliquip nisi ut anim laborum aliqua tempor est. Veniam eiusmod fugiat ullamco duis irure enim eiusmod ullamco cupidatat officia magna.
+format:
+  html:
+    toc: true
+    fig-format: svg
+    number-sections: true
+    code-fold: true
+    code-tools: true
+    format-links: true
+  pdf:
+    toc: false
+    fig-format: pdf
+    number-sections: true
+    pdf-engine: xelatex
+    mainfont: "Times New Roman"
+    sansfont: "Times New Roman"
+    include-in-header: 
+      text: | 
+        \usepackage{setspace}
+        \usepackage{placeins}
+        \doublespacing
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+editor: 
+  markdown: 
+    wrap: sentence
 ---
 
-## Section
-This is a simple placeholder for the manuscript's main document [@knuth84].

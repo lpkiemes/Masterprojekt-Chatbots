@@ -48,4 +48,22 @@ po/*~
 # RStudio Connect folder
 rsconnect/
 
+Python_code/
+
+# Quarto render artifacts
+/_manuscript/
 /.quarto/
+/site_libs/
+index.html
+index.pdf
+*-preview.html
+*.out.ipynb
+*_files/
+
+# renv
+renv/library/
+renv/staging/
+
+
+# Rohdaten sensibel
+data/raw/
