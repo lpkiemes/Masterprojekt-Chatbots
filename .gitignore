@@ -67,3 +67,6 @@ renv/staging/
 
 # Rohdaten sensibel
 data/raw/
+
+# Private Adressen
+private-authors.tex

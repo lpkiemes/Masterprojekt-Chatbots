@@ -1,0 +1,109 @@
+\begin{titlepage}
+\thispagestyle{empty}
+\singlespacing
+
+% --------------------------------------------------
+% Private Angaben laden, falls vorhanden
+% --------------------------------------------------
+
+\IfFileExists{private-authors.tex}{
+  \input{private-authors.tex}
+}{
+  \newcommand{\LauraAddress}{}
+  \newcommand{\HannahAddress}{}
+  \newcommand{\TheoAddress}{}
+}
+
+% --------------------------------------------------
+% Universität und Institut
+% --------------------------------------------------
+
+\begin{flushleft}
+\small
+Ludwig-Maximilians-Universität München\\
+Institut für Kommunikationswissenschaft und Medienforschung\\
+Sommersemester 2026
+\end{flushleft}
+
+% --------------------------------------------------
+% Lehrveranstaltung und Dozentin
+% --------------------------------------------------
+
+\vspace{1.25cm}
+
+\begin{center}
+\small
+Masterprojekt: Informationsnutzung mit generativen KI-Chatbots\\
+Dozentin: Prof. Dr. Anna Kümpel-Unkel
+\end{center}
+
+% --------------------------------------------------
+% Titel
+% --------------------------------------------------
+
+\vspace{1.25cm}
+
+\begin{center}
+{\LARGE\bfseries
+Unterschiede in angegebenem und tatsächlichem Nutzungsverhalten von KI-Chatbots
+}
+
+\vspace{0.6cm}
+
+{\large Eine explorative Analyse}
+\end{center}
+
+% --------------------------------------------------
+% Abgabedatum
+% --------------------------------------------------
+
+\vspace{1.25cm}
+
+\begin{center}
+Eingereicht am 16. August 2026
+\end{center}
+
+% --------------------------------------------------
+% Autor:innen
+% --------------------------------------------------
+
+\vspace{1.25cm}
+
+\begin{flushleft}
+\small
+Eingereicht von:
+
+\vspace{0.15cm}
+
+\textbf{Laura Kiemes}\\
+Masterstudiengang Computational Social Science, 2. Fachsemester
+\ifx\LauraAddress\empty
+\else
+\\
+\LauraAddress
+\fi
+
+\vspace{0.15cm}
+
+\textbf{Hannah Laier}\\
+Masterstudiengang Computational Social Science, 2. Fachsemester
+\ifx\HannahAddress\empty
+\else
+\\
+\HannahAddress
+\fi
+
+\vspace{0.15cm}
+
+\textbf{Theo Wiesholler}\\
+Masterstudiengang Computational Social Science, 2. Fachsemester
+\ifx\TheoAddress\empty
+\else
+\\
+\TheoAddress
+\fi
+\end{flushleft}
+
+\end{titlepage}
+
+\clearpage
