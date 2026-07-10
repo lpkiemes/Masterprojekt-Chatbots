@@ -1,0 +1,3 @@
+cat > .renvignore << 'EOF'
+Python_code/
+EOF
