@@ -14,6 +14,8 @@ format:
     format-links: true
 
   pdf:
+    colorlinks: true
+    linkcolor: black
     toc: false
     fig-format: pdf
     number-sections: true
@@ -23,6 +25,7 @@ format:
     include-in-header:
       text: |
         \usepackage{fontspec}
+    
         \setmainfont[
           Path=manuscript/fonts/,
           UprightFont=EBGaramond-Regular.ttf,
@@ -30,6 +33,15 @@ format:
           ItalicFont=EBGaramond-Italic.ttf,
           BoldItalicFont=EBGaramond-BoldItalic.ttf
         ]{EB Garamond}
+    
+        \setsansfont[
+          Path=manuscript/fonts/,
+          UprightFont=EBGaramond-Regular.ttf,
+          BoldFont=EBGaramond-Bold.ttf,
+          ItalicFont=EBGaramond-Italic.ttf,
+          BoldItalicFont=EBGaramond-BoldItalic.ttf
+        ]{EB Garamond}
+    
         \usepackage{setspace}
         \usepackage{placeins}
         \doublespacing
@@ -43,9 +55,6 @@ execute:
 editor:
   markdown:
     wrap: sentence
-    
-abstract: |
-  Hier steht später das Abstract.
 ---
 
 # Abstract {.unnumbered .unlisted}
@@ -55,7 +64,6 @@ ullamco ipsum esse excepteur nulla et nulla non et ut id nulla sunt do ex veniam
 \clearpage
 
 \tableofcontents
-
 \clearpage
 
 \phantomsection
@@ -223,37 +231,21 @@ Nostrud nisi ullamco sint fugiat. Dolore voluptate consequat incididunt ad occae
 Esse commodo cillum amet adipisicing ullamco mollit incididunt dolor excepteur magna culpa. Eu occaecat est eiusmod. Lorem dolore duis enim occaecat id aliqua pariatur in cupidatat magna consectetur. Sit incididunt officia aliquip enim cupidatat veniam et. Do ea labore aliquip occaecat duis eu eu occaecat eiusmod qui deserunt pariatur sint consectetur. Aute exercitation excepteur voluptate non consectetur laboris anim laboris quis quis elit. Elit amet do exercitation fugiat laborum velit ut non veniam mollit amet.
 
 ## Durchführung von Pretest und Haupterhebung
-Sint ea id quis. Occaecat fugiat voluptate labore ad enim reprehenderit ullamco aute et. Cillum minim irure voluptate cillum incididunt aliquip in cupidatat. Voluptate nulla velit Lorem ullamco tempor magna in veniam non culpa consectetur dolore irure laborum excepteur. In sint nisi voluptate tempor sint. Lorem elit duis ipsum enim id reprehenderit ipsum.
 
-Quis excepteur magna consequat cupidatat anim fugiat consectetur laboris et voluptate mollit cillum adipisicing. Pariatur laborum anim incididunt aliqua ex incididunt commodo. Lorem magna qui laborum irure veniam consectetur ea anim aliquip proident. Ut et aute consectetur labore dolor duis. Sit ea duis est ullamco ut pariatur sunt incididunt.
+Zur Durchführung des Pretests wurden Personen aus dem persönlichen Umfeld der Autor:innen rekrutiert, die nicht zur Zielgruppe der Studie gehörten. Konkret handelte es sich um Personen, die ihr Studium bereits abgeschlossen hatten. Ziel des Pretests war es, mögliche Probleme hinsichtlich Verständlichkeit, Benutzerfreundlichkeit und technischer Umsetzung des Fragebogens zu identifizieren. Die Teilnehmenden wurden gebeten, den Fragebogen vollständig auszufüllen und sowohl während der Bearbeitung als auch im Anschluss Rückmeldung zu geben.
 
-Fugiat mollit ipsum ullamco sint sint eu aute quis. Nulla ad laboris amet esse dolore minim. Enim esse ipsum anim velit irure amet quis nostrud sit nostrud ipsum anim. Esse consectetur duis sunt velit nulla enim ad cillum dolore officia sit est velit. In nisi laboris dolor ex. Incididunt nulla amet cillum.
+Die erste Runde des Pretests erfolgte am 09. Juli 2026 und zeigte mehrere Verbesserungsmöglichkeiten. So hatten einige Teilnehmende Schwierigkeiten, die Schaltflächen zum Kopieren der KI-Ausgabe sowie zum erneuten Generieren der Antwort unter „Erneut versuchen“ in ChatGPT zu finden. Zudem war der Prompt für den JSON-Export in der ursprünglichen Version der Anleitung nicht ausreichend früh und visuell hervorgehoben und wurde daher nicht unmittelbar gefunden. Darüber hinaus zeigte sich ein bislang nicht berücksichtigter technischer Sonderfall: Bei sehr langen Chatverläufen verweigerte ChatGPT teilweise die Ausgabe, da die Antwort das maximal zulässige Ausgabelimit überschritten hätte. Weiterhin fiel auf, dass die verschiedenen technischen Fehlerursachen in einer Frage nicht eindeutig voneinander abgegrenzt waren. Zusätzlich wurden einzelne sprachliche Formulierungen nicht verstanden (z. B. die Verwendung des Begriffs „Chatlogs“ anstelle von „Chatverläufe“) sowie kleinere Unstimmigkeiten im Fragebogen entdeckt.
 
-Reprehenderit amet excepteur incididunt occaecat mollit sit dolore elit consequat enim ipsum labore adipisicing deserunt ad. Et quis laboris ea dolor excepteur aliqua. Veniam nisi id reprehenderit nulla consequat nisi in. Ea mollit consectetur qui reprehenderit sunt duis. Excepteur nisi et qui cupidatat proident ut pariatur fugiat sint et incididunt voluptate ut pariatur. Do ullamco pariatur cillum incididunt commodo magna fugiat magna velit minim incididunt dolor. Laborum velit nisi consequat occaecat ipsum laboris minim reprehenderit occaecat mollit esse. Laboris ipsum ut esse deserunt sit.
+Auf Grundlage dieser Rückmeldungen wurden mehrere Anpassungen vorgenommen. Die Hinweise auf die Schaltflächen „Kopieren“ und „Erneut versuchen“ wurden direkt in die Anleitung integriert und durch Abbildungen ergänzt. Der Prompt für den JSON-Export wurde bereits direkt bei der Erstnennung in der Anleitung platziert und zusätzlich mit einer Kopierfunktion versehen. Darüber hinaus wurde eine zusätzliche Antwortoption zur Frage nach technischen Schwierigkeiten für den Fall aufgenommen, dass die JSON-Ausgabe aufgrund des maximalen Antwortlimits von ChatGPT nicht erstellt werden konnte. Außerdem wurden einzelne Formulierungen vereinfacht, die Gestaltung der Anleitungen verbessert und kleinere Fehler im Fragebogen behoben.
 
-Sit officia pariatur labore esse veniam non labore consectetur fugiat. Ut proident irure ad exercitation magna fugiat in elit. Exercitation non cillum aute irure cillum tempor cillum ex exercitation. Occaecat officia ad sint fugiat deserunt elit aliquip ut aliqua cillum.
+Die überarbeitete Version des Fragebogens wurde anschließend in einer weiteren Pretest-Runde später am 09. Juli 2026 überprüft. Dabei zeigte sich, dass die Datenschutzerklärung von einer Testperson als sehr umfangreich wahrgenommen wurde und dadurch zunächst abschreckend wirkte. Daraufhin wurde die Datenschutzerklärung in einer scrollbaren Ansicht dargestellt, sodass die Frage zur informierten Einwilligung unmittelbar sichtbar war. Zusätzlich wurden die Studieninformationen übersichtlicher gestaltet und bereits zu Beginn auf die Teilnahmevoraussetzung hingewiesen, ChatGPT zumindest gelegentlich für Studienzwecke zu nutzen. Darüber hinaus zeigten sich keine weiteren Verständlichkeits- oder Bedienprobleme, sodass der Fragebogen in seiner finalen Form für die Hauptstudie eingesetzt wurde.
 
-Nostrud magna id non duis. Eiusmod excepteur cupidatat tempor culpa occaecat Lorem eu elit. Tempor quis amet commodo ex est pariatur. Est fugiat ex deserunt culpa magna et et voluptate adipisicing. Et ullamco duis nulla cillum minim eiusmod dolore qui incididunt amet ullamco consectetur commodo commodo. Do Lorem ipsum commodo dolore exercitation duis reprehenderit eiusmod enim duis dolore dolore pariatur cillum. Pariatur dolor qui nisi nulla fugiat nostrud id proident in aute id.
+Die Feldzeit begann am 09. Juli 2026.
+<!-- TODO: Hier noch Ende der Feldphase ergänzen -->
+Teilnehmende wurden über den Verteiler der Studierenden im Masterprojekt und im Kanal des Masters Computational Social Science mit weiteren Studierenden zur Teilnahme eingeladen, welche insgesamt 27 Studierende umfasst. Um eine hinreichend großes Sample zu erreichen wurden weitere Teilnehmende im privaten Umfeld rekruitert. Die Teilnahme war freiwillig und anonym. 
 
-Sunt nisi voluptate aliquip veniam voluptate reprehenderit aliqua duis consequat tempor ipsum irure pariatur sunt. Veniam commodo tempor ad adipisicing. Eu aliqua incididunt irure laboris ullamco nulla Lorem aliquip reprehenderit tempor laboris. Ad duis tempor dolore pariatur enim est veniam laboris. In veniam pariatur et eiusmod cupidatat pariatur eu fugiat non cillum ut consequat. Culpa amet eiusmod mollit deserunt culpa sint ea veniam. Culpa sunt laboris elit amet officia amet mollit voluptate Lorem ipsum ad enim. Irure officia sint nisi.
-
-Cupidatat mollit Lorem fugiat occaecat sint commodo enim aute. Adipisicing ea ut consequat labore minim Lorem nostrud velit dolore pariatur fugiat. Id tempor eu elit culpa nostrud. Cillum ea et et adipisicing dolore voluptate id mollit esse eu. Sint Lorem elit consectetur est incididunt dolore Lorem et. Magna fugiat sint tempor deserunt.
-
-Laborum esse anim consequat officia id sunt velit cillum. Excepteur anim ad amet est velit eu adipisicing do mollit. Elit dolor aute esse ullamco sint aliquip magna velit anim qui dolore consectetur. Nostrud nostrud labore esse officia culpa non dolore nisi laborum consectetur nostrud. Ea ipsum est esse aliquip consequat ad quis non id reprehenderit duis. Commodo esse anim ad laboris. Amet quis do sint officia commodo eu consequat cillum laborum incididunt duis laboris fugiat.
-
-Enim tempor ipsum consequat proident ullamco nostrud. Qui est et proident reprehenderit incididunt sint et tempor consectetur et eiusmod ut sit. Velit sit est laborum nisi excepteur ad deserunt aliquip. Commodo ullamco excepteur cillum voluptate nulla commodo pariatur magna. Voluptate quis quis anim in cillum veniam mollit ad nostrud non. Ut minim irure laboris consectetur aute ad enim qui culpa. Consequat magna enim excepteur culpa consequat.
-
-Velit excepteur ipsum consectetur laboris minim occaecat voluptate deserunt. Exercitation in aliqua sint esse voluptate laborum consectetur enim. Ex nulla enim ex Lorem sit velit eu nostrud. Pariatur cillum commodo sint eiusmod qui occaecat velit fugiat tempor.
-
-Commodo aliquip voluptate laboris ea qui esse enim esse sint minim. Reprehenderit officia qui culpa labore dolore eu. Fugiat adipisicing ipsum non minim. Amet officia est laborum labore voluptate. Reprehenderit irure voluptate occaecat cillum esse. Deserunt labore commodo enim proident proident minim tempor cupidatat consectetur reprehenderit eiusmod non amet. Velit duis adipisicing magna elit esse. Mollit enim ut sit reprehenderit enim.
-
-Minim qui adipisicing est occaecat tempor consequat consectetur quis nulla dolore fugiat sit cillum. Incididunt ea sint duis veniam ipsum labore Lorem aliquip sint esse reprehenderit. Enim consequat enim Lorem ea velit non mollit do labore eiusmod est aute laboris adipisicing. Lorem sint irure tempor commodo tempor fugiat nostrud et ex elit est. Veniam officia ut nulla commodo eu pariatur do. Do mollit commodo enim exercitation veniam dolore ad occaecat ex esse laborum exercitation enim. Amet aute tempor magna eu.
-
-Lorem dolor exercitation cillum consectetur labore adipisicing exercitation ullamco aliqua pariatur magna. Id irure consectetur ad deserunt laboris. Occaecat nulla cupidatat laboris dolor ut mollit ea id exercitation commodo laborum commodo cupidatat. Cillum enim cupidatat culpa anim est reprehenderit.
-
-Nostrud deserunt reprehenderit excepteur dolor voluptate do ea non anim minim. Consequat aliquip aliquip dolor fugiat dolor deserunt elit voluptate qui Lorem. Occaecat minim cupidatat laborum ullamco voluptate dolor id non laboris est adipisicing. Veniam elit sunt fugiat cillum culpa tempor tempor velit velit eiusmod aliqua proident et. Quis fugiat nostrud id officia. Non aute dolor deserunt voluptate. Eu quis qui anim nulla.
-
-Labore dolore exercitation exercitation laborum eiusmod Lorem nulla duis irure qui consequat tempor nulla non culpa. Elit qui enim labore est labore proident. Ex eiusmod ullamco pariatur eu cillum officia fugiat elit laboris. Enim id sint eiusmod laboris est qui et pariatur aliqua non pariatur do elit minim.
+Zu Beginn der Feldphase wurde erkennbar, dass die Texteingaben im Survey über ein internes Limit verfügen, was nicht direkt in SoSci Survey erkennbar war. Durch dieses Limit wurden Eingaben, die im Survey abgeschickt wurden anschließend aus dem Datensatz entfernt. Die Respondenten bekamen daraufhin den Hinweis, welcher Fehler aufgetreten war und dazu angehalten, sich per Mail an uns zu wenden. Es kann davon ausgegangen werden, dass diese Fehleranzeige zu einer Irritation geführt hat. Später erhielten wir von SoSci Survey die gelöschten Eingaben per Mail zugesandt, wodurch Fälle manuell vervollständigt werden konnten und so keine Daten verlorgen gingen.
+<!-- TODO: Hier noch die Anzahl solcher Fälle ergänzen -->
 
 ## Beschreibung der Stichprobe
 Commodo ex aliquip nisi ad proident aliqua proident nulla ullamco in occaecat duis. Eiusmod fugiat qui in eu. Excepteur incididunt voluptate et. Deserunt do commodo et aliquip deserunt mollit eiusmod id cillum labore. Culpa enim nisi ea voluptate.
