@@ -114,7 +114,7 @@ Trotz dieser Einschränkungen stellt die Kombination aus Selbstauskunft und Chat
 
 <!-- TODO: Hier noch LLM-Auswertung beschreiben -->
 
-## Erstellung des Fragebogens
+## Erstellung des Fragebogens und Operationalisierung
 
 Der Fragebogen wurde so entwickelt, dass er die die studienbezogene Nutzung von ChatGPT standardisiert erfasst und diese Angaben anschließend auch mit den aus den Chatverläufen gewonnenen Informationen vergleichen zu können.
 Daher orientieren sich die zentralen Konstrukte an den Analysekategorien der Chatlogdaten.
@@ -167,10 +167,6 @@ Es kann davon ausgegangen werden, dass diese Fehleranzeige zu einer Irritation g
 Später erhielten wir von SoSci Survey die gelöschten Eingaben per Mail zugesandt, wodurch Fälle manuell vervollständigt werden konnten und so keine Daten verlorgen gingen.
 <!-- TODO: Hier noch die Anzahl solcher Fälle ergänzen -->
 
-## Beschreibung der Stichprobe
-
-<!-- TODO: soziodemographische Verteilung, ggf. Angaben zur
-Verteilung von für die Studie zentralen Merkmalen -->
 
 <!-- Hier wird statistische Analyse hinkommen, würde das spezifiisch nach dem fragebogenteil machen, weil dann haben wir einen teil Datenerhebung und einen Teil Datenauswertung-->
 
@@ -291,6 +287,11 @@ Die limitation hierbei ist da man keine Schlüsse über die Effektrichtung ziehe
 Vorteil ist das kein Risiko besteht, dass Werte sich neutralisieren können.
 
 -Deskrepziva Stichprobe \<\<<INSERT GRAPHS>\>\> -Deskreptiva Zusammenhang \<\<\<
+
+## Beschreibung der Stichprobe
+
+<!-- TODO: soziodemographische Verteilung, ggf. Angaben zur
+Verteilung von für die Studie zentralen Merkmalen -->
 
 \newpage
 
