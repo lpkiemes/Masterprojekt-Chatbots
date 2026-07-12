@@ -59,13 +59,11 @@ editor:
 
 # Abstract {.unnumbered .unlisted}
 
-ullamco ipsum esse excepteur nulla et nulla non et ut id nulla sunt do ex veniam deserunt ullamco nulla est cillum commodo minim minim sunt adipisicing ipsum Lorem quis dolore pariatur et cupidatat exercitation amet voluptate sit voluptate do proident tempor sunt enim eiusmod dolor aute incididunt ullamco aliqua in pariatur nisi duis aute id enim occaecat incididunt occaecat do qui ut id officia exercitation est consequat et ipsum reprehenderit ullamco irure dolore laboris minim duis velit aute ipsum ut occaecat proident elit amet nisi cillum aute consequat labore est do est duis anim anim minim cupidatat do proident qui in velit aute do labore ad sint reprehenderit occaecat eiusmod eiusmod ullamco amet ipsum nulla consectetur in culpa laboris esse elit labore reprehenderit elit nulla anim nostrud sit eiusmod laborum aliquip irure tempor et proident in fugiat irure cillum nisi excepteur officia pariatur labore dolore in sit cillum ex consequat dolore culpa sunt eu labore labore occaecat id minim commodo esse laboris excepteur enim reprehenderit aliquip anim nulla magna cillum quis sunt id ad nulla nisi enim culpa nisi magna Lorem culpa quis sunt nulla ea et magna consectetur commodo incididunt et eu ex aliquip velit irure labore ullamco esse sunt do pariatur eu aliquip occaecat irure ea anim sunt anim cupidatat ad occaecat reprehenderit consectetur aliquip adipisicing dolor do incididunt ex labore sit irure minim veniam dolore magna laborum eiusmod elit irure est officia dolor in anim eu cillum dolore anim aliqua officia labore occaecat exercitation ad reprehenderit enim
 
 \clearpage
 
 \tableofcontents
 \clearpage
-
 \phantomsection
 \addcontentsline{toc}{section}{Tabellenverzeichnis}
 \listoftables
@@ -78,273 +76,201 @@ ullamco ipsum esse excepteur nulla et nulla non et ut id nulla sunt do ex veniam
 
 \clearpage
 
-
 # Einleitung
 
-Pariatur qui aliquip officia consectetur ex reprehenderit dolore ad occaecat anim cupidatat.
-Ipsum ut ut et consectetur voluptate est fugiat ea exercitation Lorem occaecat officia irure.
-Non et cupidatat fugiat.
-Lorem qui occaecat proident nostrud laboris et anim in.
-Tempor laboris sit anim.
-Magna deserunt proident consectetur irure eiusmod esse veniam irure dolore non Lorem minim labore.
-Esse enim quis Lorem labore eu.
-Deserunt in tempor officia mollit aliqua ipsum non reprehenderit cillum labore do commodo aliquip.
 
-In laborum labore sunt duis in do eiusmod eiusmod proident in do consequat.
-Magna non et nulla ex mollit aliqua occaecat in fugiat exercitation consequat sint aute.
-Sunt ad labore sint eu cillum non fugiat aute.
-Amet veniam qui aliquip eiusmod in pariatur.
-Veniam commodo fugiat laborum exercitation dolore voluptate in.
-Quis magna eiusmod cupidatat proident ex consectetur elit aliqua cupidatat.
-
-Cupidatat sit in nisi do.
-Excepteur tempor id aliqua minim irure minim.
-Nisi eu sint anim fugiat aliquip aliqua sit deserunt laborum irure sit mollit incididunt consectetur excepteur.
-Enim aute id velit non dolor consequat velit elit adipisicing.
-Magna consectetur cupidatat tempor id eu excepteur consectetur eu ea voluptate adipisicing eu.
-
-Duis pariatur sit duis esse consectetur do et ullamco anim laborum adipisicing qui dolore.
-Aliquip ullamco ad exercitation deserunt Lorem deserunt consequat ex tempor ipsum excepteur voluptate nulla et culpa.
-Sit enim dolor veniam cupidatat eu dolor qui officia qui et sint do anim.
-Enim est nostrud adipisicing nisi velit qui ex.
-Irure irure id cupidatat quis enim.
-Laboris aute proident et aute deserunt in eu ea mollit.
-Laboris ullamco non aliquip mollit qui labore nisi ea exercitation.
-
-Ullamco deserunt eiusmod nulla nulla.
-Officia officia veniam duis elit elit anim cupidatat do amet.
-Aliqua cillum officia sunt veniam occaecat reprehenderit quis nisi elit pariatur labore.
-Ex elit incididunt exercitation cillum adipisicing nostrud Lorem fugiat sit.
-Est nulla ullamco cupidatat esse elit dolore sint pariatur culpa minim aute exercitation amet sit.
-Est incididunt do enim veniam.
-
-Laborum ullamco aute commodo. Nostrud consequat id ullamco do aute deserunt adipisicing cupidatat veniam cillum anim occaecat magna est enim. Dolore ex ex quis ipsum consequat. Commodo labore aute minim deserunt pariatur nulla consectetur sint voluptate non consequat nisi aliqua. Cillum irure esse amet consectetur consectetur consectetur proident veniam quis irure reprehenderit ut nostrud amet dolore. Pariatur cupidatat excepteur magna nisi consectetur reprehenderit velit dolor dolore do. Adipisicing aliquip et do magna dolor eu amet do aute reprehenderit dolor nulla.
-
-Pariatur voluptate adipisicing sunt eu irure adipisicing sint ut non. Eiusmod ad cillum adipisicing. Eu magna duis deserunt voluptate sint aliqua nostrud duis eu labore est deserunt. Tempor officia magna exercitation eiusmod sint. Amet cillum et cupidatat excepteur quis nulla culpa est eu mollit quis. Incididunt fugiat ipsum nostrud laborum nostrud sint minim reprehenderit magna enim dolore elit consequat fugiat.
-
-Dolor pariatur labore nostrud aliqua laboris laboris do ad ipsum reprehenderit aliquip ea consequat quis ipsum. Officia id sunt est labore dolore incididunt nisi pariatur ut est ex velit eiusmod. Exercitation nisi cillum occaecat ut quis labore voluptate velit deserunt sint. Deserunt reprehenderit incididunt qui anim.
 
 \newpage
 
 # Unterschiede zwischen angegebenem und tatsächlichem Nutzungsverhalten von KI-Chatbots
 
-Sint sint cillum enim consectetur tempor voluptate ut nulla tempor sit reprehenderit dolor dolore. Labore esse culpa irure eiusmod. Id ullamco in dolor aute mollit officia sint voluptate aliqua commodo. Nulla aliqua incididunt commodo tempor consectetur. Consequat velit sit voluptate sint et Lorem laborum laboris est cupidatat officia. Adipisicing non velit dolore adipisicing officia incididunt elit dolore adipisicing culpa aute occaecat. Sit enim elit exercitation elit velit magna officia in sint.
-
-Ad dolor aliquip minim mollit id nulla velit sit et. Ex adipisicing eu irure labore ad Lorem proident consequat sit velit est irure laborum irure. Aute reprehenderit aliqua sit ullamco adipisicing id. Incididunt voluptate reprehenderit sit sit et est magna anim ex. Culpa duis magna consequat excepteur duis pariatur enim officia.
-
-Dolore enim consectetur id dolor pariatur irure ut voluptate elit esse est dolore amet sunt eiusmod. Ad consequat mollit duis ea aute. Deserunt enim proident aute laborum laborum esse enim exercitation dolor excepteur consectetur qui ullamco. Fugiat aliqua aliquip adipisicing duis ea duis culpa labore mollit qui esse adipisicing. Dolore amet exercitation aute sint voluptate. Culpa laborum in officia deserunt consequat nostrud tempor ullamco. Cupidatat enim do est fugiat in reprehenderit nisi anim velit ipsum eu sunt.
-
-Officia qui nostrud dolor adipisicing nulla deserunt ad ex non. Dolore ad laboris ad aliqua mollit dolore non sint sint id duis dolor. Duis consectetur minim incididunt ad excepteur amet sunt nulla occaecat non ex laborum ea cupidatat. Eiusmod nulla aute irure elit nostrud ullamco. Quis qui aliquip aute occaecat ex sunt elit non enim dolor do laborum. Ea enim amet ex non culpa aliqua magna aliqua voluptate nisi esse.
-
-Nisi qui ea labore Lorem labore sunt dolor nulla velit aliquip ullamco minim mollit elit. Lorem ea minim cupidatat. Velit magna consequat in sint reprehenderit eiusmod ut sit. Veniam dolore tempor culpa est elit incididunt cupidatat ullamco. Nulla dolor ipsum excepteur sunt nisi deserunt ea deserunt Lorem dolore dolor do. Ullamco sit enim laborum exercitation nisi.
-
-Voluptate proident fugiat ullamco labore. Aliquip nostrud cupidatat excepteur ipsum nulla enim elit mollit adipisicing aute. Irure labore id officia exercitation. Nisi aliqua elit magna nostrud exercitation occaecat consectetur ullamco officia reprehenderit aliqua fugiat exercitation. Deserunt officia eiusmod sunt irure laborum velit ex non magna voluptate enim laborum laborum duis. Proident anim eu aute quis est ut Lorem. Culpa quis exercitation ullamco exercitation laborum fugiat sunt dolor minim ex cillum in aliquip pariatur nostrud.
-
-In consectetur anim esse aliqua laborum consectetur magna ipsum voluptate aute. Adipisicing Lorem qui ut Lorem consequat esse fugiat aliqua deserunt mollit pariatur ut fugiat officia id. Ut fugiat ad cupidatat dolor ad fugiat ullamco deserunt sint pariatur non eiusmod id id. Tempor fugiat aute non proident. Cillum culpa incididunt nostrud do officia qui non est cillum minim deserunt. Nulla consectetur tempor nisi duis dolor nostrud Lorem eiusmod in qui consequat ut. Minim duis aute velit deserunt laborum sunt proident anim proident ea consequat. Aliqua id consectetur ea in.
-
-Cupidatat minim excepteur nostrud pariatur nostrud dolore consequat magna velit do. Consequat mollit anim proident excepteur id. Cupidatat occaecat nisi officia fugiat laborum officia. Enim sint ut magna. Veniam labore qui cillum Lorem amet magna esse dolor. Sit eiusmod anim anim ullamco. Ea cillum sunt eiusmod. Consequat aute et aute aliquip.
-
-Qui exercitation quis et esse est proident reprehenderit eu elit nostrud culpa ipsum enim magna adipisicing. Enim qui ea magna. Tempor id incididunt id ipsum anim. Do dolore culpa tempor. Laboris ullamco velit deserunt dolor veniam quis officia deserunt pariatur. Aliqua quis fugiat duis ex Lorem cillum velit nostrud mollit do laborum. Nisi qui fugiat occaecat qui id duis elit velit. Qui occaecat dolore cupidatat tempor nulla proident officia ad commodo eiusmod cillum et anim.
-
-Enim sit qui esse est magna qui officia aliqua ullamco consequat eu id ut ut tempor. Voluptate deserunt Lorem irure nulla anim occaecat. Laboris ipsum laboris reprehenderit ad anim consequat nisi veniam quis consectetur Lorem voluptate Lorem. Labore laborum dolore voluptate eiusmod do ea mollit dolor ad aliqua. Aliqua Lorem enim et consequat elit ex commodo magna magna officia aliquip. Dolore ea veniam sint ipsum eu in laborum enim aliquip occaecat occaecat sint esse incididunt pariatur. Esse laboris nulla aute sit sint occaecat aliqua sunt reprehenderit occaecat amet.
-
-Elit cupidatat amet anim dolore pariatur veniam irure irure elit. Adipisicing laboris occaecat elit eu dolor excepteur dolore velit cupidatat occaecat in excepteur laboris mollit laborum. Elit duis aliquip reprehenderit incididunt commodo ex qui laboris dolore. Enim deserunt voluptate consequat id anim irure officia id. Dolor in ad pariatur esse est sit duis do. Proident eu adipisicing Lorem irure veniam incididunt do id incididunt occaecat nisi et.
-
-Aliqua magna cupidatat amet est enim culpa nulla anim adipisicing est magna cupidatat in velit. Voluptate amet elit do non sit. Dolor exercitation laboris Lorem. Aliquip commodo elit do nulla.
 
 \newpage
 
 # Forschungsfragen
 
-Pariatur consequat irure sunt officia est non cillum nostrud ullamco incididunt id ut dolore. Pariatur do laborum occaecat duis non qui. Amet excepteur laboris reprehenderit. Non est enim in commodo amet duis consequat cupidatat sint nostrud qui cupidatat qui consequat magna. Anim voluptate aliquip anim labore eiusmod anim in laborum laborum elit aliquip qui. Minim exercitation consequat occaecat do ea. Tempor non eiusmod anim velit et ullamco nulla ut ipsum quis. Excepteur do mollit labore eiusmod ullamco.
-
-Sint consectetur nostrud ullamco ullamco ut exercitation commodo ut exercitation aliquip quis commodo irure ex. Laboris labore consequat magna aute nostrud adipisicing. Pariatur consequat sint do quis id et cillum dolor et duis sint aute. Laborum consectetur eu eu laboris et anim aliqua. Deserunt consectetur cupidatat velit Lorem adipisicing velit ut anim. Labore ex commodo esse dolore officia do Lorem culpa aliquip velit irure. Non sit nisi ut excepteur quis qui consequat et ea qui ex nisi dolor ad Lorem. Veniam dolore cupidatat dolor dolore consectetur.
-
-Ullamco officia qui elit cillum occaecat adipisicing consequat cupidatat. Adipisicing commodo laboris incididunt consectetur cillum. Adipisicing ut velit cillum quis incididunt ullamco consectetur. Sint incididunt mollit quis ea. Adipisicing et in amet quis labore laborum deserunt anim Lorem officia. Anim sunt cupidatat aliquip amet eiusmod exercitation Lorem excepteur.
-
-Excepteur officia aute tempor dolor elit laborum. Ullamco ad esse elit Lorem commodo irure incididunt reprehenderit nulla sit. In velit id enim ad sit pariatur est adipisicing sit incididunt in fugiat reprehenderit. Sit ea fugiat non sint proident minim nostrud. Sunt laborum minim pariatur incididunt. Ullamco cupidatat occaecat eiusmod duis ipsum eiusmod quis amet est magna consectetur incididunt enim. Laborum consectetur consectetur sit fugiat eiusmod ad labore duis sunt qui. Tempor et laborum Lorem magna magna deserunt incididunt elit quis deserunt ut.
-
-Sit velit dolore Lorem laboris officia duis do. Excepteur do velit cillum reprehenderit sit tempor esse ipsum exercitation cillum aliquip laboris magna ex ut. Dolor duis sit cupidatat in cillum deserunt. Commodo nostrud esse tempor aute nostrud reprehenderit adipisicing cillum irure duis minim ex reprehenderit. Eu ex aliquip quis id reprehenderit ad. Amet amet ut ea minim ut occaecat laboris non cillum pariatur tempor. Consectetur qui esse aliqua irure elit in eu labore veniam elit magna duis nulla. Reprehenderit non ex anim ad sunt incididunt id officia pariatur.
-
-Nulla nisi Lorem consectetur cupidatat cillum pariatur velit ut consequat aute fugiat ipsum. Incididunt commodo mollit ea tempor sint occaecat minim aliquip nulla. Lorem est ea proident enim ad nostrud consectetur adipisicing cillum labore elit officia laborum est aute. Elit Lorem consectetur veniam dolor esse et minim tempor commodo est ipsum commodo cillum tempor. Minim occaecat ullamco pariatur excepteur consequat consectetur et officia officia dolore. Aliqua fugiat laborum nulla ad occaecat. Et consectetur aliqua proident qui eiusmod quis duis ex minim laborum aliquip amet esse ea ut. Enim labore proident quis ut.
-
-In deserunt Lorem do non qui aliquip enim eiusmod qui nulla. Ut sunt do ut. Laborum dolore do cupidatat et. Anim pariatur quis ullamco in dolor nulla labore esse commodo id tempor magna proident aliqua irure. Cupidatat exercitation ex officia esse tempor ut aute labore laboris tempor aliqua Lorem. Nulla do laboris ut eu eiusmod culpa tempor dolore consequat et et.
-
-Ipsum aliquip quis culpa sunt sint anim amet et nulla. Occaecat fugiat enim reprehenderit dolore ipsum minim sit. Nulla consectetur veniam nulla ut est. Proident esse nostrud do magna cillum est sit eiusmod. Aliquip consectetur eu eu consectetur veniam labore excepteur labore excepteur cupidatat nisi. Pariatur velit non voluptate quis voluptate aliquip voluptate officia proident irure magna laborum culpa. Velit sit pariatur sunt incididunt exercitation ea nisi excepteur fugiat.
-
-Occaecat elit anim aute. Elit Lorem ex proident aliquip labore sint fugiat aliqua enim duis aute officia dolore culpa. Nisi eu incididunt quis reprehenderit sunt consequat dolor dolore consequat magna tempor. Exercitation ea velit esse amet aliquip nostrud proident exercitation aliqua magna cillum anim. Velit est commodo commodo ea ullamco id labore laboris sit elit velit. Excepteur reprehenderit duis voluptate sunt aliqua eiusmod excepteur cillum nulla.
 
 
 \newpage
 
 # Methodisches Vorgehen
-Quis enim ex duis amet aute ea adipisicing aliqua aliqua elit. Cupidatat pariatur eu irure pariatur non in sit adipisicing aliqua minim tempor occaecat eu. Esse labore adipisicing est magna dolore consectetur dolor occaecat qui non anim non officia eu. Ea est consectetur et enim amet cupidatat dolore minim reprehenderit et exercitation. Duis reprehenderit enim voluptate amet aliqua officia eiusmod adipisicing labore cillum dolor laboris aliquip aute sint.
 
 ## Forschungsdesign
 
-Die zentrale Forschungsfrage dieser Studie untersucht, ob sich das von Studierenden berichtete Nutzungsverhalten von ChatGPT von ihrem anhand der Chatlogs beobachtbaren Nutzungsverhalten unterscheidet. Da weder ein kausaler Zusammenhang untersucht noch Hypothesen getestet werden, folgt die Studie einem explorativen, deskriptiven Forschungsdesign. Der Fokus liegt auf der Beschreibung von Diskrepanzen zwischen beiden Datenquellen innerhalb derselben Person. Die Vergleichseinheit ist somit nicht der Unterschied zwischen Personen, sondern die Abweichung zwischen Selbstbericht und beobachtetem Verhalten einer Person.
+Die zentrale Forschungsfrage dieser Studie untersucht, ob sich das von Studierenden berichtete Nutzungsverhalten von ChatGPT von ihrem anhand der Chatlogs beobachtbaren Nutzungsverhalten unterscheidet.
+Da weder ein kausaler Zusammenhang untersucht noch Hypothesen getestet werden, folgt die Studie einem explorativen, deskriptiven Forschungsdesign.
+Der Fokus liegt auf der Beschreibung von Diskrepanzen zwischen beiden Datenquellen innerhalb derselben Person.
+Die Vergleichseinheit ist somit nicht der Unterschied zwischen Personen, sondern die Abweichung zwischen Selbstbericht und beobachtetem Verhalten einer Person.
 
-Surveyangaben können durch verschiedene Biases beeinflusst werden. Diese können bewusst oder unbewusst erfolgen. Zum einen kann es in der Messsituation zu Erinnerungsfehlern kommen. Für Respondenten kann es schwierig sein, das eigene Verhalten in der Vergangenheit einzuschätzen. Zum anderen kann der Effekt der sozialen Erwünschtheit dazu führen, dass Angaben in der Messsituation angepasst werden, um soziale Erwartungen zu erfüllen. Negativ angesehene Verhaltensweisen können untertrieben und positiv angesehene können übertrieben werden. Zuletzt kann es zudem vorkommen, dass Personen eine subjektive Einschätzung der eigenen Person haben, die sie im Fragebogen so angeben wollen. 
+Surveyangaben können durch verschiedene Biases beeinflusst werden.
+Diese können bewusst oder unbewusst erfolgen.
+Zum einen kann es in der Messsituation zu Erinnerungsfehlern kommen.
+Für Respondenten kann es schwierig sein, das eigene Verhalten in der Vergangenheit einzuschätzen.
+Zum anderen kann der Effekt der sozialen Erwünschtheit dazu führen, dass Angaben in der Messsituation angepasst werden, um soziale Erwartungen zu erfüllen.
+Negativ angesehene Verhaltensweisen können untertrieben und positiv angesehene können übertrieben werden.
+Zuletzt kann es zudem vorkommen, dass Personen eine subjektive Einschätzung der eigenen Person haben, die sie im Fragebogen so angeben wollen.
 
-Im Gegensatz zu den Selbstauskünften dokumentieren Chatlogdaten das tatsächlich aufgezeichnete Interaktionsverhalten zwischen den Teilnehmenden und ChatGPT. Dadurch entfallen Erinnerungsfehler sowie Verzerrungen, die durch soziale Erwünschtheit oder subjektive Selbsteinschätzungen entstehen können. Gerade weil diese Verzerrungen möglich sind, eignen sich Selbstauskünfte allein nur eingeschränkt zur Beurteilung des tatsächlichen Nutzungsverhaltens. Der Abgleich mit den Chatlogdaten ermöglicht es daher, mögliche Diskrepanzen systematisch sichtbar zu machen.
+Im Gegensatz zu den Selbstauskünften dokumentieren Chatlogdaten das tatsächlich aufgezeichnete Interaktionsverhalten zwischen den Teilnehmenden und ChatGPT.
+Dadurch entfallen Erinnerungsfehler sowie Verzerrungen, die durch soziale Erwünschtheit oder subjektive Selbsteinschätzungen entstehen können.
+Gerade weil diese Verzerrungen möglich sind, eignen sich Selbstauskünfte allein nur eingeschränkt zur Beurteilung des tatsächlichen Nutzungsverhaltens.
+Der Abgleich mit den Chatlogdaten ermöglicht es daher, mögliche Diskrepanzen systematisch sichtbar zu machen.
 
-Trotz der Vorteile der Chatlogdaten, gibt es auch Limitationen. Zum einen können wir keine Zufallsstichprobe gewährleisten, da die Chatlogspende freiwillig ist und Respondenten innerhalb von Lehrveranstaltungen und im privaten Umfeld rekrutiert wurden. Zum anderen können wir nicht garantieren, dass die Chatlogs vollständig sind. Es kann sein, dass Respondenten nur einen Teil ihrer Chats spenden oder nur jene, die sie beispielsweise in ein besseres Licht rücken. Trotz einer Zusicherung von Anonymität kann es passieren, dass beispielsweise keine Chats hochgeladen werden, die man als wissenschaftliche schlechte Praxis betiteln könnte. So könnte es vorkommen, dass genau die Chats nicht hochgeladen werden, die im studienkontext von Lehrpersonen untersagt wurden. 
+Trotz der Vorteile der Chatlogdaten, gibt es auch Limitationen.
+Zum einen können wir keine Zufallsstichprobe gewährleisten, da die Chatlogspende freiwillig ist und Respondenten innerhalb von Lehrveranstaltungen und im privaten Umfeld rekrutiert wurden.
+Zum anderen können wir nicht garantieren, dass die Chatlogs vollständig sind.
+Es kann sein, dass Respondenten nur einen Teil ihrer Chats spenden oder nur jene, die sie beispielsweise in ein besseres Licht rücken.
+Trotz einer Zusicherung von Anonymität kann es passieren, dass beispielsweise keine Chats hochgeladen werden, die man als wissenschaftliche schlechte Praxis betiteln könnte.
+So könnte es vorkommen, dass genau die Chats nicht hochgeladen werden, die im studienkontext von Lehrpersonen untersagt wurden.
 
 Trotz dieser Einschränkungen stellt die Kombination aus Selbstauskunft und Chatlogdaten den geeignetsten Ansatz dar, um individuelle Diskrepanzen zwischen berichtetem und dokumentiertem Nutzungsverhalten sichtbar zu machen.
 
 <!-- TODO: Hier noch LLM-Auswertung beschreiben -->
 
 ## Erstellung des Fragebogens
-Der Fragebogen wurde so entwickelt, dass er die die studienbezogene Nutzung von ChatGPT standardisiert erfasst und diese Angaben anschließend auch mit den aus den Chatverläufen gewonnenen Informationen vergleichen zu können. Daher orientieren sich die zentralen Konstrukte an den Analysekategorien der Chatlogdaten.
+
+Der Fragebogen wurde so entwickelt, dass er die die studienbezogene Nutzung von ChatGPT standardisiert erfasst und diese Angaben anschließend auch mit den aus den Chatverläufen gewonnenen Informationen vergleichen zu können.
+Daher orientieren sich die zentralen Konstrukte an den Analysekategorien der Chatlogdaten.
 
 <!-- TODO: Hier noch Operationalisierung beschreiben -->
 
-Da das Ziel der Studie der Vergleich zweier Datenquellen ist, werden keine klassischen Skalen gebildet. Stattdessen werde für die zentralen Konstrukte (Sentiment, kritisches Prüfen und Informationsnutzung) Diskrepanzmaße zwischen den Surveyangaben und den aus den Chatlog extrahierten Informationen berechnet, die die Grundlage für die Analyse bilden.
+Da das Ziel der Studie der Vergleich zweier Datenquellen ist, werden keine klassischen Skalen gebildet.
+Stattdessen werde für die zentralen Konstrukte (Sentiment, kritisches Prüfen und Informationsnutzung) Diskrepanzmaße zwischen den Surveyangaben und den aus den Chatlog extrahierten Informationen berechnet, die die Grundlage für die Analyse bilden.
 
 <!-- TODO: Hier noch Datenmodifikation beschreiben -->
 
 ## Durchführung von Pretest und Haupterhebung
 
-Zur Durchführung des Pretests wurden Personen aus dem persönlichen Umfeld der Autor:innen rekrutiert, die nicht zur Zielgruppe der Studie gehörten. Konkret handelte es sich um Personen, die ihr Studium bereits abgeschlossen hatten. Ziel des Pretests war es, mögliche Probleme hinsichtlich Verständlichkeit, Benutzerfreundlichkeit und technischer Umsetzung des Fragebogens zu identifizieren. Die Teilnehmenden wurden gebeten, den Fragebogen vollständig auszufüllen und sowohl während der Bearbeitung als auch im Anschluss Rückmeldung zu geben.
+Zur Durchführung des Pretests wurden Personen aus dem persönlichen Umfeld der Autor:innen rekrutiert, die nicht zur Zielgruppe der Studie gehörten.
+Konkret handelte es sich um Personen, die ihr Studium bereits abgeschlossen hatten.
+Ziel des Pretests war es, mögliche Probleme hinsichtlich Verständlichkeit, Benutzerfreundlichkeit und technischer Umsetzung des Fragebogens zu identifizieren.
+Die Teilnehmenden wurden gebeten, den Fragebogen vollständig auszufüllen und sowohl während der Bearbeitung als auch im Anschluss Rückmeldung zu geben.
 
-Die erste Runde des Pretests erfolgte am 09. Juli 2026 und zeigte mehrere Verbesserungsmöglichkeiten. So hatten einige Teilnehmende Schwierigkeiten, die Schaltflächen zum Kopieren der KI-Ausgabe sowie zum erneuten Generieren der Antwort unter „Erneut versuchen“ in ChatGPT zu finden. Zudem war der Prompt für den JSON-Export in der ursprünglichen Version der Anleitung nicht ausreichend früh und visuell hervorgehoben und wurde daher nicht unmittelbar gefunden. Darüber hinaus zeigte sich ein bislang nicht berücksichtigter technischer Sonderfall: Bei sehr langen Chatverläufen verweigerte ChatGPT teilweise die Ausgabe, da die Antwort das maximal zulässige Ausgabelimit überschritten hätte. Weiterhin fiel auf, dass die verschiedenen technischen Fehlerursachen in einer Frage nicht eindeutig voneinander abgegrenzt waren. Zusätzlich wurden einzelne sprachliche Formulierungen nicht verstanden (z. B. die Verwendung des Begriffs „Chatlogs“ anstelle von „Chatverläufe“) sowie kleinere Unstimmigkeiten im Fragebogen entdeckt.
+Die erste Runde des Pretests erfolgte am 09.
+Juli 2026 und zeigte mehrere Verbesserungsmöglichkeiten.
+So hatten einige Teilnehmende Schwierigkeiten, die Schaltflächen zum Kopieren der KI-Ausgabe sowie zum erneuten Generieren der Antwort unter „Erneut versuchen“ in ChatGPT zu finden.
+Zudem war der Prompt für den JSON-Export in der ursprünglichen Version der Anleitung nicht ausreichend früh und visuell hervorgehoben und wurde daher nicht unmittelbar gefunden.
+Darüber hinaus zeigte sich ein bislang nicht berücksichtigter technischer Sonderfall: Bei sehr langen Chatverläufen verweigerte ChatGPT teilweise die Ausgabe, da die Antwort das maximal zulässige Ausgabelimit überschritten hätte.
+Weiterhin fiel auf, dass die verschiedenen technischen Fehlerursachen in einer Frage nicht eindeutig voneinander abgegrenzt waren.
+Zusätzlich wurden einzelne sprachliche Formulierungen nicht verstanden (z. B. die Verwendung des Begriffs „Chatlogs“ anstelle von „Chatverläufe“) sowie kleinere Unstimmigkeiten im Fragebogen entdeckt.
 
-Auf Grundlage dieser Rückmeldungen wurden mehrere Anpassungen vorgenommen. Die Hinweise auf die Schaltflächen „Kopieren“ und „Erneut versuchen“ wurden direkt in die Anleitung integriert und durch Abbildungen ergänzt. Der Prompt für den JSON-Export wurde bereits direkt bei der Erstnennung in der Anleitung platziert und zusätzlich mit einer Kopierfunktion versehen. Darüber hinaus wurde eine zusätzliche Antwortoption zur Frage nach technischen Schwierigkeiten für den Fall aufgenommen, dass die JSON-Ausgabe aufgrund des maximalen Antwortlimits von ChatGPT nicht erstellt werden konnte. Außerdem wurden einzelne Formulierungen vereinfacht, die Gestaltung der Anleitungen verbessert und kleinere Fehler im Fragebogen behoben.
+Auf Grundlage dieser Rückmeldungen wurden mehrere Anpassungen vorgenommen.
+Die Hinweise auf die Schaltflächen „Kopieren“ und „Erneut versuchen“ wurden direkt in die Anleitung integriert und durch Abbildungen ergänzt.
+Der Prompt für den JSON-Export wurde bereits direkt bei der Erstnennung in der Anleitung platziert und zusätzlich mit einer Kopierfunktion versehen.
+Darüber hinaus wurde eine zusätzliche Antwortoption zur Frage nach technischen Schwierigkeiten für den Fall aufgenommen, dass die JSON-Ausgabe aufgrund des maximalen Antwortlimits von ChatGPT nicht erstellt werden konnte.
+Außerdem wurden einzelne Formulierungen vereinfacht, die Gestaltung der Anleitungen verbessert und kleinere Fehler im Fragebogen behoben.
 
-Die überarbeitete Version des Fragebogens wurde anschließend in einer weiteren Pretest-Runde später am 09. Juli 2026 überprüft. Dabei zeigte sich, dass die Datenschutzerklärung von einer Testperson als sehr umfangreich wahrgenommen wurde und dadurch zunächst abschreckend wirkte. Daraufhin wurde die Datenschutzerklärung in einer scrollbaren Ansicht dargestellt, sodass die Frage zur informierten Einwilligung unmittelbar sichtbar war. Zusätzlich wurden die Studieninformationen übersichtlicher gestaltet und bereits zu Beginn auf die Teilnahmevoraussetzung hingewiesen, ChatGPT zumindest gelegentlich für Studienzwecke zu nutzen. Darüber hinaus zeigten sich keine weiteren Verständlichkeits- oder Bedienprobleme, sodass der Fragebogen in seiner finalen Form für die Hauptstudie eingesetzt wurde.
+Die überarbeitete Version des Fragebogens wurde anschließend in einer weiteren Pretest-Runde später am 09.
+Juli 2026 überprüft.
+Dabei zeigte sich, dass die Datenschutzerklärung von einer Testperson als sehr umfangreich wahrgenommen wurde und dadurch zunächst abschreckend wirkte.
+Daraufhin wurde die Datenschutzerklärung in einer scrollbaren Ansicht dargestellt, sodass die Frage zur informierten Einwilligung unmittelbar sichtbar war.
+Zusätzlich wurden die Studieninformationen übersichtlicher gestaltet und bereits zu Beginn auf die Teilnahmevoraussetzung hingewiesen, ChatGPT zumindest gelegentlich für Studienzwecke zu nutzen.
+Darüber hinaus zeigten sich keine weiteren Verständlichkeits- oder Bedienprobleme, sodass der Fragebogen in seiner finalen Form für die Hauptstudie eingesetzt wurde.
 
-Die Feldzeit begann am 09. Juli 2026.
-<!-- TODO: Hier noch Ende der Feldphase ergänzen -->
-Teilnehmende wurden über den Verteiler der Studierenden im Masterprojekt und im Kanal des Masters Computational Social Science mit weiteren Studierenden zur Teilnahme eingeladen, welche insgesamt 27 Studierende umfasst. Um eine hinreichend großes Sample zu erreichen wurden weitere Teilnehmende im privaten Umfeld rekruitert. Die Teilnahme war freiwillig und anonym. 
+Die Feldzeit begann am 09.
+Juli 2026.
+<!-- TODO: Hier noch Ende der Feldphase ergänzen --> Teilnehmende wurden über den Verteiler der Studierenden im Masterprojekt und im Kanal des Masters Computational Social Science mit weiteren Studierenden zur Teilnahme eingeladen, welche insgesamt 27 Studierende umfasst.
+Um eine hinreichend großes Sample zu erreichen wurden weitere Teilnehmende im privaten Umfeld rekruitert.
+Die Teilnahme war freiwillig und anonym.
 
-Zu Beginn der Feldphase wurde erkennbar, dass die Texteingaben im Survey über ein internes Limit verfügen, was nicht direkt in SoSci Survey erkennbar war. Durch dieses Limit wurden Eingaben, die im Survey abgeschickt wurden anschließend aus dem Datensatz entfernt. Die Respondenten bekamen daraufhin den Hinweis, welcher Fehler aufgetreten war und dazu angehalten, sich per Mail an uns zu wenden. Es kann davon ausgegangen werden, dass diese Fehleranzeige zu einer Irritation geführt hat. Später erhielten wir von SoSci Survey die gelöschten Eingaben per Mail zugesandt, wodurch Fälle manuell vervollständigt werden konnten und so keine Daten verlorgen gingen.
+Zu Beginn der Feldphase wurde erkennbar, dass die Texteingaben im Survey über ein internes Limit verfügen, was nicht direkt in SoSci Survey erkennbar war.
+Durch dieses Limit wurden Eingaben, die im Survey abgeschickt wurden anschließend aus dem Datensatz entfernt.
+Die Respondenten bekamen daraufhin den Hinweis, welcher Fehler aufgetreten war und dazu angehalten, sich per Mail an uns zu wenden.
+Es kann davon ausgegangen werden, dass diese Fehleranzeige zu einer Irritation geführt hat.
+Später erhielten wir von SoSci Survey die gelöschten Eingaben per Mail zugesandt, wodurch Fälle manuell vervollständigt werden konnten und so keine Daten verlorgen gingen.
 <!-- TODO: Hier noch die Anzahl solcher Fälle ergänzen -->
 
+<!-- Hier wird statistische Analyse hinkommen, würde das spezifiisch nach dem fragebogenteil machen, weil dann haben wir einen teil Datenerhebung und einen Teil Datenauswertung-->
+
+## Datenauswertung 
+
+-LLM-Evaluation + zero shot klassifikation theorie (der Große Teil davon im Appendix)
+-statisitsch Vorangehensweiße und rechtfertigung
+
+##Textklassifikation mit LMMs
+
+
+
+##Opperationalisierung (ca  4000 zeichen) 
+
+-Wahrscheinlich kürzen oder einfach komplett in den Appendix?
+
+Ziel der Studie ist es zum einen, Unterschiede zwischen surveybasierten Selbstauskünften und dem tatsächlich beobachteten Verhalten in den Chatlogs zu ermitteln, und zum anderen zu untersuchen, ob sich aus diesen Abweichungsmustern Gruppen mit unterschiedlichen Merkmalen identifizieren lassen. Hierfür müssen die Ergebnisse der Selbstauskunft und der gewonnenen Daten aus den Chats vergleichbar miteinander werden. 
+Die Survey-Daten liegen auf Personenebene vor, während die Ergebnisse der quantitativen Textanalyse auf Chat-Ebene erhoben wurden. Da die Datenspende auf Chat-Ebene erfolgt (jede Person stellt mehrere Chats bereit), ist zunächst eine Transformation in ein Wide-Format auf Personenebene erforderlich. Im Anschluss werden die Chat-basierten Ergebnisse pro Person aggregiert, um sie auf ein Skalenniveau zu überführen, das mit den Selbstauskunftsdaten vergleichbar ist. Zur Vereinheitlichung der Messniveaus werden die Survey-Variablen zu Sentiment und kritischem Nachfragen kategorial reduziert. Die Ausprägungen „sehr (un)freundlich“ und „(un)freundlich“ werden jeweils zusammengefasst. Analog werden die Antwortkategorien „stimme eher (nicht) zu“ und „stimme (nicht) zu“ aggregiert. Für die Chat-Daten erfolgt eine entsprechende Operationalisierung durch Aggregation über alle Chats einer Person. Dabei wird für die Variablen Sentiment und kritisches Nachfragen jeweils der Modus berechnet, um eine personenbezogene Ausprägung zu erhalten. Bei Sentiment kann es vorkommen, dass kein eindeutiger Wert berechnet werden kann, wenn die Verteilung exakt bimodal ist. Wenn kein eindeutiger Wert berechnet werden kann, wird stattdessen „Neutral“ als konservativer Wert verwendet. In einem späteren Robustheitscheck werden diese Beobachtungen ausgeschlossen, um die Ergebnisse zu überprüfen. Um die Selbstauskunft mit dem beobachteten Verhalten vergleichbar zu machen, werden beide Seiten auf denselben Wertebereich [0,1] normiert. Auf Seiten der Selbstauskunft geben die Befragten im Fragebogen an, wie sie ihre Nutzung auf die fünf Aufgabenbereiche verteilen, indem sie insgesamt zehn Punkte vergeben. Der Anteil eines Aufgabenbereichs ergibt sich, indem die für diesen Bereich vergebene Punktzahl durch die maximal mögliche Gesamtpunktzahl von zehn geteilt wird. Analog dazu werden die Klassifikationen der einzelnen Chats auf denselben Wertebereich [0,1] überführt: Für jeden Aufgabenbereich wird der Anteil an den insgesamt gespendeten Chats einer Person berechnet, also die Anzahl der einem Bereich zugeordneten Chats geteilt durch die Gesamtzahl ihrer gültigen Chats.
+Durch die quantitative Textklassifikation können somit insgesamt sieben Variablen operationalisiert werden (fünf Aufgabenbereiche, Sentiment und kritisches Nachfragen), die strukturell äquivalent zu den sieben im Survey erhobenen Variablen sind. Auf diese Weise wird eine direkte Vergleichbarkeit zwischen Selbstauskunft und Verhaltensdaten ermöglicht.
+Diese durch die Anpassung gewonnene Vergleichbarkeit wird verwendet, um zu beobachten, wie das tatsächliche Verhalten von der Selbstauskunft divergiert. Dazu werden folgende Variablen erstellt. Die Daten durch den Chat sind der Grundwert, mit dem die Selbstauskünfte verglichen werden. Bei Sentiment “1” heißt es also, dass die Person freundlicher ist als sie angegeben hat, “0”, dass die Selbstauskunft zutrifft, und “-1” , dass die Person unfreundlicher ist als sie angegeben hat.
+
+$(i) Sentiment (S):$ 
+
+$$
+S_{\text{Diskrepanz}} =
+\begin{cases}
+-1, & \text{unfreundlicher} \\
+0, & \text{korrekt} \\
+1, & \text{freundlicher}
+\end{cases}
+$$
+
+Bei kritischen Nachfragen bedeutet “-1”, dass die Person denkt nachzufragen, aber es nicht tut, “0”, dass die Selbstauskunft korrekt ist und “1”, dass die Person denkt, dass sie nicht nachfragt, aber es tut. 
+
+$(ii) Für Kritisches nachfragen (K):$
+
+$$
+K_{\text{Diskrepanz}} =
+\begin{cases}
+-1, & \text{unkritischer als angegeben} \\
+0, & \text{korrekt} \\
+1, & \text{kritischer als angegeben}
+\end{cases}
+$$
+
+Bei den fünf Aufgaben der Informationsnutzung bedeutet ein positiver Wert für eine Aufgabe “i”, dass die Selbstauskunft der Person um den Anteil nach oben abweicht. Ein negativer Wert, analog dazu, dass die Person nach unten abweicht. 
+ “SA” ist die Selbstauskunft und “BE” ist das beobachtete Verhalten.
+ 
+<!-- $(iii) Aufgaben (A)$ -->
+
+$$
+D_i = SA_i - BE_i, \qquad A_{i,\text{Diskrepanz}} \in [-1, 1]
+$$
+
+$$
+A_{i,\text{Diskrepanz}} =
+\begin{cases}
+\text{Unterschätzung}, & -1 \leq D_i < 0 \\
+\text{Übereinstimmung}, & D_i = 0 \\
+\text{Überschätzung}, & 0 < D_i \leq 1
+\end{cases}
+$$
+
+
+## Statistische Analyse (ca 5000 zeichen)
+Die explorative Analyse der gewonnenen Daten soll mittels einer k-medoids-Clusteranalyse durchgeführt werden. Da die Variablen, die in das Cluster einfließen sollen, aus fünf kontinuierlichen Diskrepanzscores (Kategorien der Informationsnutzung) und zwei ordinalskalierten und gerichteten Diskrepanzkategorien (kritisches Nachfragen und Sentiment) bestehen, liegen gemischte Skalenniveaus vor. Die Manhattan-Distanz und Euklidische-Distanz, die in der Literatur sehr prominent sind, benötigen metrische oder binäre Daten. Für das Clustering wird daher die Gower-Distanz verwendet, die unterschiedliche Skalenniveaus in einer gemeinsamen Distanzmatrix kombiniert (Gower 1971). Die Idee der Gower-Distanz ist, dass für alle Variablen eine eigene Distanz berechnet wird, die immer zwischen 0 und 1 liegt. Diese berechneten Einzel-Distanzen werden am Ende in einer Gesamtdistanz pro Personenpaar verrechnet, bei der 0 bedeutet, dass die Personen identisch sind, und 1 bedeutet, dass sie möglichst unterschiedlich sind. Von den kontinuierlichen Variablen $A_i$ wird die absolute Differenz genommen, während $S_{\text{Diskrepanz}}$ und $K_{\text{Diskrepanz}}$ zuerst als geordnete Faktoren codiert werden, damit ihre Richtung (Unter- vs. Überschätzung) erhalten bleibt und nicht wie bei einer rein nominalen Codierung verloren geht. Anschließend werden die ordinalen Maßzahlen in Ränge übersetzt. Da die inhaltliche Domäne mit fünf Variablen gegenüber Sentiment und Kritik mit je einer Variable bei Gleichgewichtung aller einzelnen Variablen überproportional stark in die Distanz eingeht, werden die 5 aufgabenspezifischen Diskrepanzmaße mit $\frac{1}{5} = 0{,}2$ gewichtet.
+
+Der Algorithmus, der für die Clusteranalyse verwendet wird, ist der "Partitioning around Medoids"-Algorithmus, kurz PAM (Kaufman und Rousseeuw 1990). Dieser funktioniert wie folgt: Wie der k-means-Algorithmus unterteilt er den Datensatz in eine Anzahl von k-Partitionen. Dabei werden aber statt des arithmetischen Mittels oder des Medians tatsächliche Beobachtungseinheiten als Clusterzentrum gewählt. Dies erlaubt auch, dass beliebige Distanzmaße verwendet werden können und man nicht wie bei k-means auf die euklidischen Distanzmaße beschränkt ist, die metrische oder binäre Daten verwenden. Da PAM Personen als Zentrum der k-Partitionen erlaubt, kann man die Cluster-Zentren intuitiver interpretieren: So kann man diese Person, die im Zentrum steht, als eine Art Idealtyp des Clusters interpretieren, dem die anderen Personen ähneln. Dies macht den Algorithmus zu einer attraktiven Wahl für unser exploratives Vorhaben. Die Struktur des Algorithmus funktioniert wie folgt: Zu Beginn werden per Zufall drei Beobachtungen ausgewählt (dies wird durch einen Seed "404" replizierbar gehalten). Danach werden alle Personen dem Medoid (Zentrum) zugeordnet, an dem sie am nächsten liegen, und die Summe aller Distanzen von den Personen zu ihrem Medoid berechnet. Schließlich werden die Beobachtungen, die Medoid sind, mit Beobachtungen, die nicht Medoid sind, ausgetauscht. Dieser Prozess wiederholt sich, bis keine Verbesserung mehr möglich ist.
+
+Die Anzahl der k-Partitionen wird mittels der Silhouette-Methode von e (1987) festgelegt und nicht wie bei einer k-means-Clusterung mit dem Elbow-Kriterium. Dabei wird berechnet, ob und wie viel die Distanz einer Person zum nächsten fremden Cluster größer ist als die Distanz innerhalb der eigenen Gruppe. Das Ergebnis liegt im Intervall von $[-1, 1]$, wobei 1 heißt, dass die Person sehr gut in das Cluster passt, 0, dass es uneindeutig ist, und $-1$, dass die Person näher an einem anderen Cluster ist. Nun rechnet man den Durchschnitt für alle Personen aus, der anzeigt, wie eng gruppiert alle Personen in dem Cluster sind. Ein Cluster mit einer durchschnittlichen Silhouette von 0,5 wird als ausreichend für unsere Zwecke betrachtet, 0,7 als stark. Dieser Prozess wird für $k = 2$ bis $k = 6$ wiederholt. Die Anzahl $k$, für die die maximale durchschnittliche Silhouette berechnet wird, wird verwendet.
+
+Nachdem die Cluster stehen, können diese noch auf inhaltliche Unterschiede überprüft werden. Dazu werden die einzelnen Cluster auf Unterschiede in den im Fragebogen erhobenen Kontextvariablen untersucht, also beispielsweise Studiengang, soziale Erwünschtheit und Erfahrung mit künstlicher Intelligenz. Erst wird ein deskriptiver graphischer Überblick gegeben und im Anschluss werden die einzelnen Werte zwischen den Gruppen statistisch verglichen. Dafür wird für die soziale Erwünschtheit, die in eine Skala umgewandelt wird, eine ANOVA durchgeführt. Für die ordinalskalierten Variablen, also Erfahrung mit künstlicher Intelligenz, Nutzungshäufigkeit und Informationsnutzung, wird Kruskal-Wallis berechnet, da dort keine Annahme über die Abstände der Ausprägungen getroffen werden muss, weil alle Beobachtungen in Ränge eingeteilt werden. Für die nominalskalierten Variablen wird ein Chi-Quadrat-Test durchgeführt.
+
+
 ## Beschreibung der Stichprobe
-Commodo ex aliquip nisi ad proident aliqua proident nulla ullamco in occaecat duis. Eiusmod fugiat qui in eu. Excepteur incididunt voluptate et. Deserunt do commodo et aliquip deserunt mollit eiusmod id cillum labore. Culpa enim nisi ea voluptate.
+<!-- Sind damit so deskreptive Statistiken gemeint? -->
 
-Id quis eu minim exercitation ullamco commodo reprehenderit exercitation nulla veniam. Anim anim proident in sit qui nostrud reprehenderit quis ad quis laboris irure tempor consectetur nulla. Magna amet aute aliqua anim quis amet eu qui elit et proident commodo reprehenderit. Sit et consequat ipsum reprehenderit. Tempor magna irure proident. Qui mollit culpa quis amet amet minim irure aute ut laboris.
+Nach der Datenaufbereitung wird der Forschungsfrage erst deskriptiv genähert, um einen Überblick darüber zu bekommen, wie stark die Unterschiede zwischen beobachtetem und selbstangaben Verhalten sind. Dzu wird unter anderen das arithmetische Mittel über alle Aufgaben berechnen, um zu beobachten, ob sich eine Person eher überschätzt oder unterschätzt. Es besteht das Risiko, dass sich die Werte einer Person gegenseitig neutralisieren. Soweit die mittlere absolute Abweichung (MAD), um zu sehen, wie viel im Mittel eine Person von ihrer Selbstauskunft  abweicht. Die limitation hierbei ist da man keine Schlüsse über die Effektrichtung ziehen kann. Vorteil ist das kein Risiko besteht, dass Werte sich neutralisieren können.
 
-Eu ad consequat aliqua pariatur pariatur eiusmod ex elit. Minim dolor adipisicing excepteur excepteur non est laborum. Dolor esse commodo occaecat aliqua excepteur est ut aute veniam ut ullamco amet anim duis enim. Elit magna commodo et esse qui proident anim deserunt. Incididunt nisi cupidatat duis minim qui quis consequat. Laborum ipsum enim minim est culpa ut nulla minim. Sunt commodo culpa nulla duis. Nostrud quis laboris fugiat dolore dolor ad consequat tempor occaecat ullamco eu anim.
-
-Nisi labore adipisicing sit do officia ex voluptate sit velit laboris nisi. Dolore sit id proident fugiat ad commodo exercitation eiusmod mollit dolor ipsum. Pariatur cillum dolor ipsum sit amet ut excepteur ad. Anim sint est duis occaecat non velit proident id dolore ad reprehenderit aliquip. Laboris elit sint quis dolore velit qui cillum eiusmod.
-
-Aliqua ipsum enim ex aliquip irure adipisicing fugiat enim qui veniam culpa est laboris duis. Pariatur pariatur pariatur cupidatat ad et velit ut ullamco labore ad. Veniam anim cillum deserunt ad eu anim laborum velit consectetur minim mollit. Anim adipisicing dolore quis est occaecat ex nulla nostrud laborum cupidatat irure consequat.
-
-Ea consequat id aliqua minim pariatur. Excepteur dolore ipsum fugiat id nisi enim anim reprehenderit amet labore ad veniam. Magna enim nisi veniam pariatur laboris labore officia occaecat elit ullamco velit consequat enim culpa. Ullamco tempor enim fugiat duis fugiat.
-
-Et consequat eu nostrud ut reprehenderit cillum est. Elit veniam voluptate consectetur elit fugiat nostrud amet eiusmod. Labore sit laborum nulla aliqua anim consectetur aliquip fugiat irure quis nulla adipisicing et esse. Aute quis proident irure adipisicing amet voluptate in ipsum laborum commodo nostrud. Ea id eu anim esse occaecat minim duis duis laborum in tempor aliqua nostrud occaecat. Esse pariatur ad eu laboris mollit incididunt ut laborum eu minim ea minim nulla. Excepteur cupidatat id do magna consequat irure do magna dolore do consectetur fugiat laboris eiusmod.
-
-Excepteur consequat minim labore in eu adipisicing minim labore cillum consectetur ullamco sunt aliquip laboris irure. Sunt elit sunt elit elit fugiat officia fugiat esse est duis aliquip. Laboris in nisi in labore quis irure est. Reprehenderit est deserunt irure nulla aliquip deserunt officia tempor ipsum officia nostrud mollit. Commodo sit ad cupidatat ea. Veniam eiusmod incididunt dolore nostrud enim Lorem est pariatur excepteur do excepteur commodo et. Id esse deserunt occaecat do aute amet nulla duis laboris dolore.
-
-Minim qui occaecat sunt cillum eu cillum. Velit magna qui ipsum velit. Veniam incididunt anim pariatur cillum non mollit sit qui occaecat ad id et et. Duis mollit sunt duis mollit deserunt labore veniam dolore laboris eu mollit nulla. Cillum nulla veniam laborum culpa laboris pariatur magna sunt non nostrud magna culpa qui. Nulla in amet magna irure amet irure est excepteur anim non laboris reprehenderit do deserunt. Nulla veniam consectetur do aliqua ea.
-
-Reprehenderit proident ea magna velit sunt laborum nostrud consectetur est adipisicing nulla ipsum magna laboris eu. Non excepteur et est cillum adipisicing deserunt aliqua mollit commodo do ad commodo nostrud ad. Officia magna velit eu cillum irure mollit ad dolore ut excepteur. Occaecat commodo deserunt anim et elit culpa laborum.
-
-Consequat occaecat esse voluptate mollit fugiat incididunt Lorem adipisicing Lorem labore mollit. Deserunt ad id et. Velit do irure elit. Voluptate nisi dolor labore laborum minim pariatur ullamco eiusmod et in. Occaecat qui eu dolore velit esse ea.
-
-Nostrud ad Lorem tempor laborum pariatur et. Do aliquip eiusmod deserunt dolore. Fugiat ut ex labore anim deserunt culpa aute quis. Ex ipsum reprehenderit nulla duis proident sunt esse enim ullamco ullamco aliquip et pariatur. Occaecat proident commodo sit irure cillum esse esse eiusmod ipsum pariatur reprehenderit officia.
-
-Veniam dolore laborum dolore elit quis adipisicing excepteur dolor nisi et ut culpa. Non amet do adipisicing adipisicing cillum sit esse eiusmod tempor. Ex ea nulla velit sunt reprehenderit. Irure officia et dolore. Proident voluptate reprehenderit proident ullamco in dolore incididunt. Duis voluptate laborum voluptate. In culpa voluptate veniam ut.
-
-Proident anim commodo amet id tempor laborum eu. Nostrud occaecat sint mollit occaecat. Amet elit minim dolore tempor adipisicing quis ut ullamco laborum eu ut enim consequat tempor. Dolore occaecat qui sint nisi laborum exercitation qui ipsum magna Lorem ipsum in reprehenderit quis elit. Nisi ad eiusmod amet. Incididunt occaecat nostrud in aute culpa duis ex ullamco culpa incididunt. Ullamco in consequat pariatur tempor aliquip laboris qui fugiat qui consectetur mollit. Reprehenderit proident anim consectetur irure elit ex consequat nulla incididunt tempor consectetur tempor ad elit.
-
-Cillum fugiat mollit nulla aliqua magna. Excepteur mollit dolor labore adipisicing consectetur proident excepteur duis occaecat. Duis tempor et nostrud tempor magna cupidatat reprehenderit incididunt est deserunt voluptate. Minim commodo magna in velit excepteur nostrud laboris adipisicing. Do nostrud exercitation aliqua qui magna labore laborum Lorem exercitation est sint.
-
+-Deskrepziva Stichprobe
+<<<INSERT GRAPHS>>>
+-Deskreptiva Zusammenhang
+<<<
 
 \newpage
 
 # Ergebnisse
-Pariatur eiusmod id commodo adipisicing ea ullamco sit et reprehenderit magna magna id enim est. Consequat eiusmod nulla incididunt adipisicing elit culpa veniam culpa non qui voluptate sint. Eiusmod ea adipisicing officia veniam amet sit voluptate qui duis ut ullamco consectetur. Anim consequat ad do ipsum officia minim tempor culpa.
 
-Duis ex dolor consequat ullamco magna anim elit. Velit commodo minim reprehenderit veniam minim adipisicing culpa ad magna. Id nostrud ea quis. Do quis duis qui deserunt incididunt nisi eiusmod eiusmod ad velit est fugiat duis duis tempor. Irure officia duis laborum consectetur ipsum et nostrud est ex dolore mollit adipisicing magna esse.
-
-Cillum consequat reprehenderit aliqua voluptate reprehenderit officia Lorem. Nisi cillum cillum ut. Reprehenderit eiusmod dolore fugiat do officia esse consequat quis. Ea incididunt laborum est. Excepteur deserunt aliqua non sunt enim aute aute aliquip dolor excepteur deserunt ut. Non est sit exercitation velit labore tempor magna Lorem sit nisi Lorem aute quis. Eiusmod laborum nisi aliqua eiusmod cillum ullamco. Aute ut amet tempor nulla.
-
-Irure commodo incididunt enim exercitation cillum laboris consequat anim occaecat Lorem sint commodo in do. Fugiat nulla voluptate consectetur id aliqua ea mollit. Veniam et et consectetur. Excepteur elit fugiat ex sunt aliquip aute. Reprehenderit ex culpa cillum culpa aute sunt ea enim fugiat sunt. Ad mollit adipisicing laboris qui quis ex duis fugiat quis ut laborum commodo duis fugiat elit.
-
-Eiusmod aliqua labore exercitation. Non cupidatat mollit esse esse non in quis officia aliqua aute et dolore ad. Officia mollit nulla ex dolor veniam anim nostrud enim voluptate duis nostrud veniam. Nulla cupidatat dolor ut ut excepteur ut consequat sit ea quis adipisicing dolore reprehenderit dolore deserunt. In proident nisi exercitation magna deserunt aute tempor ullamco duis eiusmod voluptate. Duis cupidatat consectetur cupidatat labore eiusmod esse deserunt.
-
-Consectetur exercitation voluptate consequat fugiat ut quis cillum laborum sunt non nostrud est. Ad culpa Lorem laborum in irure non fugiat ad incididunt ad officia enim ad anim cillum. Reprehenderit eiusmod sint qui aliqua proident ex quis. In magna reprehenderit dolore velit cupidatat Lorem ad magna sit cupidatat dolor nostrud cillum esse tempor. Ipsum exercitation et laboris. Enim amet qui eiusmod dolore elit veniam adipisicing ad labore magna. Culpa et voluptate officia et reprehenderit non eu dolor reprehenderit sint dolor.
-
-Cillum sunt occaecat et aliquip eu esse eiusmod cupidatat ex ad. Officia aute ullamco dolor laboris duis pariatur. Et irure cupidatat veniam minim aute voluptate dolor qui consectetur magna. Excepteur ad deserunt incididunt ea id. Id eiusmod deserunt duis ullamco mollit ipsum commodo labore excepteur nostrud amet eiusmod. Lorem ad ut id. Magna et dolore culpa nisi laborum ea enim.
-
-Nisi consectetur tempor labore voluptate deserunt labore nisi Lorem cillum mollit anim. In officia dolor nostrud ipsum sit do in commodo incididunt voluptate incididunt aute. Sint est tempor cupidatat in nulla anim incididunt nisi cupidatat ullamco qui. Amet non est non id nulla officia Lorem.
-
-Reprehenderit occaecat proident proident mollit nostrud est ex nisi consectetur ut deserunt ullamco esse occaecat sint. Pariatur in fugiat duis ex Lorem exercitation minim pariatur laboris cillum. Nostrud tempor excepteur dolor amet in quis mollit nisi aute adipisicing. Ad dolor incididunt sint do quis id ex non do voluptate consequat dolore. Deserunt consequat esse magna officia elit occaecat officia ex nisi nulla amet. Amet elit laboris officia tempor eiusmod dolor laboris eiusmod.
-
-Mollit esse in nostrud sint veniam tempor eiusmod labore cillum proident reprehenderit proident nisi in pariatur. Aute nisi duis ipsum ut veniam excepteur eu eu. Mollit occaecat laboris ipsum elit est minim incididunt velit sint nisi irure ex velit voluptate mollit. In tempor nulla amet exercitation excepteur nostrud occaecat ullamco excepteur elit. Anim deserunt amet aute aliquip in est adipisicing. Do ea ipsum cillum dolor tempor amet Lorem dolore magna do anim.
-
-Ad cupidatat dolore labore ipsum. Duis ea culpa ipsum nulla. Qui laborum cillum quis. Velit ullamco voluptate labore officia duis occaecat reprehenderit magna dolor voluptate.
-
-Culpa nulla ex do minim excepteur anim. Sunt officia irure dolore ea proident minim cillum consectetur Lorem deserunt ullamco enim. Ullamco nisi duis reprehenderit mollit enim eiusmod sint mollit laboris. Consequat eu exercitation velit et laborum irure et velit aliquip commodo. Ipsum duis est mollit commodo deserunt. Proident magna consectetur do. Ea incididunt labore dolore Lorem irure culpa esse ut cillum ea. Amet eu dolor magna velit enim consequat ex est enim velit dolor pariatur sunt irure anim.
-
-Irure in dolor eu qui do reprehenderit quis et anim esse do consectetur sunt. Adipisicing sunt fugiat ex eu cupidatat aliqua laboris voluptate pariatur proident ut laboris. Sint aute do cupidatat tempor adipisicing velit. Occaecat sunt qui ipsum pariatur sit pariatur cillum consequat minim esse nulla. Et enim ex proident in.
-
-Exercitation voluptate tempor minim non laborum nulla id eiusmod magna incididunt. Proident amet minim aute ut consectetur aute labore quis sit occaecat ad. Aliquip reprehenderit elit anim commodo ad dolor consectetur id dolor officia occaecat anim. Nostrud id mollit pariatur eu excepteur ipsum irure aliqua aliquip eiusmod. Do cillum laboris cillum. Voluptate aliquip ut incididunt cillum id cillum aliquip mollit nostrud irure dolor nulla pariatur tempor ea. Quis amet nisi sunt est deserunt ex tempor dolore aliqua pariatur et consectetur et nulla. Eiusmod non fugiat minim dolor adipisicing qui cillum minim Lorem incididunt enim incididunt.
-
-Esse consectetur veniam cupidatat ea eiusmod sunt. Cupidatat eu amet labore irure reprehenderit pariatur eiusmod velit aute irure fugiat. Ullamco et ex sunt nisi. Enim officia tempor nisi enim occaecat sunt. Commodo fugiat incididunt elit excepteur qui adipisicing ea commodo ex. Qui nulla voluptate duis. Nisi qui commodo voluptate nisi cupidatat deserunt in aliquip qui consectetur anim nisi.
-
-Velit sunt do tempor veniam velit fugiat mollit id velit amet mollit cupidatat amet tempor. Velit irure commodo dolore aliqua et. Amet excepteur anim velit eu amet et ipsum occaecat do sit minim nulla. Deserunt commodo incididunt pariatur id sit nulla eiusmod enim sint pariatur ut anim commodo. Id proident commodo culpa ipsum est minim officia non ullamco aliqua reprehenderit consequat ad. Sit consectetur exercitation eiusmod ea cupidatat et elit occaecat. Officia exercitation qui id laboris anim exercitation. Eiusmod officia id in minim mollit in et eiusmod fugiat aute duis.
-
-Non minim deserunt consectetur enim est esse sint velit mollit aute. Irure ullamco nostrud eiusmod. Mollit pariatur ullamco aliqua. Nisi irure voluptate velit. Ex consequat in sint do adipisicing commodo ex minim deserunt et do nostrud.
-
-Tempor cupidatat enim fugiat ullamco elit adipisicing ut esse consequat. Non irure sit duis culpa qui reprehenderit. Laboris et fugiat consequat laboris cupidatat proident consequat eiusmod. Sunt tempor aute sit deserunt minim nisi.
-
-Esse enim pariatur commodo aliquip sit nostrud sunt Lorem tempor aute aliqua ex minim in in. Nisi laboris ex qui pariatur aliquip labore ea eu mollit. Eu est cupidatat minim est id cupidatat cupidatat eiusmod deserunt reprehenderit eu. Cupidatat deserunt minim aliquip mollit in in labore magna ad. Nulla occaecat adipisicing dolore ad mollit dolor adipisicing officia veniam culpa ex ad. Ut anim officia deserunt minim excepteur exercitation aliquip officia irure reprehenderit minim consequat. Proident adipisicing dolore do culpa Lorem duis laboris id amet pariatur non consectetur proident. Lorem sit quis ipsum quis eu sit dolore pariatur enim sint laboris qui consequat ipsum.
-
-Do id occaecat laborum cupidatat irure nulla ipsum cupidatat ipsum nostrud in. Qui Lorem in excepteur. Duis veniam nulla do reprehenderit officia duis minim consequat ad aute do nisi. Mollit aliqua sint ad voluptate eiusmod sint quis velit. Commodo enim ipsum labore in fugiat minim ea officia eu Lorem nostrud id officia.
-
-Duis occaecat anim reprehenderit mollit sit dolore nulla. Veniam labore eiusmod laboris nulla officia minim pariatur eiusmod do dolor dolor. Dolor ex duis ea sit aute velit. Cillum occaecat Lorem id exercitation eu ad magna ut. Non elit ad ullamco adipisicing laboris consequat. Excepteur ex anim ullamco. Amet non aliqua culpa aute nostrud non irure elit laboris amet cupidatat deserunt et nulla occaecat.
-
-Eiusmod labore cillum incididunt. Dolore ipsum commodo esse consequat. Excepteur nulla enim voluptate pariatur anim ex consequat. Pariatur aliqua deserunt sunt officia exercitation incididunt anim magna exercitation et eu. Eiusmod laboris duis nulla.
-
-Laborum sint cillum et incididunt enim cillum in fugiat. Sint consectetur Lorem enim cupidatat elit amet amet ea eiusmod ad ea non sint dolore. Est nisi ex quis id. Esse quis irure consectetur occaecat veniam tempor excepteur excepteur ut irure incididunt mollit irure.
-
-Ullamco eiusmod culpa deserunt pariatur cillum duis eiusmod mollit. Tempor aute fugiat labore consectetur est nulla culpa velit labore ut est officia irure exercitation. Dolore anim anim irure enim. Ad elit est commodo minim incididunt.
-
-Ea nisi do elit nostrud Lorem ullamco in labore sunt et ut anim. In et Lorem consectetur ullamco. Quis elit elit esse quis esse. Sit pariatur aliquip adipisicing et reprehenderit aute id magna consequat. Mollit minim excepteur ad minim do eiusmod ut eu mollit officia duis laboris. Anim culpa enim ex sint. Incididunt sit enim culpa et aliquip est ullamco id minim anim.
-
-Nulla sit veniam eu Lorem. Consequat enim ut id. Ipsum minim exercitation ad duis velit nisi est elit aliqua id dolore cillum voluptate. Qui amet excepteur aute deserunt. Eu non officia id tempor tempor consequat eu mollit proident cupidatat duis ad cupidatat ex ut. Do dolore ea est aute dolore voluptate minim dolore. Elit commodo id duis magna eiusmod dolor sint deserunt Lorem laborum ipsum cupidatat nulla incididunt.
-
-In mollit officia reprehenderit ut. Incididunt fugiat est sint minim eu aliquip nulla et cupidatat ipsum ullamco. Velit voluptate dolor aliqua elit officia nulla est esse dolor adipisicing consequat elit. Esse ex mollit cupidatat. Occaecat veniam elit occaecat. Irure in duis aute nisi pariatur nostrud anim cillum reprehenderit non adipisicing do occaecat enim ad. Ea sit ex aliquip nisi nostrud aute adipisicing.
-
-Quis ipsum adipisicing ea excepteur culpa sunt elit laboris ea. Veniam sint tempor Lorem elit dolore laboris ut nisi do sit ipsum. Aliqua duis id incididunt qui aute proident in Lorem fugiat qui. Consectetur magna qui cupidatat dolor aute magna voluptate esse aute mollit Lorem officia enim dolore eiusmod. Aliquip velit excepteur magna reprehenderit minim mollit. Culpa id eu ea dolore. Aute aliqua ea voluptate fugiat qui.
-
-Sint laborum et velit anim. Exercitation ipsum nulla eiusmod sunt ut irure anim occaecat ex quis commodo Lorem aliquip irure. Et ad labore culpa aute excepteur dolore ullamco laborum mollit fugiat proident pariatur nisi nostrud laborum. Minim adipisicing fugiat eu est non cupidatat magna id magna nostrud aliquip.
 
 \newpage
 
 # Dikussion
-Officia nisi consectetur minim amet dolor sunt. Sint adipisicing aute consequat deserunt ad sit exercitation velit Lorem exercitation sint. Exercitation et ut nisi fugiat laborum eiusmod. Commodo enim non eiusmod qui officia cillum eiusmod ullamco. Esse aliquip consectetur sunt in ut veniam esse est magna nostrud.
 
-Incididunt esse ex id excepteur. Duis commodo dolor cupidatat ea ex et officia cillum officia proident non sunt. Laboris reprehenderit occaecat sunt irure sunt cupidatat irure in adipisicing ut. Aliquip sint elit ea excepteur labore cupidatat esse.
-
-Enim duis reprehenderit commodo reprehenderit ipsum laboris amet veniam consectetur fugiat Lorem adipisicing. Anim cupidatat et velit quis esse cillum cillum. Commodo do laboris sint in dolor et aliqua esse amet mollit minim velit cupidatat non consectetur. Qui voluptate consequat in aute nulla quis sint deserunt. Fugiat aliquip proident cillum mollit sunt mollit sint. Deserunt esse esse exercitation ut non velit anim elit cupidatat exercitation non eu.
-
-Eu sunt occaecat veniam velit eu mollit Lorem pariatur. Nulla laboris laborum laboris adipisicing nisi velit exercitation officia Lorem. Adipisicing sit qui non irure. Enim exercitation nulla culpa proident minim. Cupidatat esse dolore dolore. Enim enim eiusmod dolore est pariatur cillum mollit occaecat duis ipsum culpa quis cupidatat est. Laborum pariatur non officia esse dolore commodo est velit sunt occaecat.
-
-Velit enim pariatur officia. Nulla Lorem consequat mollit amet minim. Aute consequat magna adipisicing minim nostrud dolor adipisicing. Ipsum ullamco anim ipsum incididunt consectetur irure. Aliqua deserunt sint eiusmod est labore. Fugiat proident cupidatat dolore exercitation excepteur tempor deserunt duis ullamco do. Aliquip adipisicing commodo elit aute excepteur ullamco non magna occaecat occaecat. Velit fugiat do dolor sunt labore commodo nulla.
-
-Nulla non consectetur laborum Lorem aute officia duis pariatur qui et est laboris velit sunt. Officia duis nisi et consectetur occaecat excepteur pariatur officia in nisi reprehenderit laboris. Ut et sunt proident sunt qui laborum adipisicing sunt non Lorem. Labore consectetur irure nisi. Ipsum labore est quis duis ipsum excepteur cillum laborum sint eiusmod. Excepteur incididunt voluptate cupidatat. Deserunt occaecat proident reprehenderit exercitation consequat velit occaecat Lorem irure exercitation dolor cillum sit officia. Fugiat quis tempor voluptate excepteur ipsum id sit.
-
-Incididunt commodo ex amet in tempor nulla anim cupidatat laborum excepteur. Irure amet voluptate id sint esse esse elit. Ex et commodo do fugiat nisi cupidatat laborum mollit amet aliquip. Culpa sit commodo culpa ullamco deserunt ex.
-
-Aute ullamco est duis elit occaecat cupidatat adipisicing esse et ut non et cupidatat aliqua culpa. Officia adipisicing ut sint dolor quis officia ea. Laboris fugiat aliquip consequat nulla laboris. Tempor incididunt veniam officia. Quis aliquip qui excepteur.
-
-In aliquip anim velit nulla dolore deserunt dolore. Sint nulla aute deserunt. Minim cupidatat excepteur eiusmod eu eiusmod amet esse ipsum magna nulla minim sint qui amet. Veniam occaecat qui dolor sunt eu non. Amet ullamco non eu duis proident anim occaecat id id laborum exercitation. Ad qui eiusmod consectetur.
-
-Reprehenderit non cillum do elit tempor quis aute. Culpa ad deserunt Lorem ipsum incididunt duis aliqua consequat duis. Adipisicing ea ea sunt sunt enim ipsum sit deserunt reprehenderit reprehenderit. Dolore aute nisi laboris magna irure est exercitation eu. Non veniam ea fugiat anim ex aute. Ad ipsum aute consectetur laborum aliqua culpa adipisicing ut dolor excepteur velit laborum sint. Irure id occaecat velit aliquip.
-
-Labore ea elit enim dolor labore tempor cillum ad irure eiusmod fugiat. Eu dolor cupidatat proident fugiat. Velit commodo esse et in amet deserunt reprehenderit. Reprehenderit exercitation veniam proident aute nostrud aute laboris incididunt nostrud excepteur sunt qui nisi cillum. Ut reprehenderit et ut et.
-
-Proident esse et ea elit anim voluptate. Incididunt ad dolor nisi nostrud nostrud cillum ipsum consectetur dolor consectetur consectetur. Nisi et magna pariatur do do duis mollit consequat. Aliqua voluptate commodo esse veniam excepteur amet aute esse anim et ex Lorem excepteur. Qui aliqua aliqua elit nulla quis occaecat.
-
-Dolor duis aliquip Lorem in pariatur fugiat aliquip irure reprehenderit dolore. Occaecat amet ullamco incididunt velit pariatur duis ipsum excepteur. Ipsum id aliquip occaecat occaecat qui sunt aliqua amet. Qui consectetur voluptate ut ipsum anim officia veniam ad irure ut sint ipsum nostrud. Nisi occaecat labore irure do excepteur qui amet cupidatat.
-
-Deserunt do duis officia occaecat ut irure qui laborum sunt nostrud veniam culpa. Consectetur deserunt officia culpa consectetur veniam culpa. Dolore dolor consequat ut reprehenderit mollit. Laboris in occaecat cillum consequat nostrud adipisicing dolore qui laborum consectetur aliquip nisi amet. Lorem aute qui ipsum occaecat non aute commodo ullamco deserunt. Minim nostrud sunt laborum labore ut elit quis nostrud exercitation. Cupidatat minim nisi esse deserunt est amet pariatur qui aute ea do pariatur amet et reprehenderit. Dolore consequat proident aliqua anim nisi nulla laboris pariatur ad proident.
-
-Veniam ut exercitation fugiat et aute. Officia sit magna officia nulla consectetur dolor ex proident irure elit. Ea aliquip sunt minim Lorem culpa. Commodo veniam dolor esse ipsum laborum labore est officia amet ut officia ipsum consectetur commodo elit.
 
 \newpage
 
@@ -366,6 +292,7 @@ Die Analysedaten und -Materialien sind auf dem Open Science Framework OSF (<http
 :::
 
 \newpage
+Anhag wird wahrscheunlich einfac auf Github geteilt
 
 # Anhang {.unnumbered}
 
@@ -377,4 +304,4 @@ Die Analysedaten und -Materialien sind auf dem Open Science Framework OSF (<http
 |                |                  |                    |        |
 |                |                  |                    |        |
 
-: Kennzeichnung von verwendeten KI-Tools {#tbl-ai-tools}
+: Kennzeichnung von verwendeten KI-Tools
