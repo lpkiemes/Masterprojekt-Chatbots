@@ -41,7 +41,7 @@ Die Chatlogs wurden mithilfe eines Large Language Models klassifiziert. Die Güt
 | `_quarto.yml` | Quarto-Konfiguration für die PDF-Ausgabe |
 | `R_code/01_data_prep.R` | Aufbereitung und Verknüpfung der Analysedaten |
 | `R_code/02_data_analysis.R` | Clusteranalyse und ergänzende Auswertungen |
-| `R_code/03_sample_modification.R` | Stichprobenkunstruktion |
+| `R_code/03_sample_modification.R` | Stichprobenkonstruktion |
 | `R_code/04_discrepancy_analysis.R` | Deskriptive Analyse der Diskrepanzen |
 | `Python_code/Gold_standard.ipynb` | Erstellung und Aufbereitung des Goldstandards |
 | `Python_code/llm_pipeline_openai_gold.ipynb` | Evaluation der LLM-Klassifikation |
@@ -55,10 +55,12 @@ Die Chatlogs wurden mithilfe eines Large Language Models klassifiziert. Die Güt
 
 ## Reproduktion der R-Analysen
 
-### Voraussetzungen
+### Variante 1: Lokal
 
-- R und RStudio. Die Analysen wurden mit R 4.6.0 durchgeführt
-- Quarto
+#### Voraussetzungen
+
+- R 4.6.0
+- Quarto 1.7.31
 - eine LaTeX-Installation mit XeLaTeX, beispielsweise TinyTeX
 - das R-Paket `renv`
 
@@ -82,6 +84,11 @@ Rscript R_code/02_data_analysis.R
 Rscript R_code/03_sample_modification.R
 Rscript R_code/04_discrepancy_analysis.R
 ```
+
+### Variante 2: Reproduktion mit Docker
+
+Für eine möglichst konsistente Reproduktion der Analyse und PDF-Ausgabe steht zusätzlich ein Docker-Setup zur Verfügung. Das Docker-Image enthält R 4.6.0, Quarto, LaTeX/TinyTeX und die in renv.lock dokumentierten R-Paketversionen.
+
 
 Die vollständige Verarbeitung ab den Rohdaten erfordert zusätzlich Python, Zugriff auf die privaten Erhebungsdaten und lokal hinterlegte Zugangsdaten. Einzelheiten enthält [`WORKFLOW.md`](WORKFLOW.md).
 
