@@ -345,8 +345,6 @@ F1e: Welche typischen personenbezogenen Diskrepanzmuster lassen sich über die u
 
 Da bislang kaum empirische Erkenntnisse zu Diskrepanzen zwischen berichteter und beobachtbarere Nutzung generativer KI vorliegen, dient die Untersuchung dieser Forschungsfragen zunächst der Exploration möglicher Unterschiede und Muster auf deren Grundlage in zukünftiger Forschung spezifischere Hypothesen entwickelt werden können.
 
-\newpage
-
 # Methodisches Vorgehen {#sec-methode}
 
 Im Folgenden wird das methodische Vorgehen beschrieben, mit dem die Forschungsfragen untersucht werden.
@@ -1443,8 +1441,8 @@ Sämtliche hier beschriebenen Unterschiede in den Kontextvariablen sind bei Grup
 
 # Diskussion {#sec-diskussion}
 
-Ausgangspunkt dieser Arbeit war die Beobachtung, dass die bisherige Forschung zur Nutzung generativer KI-Chatbots im Studium ausschließlich auf Selbstauskünften beruht, obwohl aus der Internet- und Social-Media-Forschung bekannt ist, dass Selbstauskünfte und beobachtetes Verhalten oft nur moderat übereinstimmen [@scharkow2016; @parry2021].
-Die übergeordnete Frage F1 wurde dazu über fünf Teilfragen (F1a bis F1e) untersucht, deren Ergebnisse im Folgenden zusammengeführt werden.
+Ausgangspunkt dieser Arbeit war die Beobachtung, dass die bisherige Forschung zur Nutzung generativer KI-Chatbots im Studium ausschließlich auf Selbstauskünften beruht, obwohl aus der Internet- und Social-Media-Forschung bekannt ist, dass Selbstauskünfte und beobachtetes Verhalten oft nur moderat übereinstimmen [@scharkow2016; @parry2021]. Die übergeordnete Frage F1 wurde dazu über fünf Teilfragen (F1a bis F1e) untersucht, deren Ergebnisse im Folgenden zusammengeführt werden.
+
 
 Bei den Nutzungsarten (F1a und F1b) variierte das Ausmaß der Übereinstimmung zwischen Selbstauskünften und Chatlogsdaten deutlich nach Aufgabenbereich.
 Die größte Übereinstimmung zeigte sich bei *Lernen und Prüfungsvorbereitung*, gefolgt von *Schreiben und Textarbeit*.
@@ -1882,8 +1880,8 @@ Der ursprünglliche Titel der Präregistrierung lautete: *Unterschiede in angege
 Diesen haben wir zu *Unterschiede in angegebenem und beobachtetem Nutzungsverhalten von ChatGPT* geändert.
 Zum einen hebt das hervor, dass diese Analyse nur ChatGPT-Nutzung untersucht.
 Zum anderen heben wir deutlich hervor, dass wir keinen objektiven und unverzerrten Einblick in das Nutzungsverhalten in Form von Chatlogs bekommen haben.
-Zwar handelt es sich um realte Chatverläufe, allerdings sind diese möglicherweise verzerrt.
-Wir sprechen von „beobachtetem Nutzungsverhalten“, um diesem Umstand kenntlich zu machen.
+Zwar handelt es sich um reale Chatverläufe, allerdings sind diese möglicherweise verzerrt.
+Wir sprechen von „beobachtetem Nutzungsverhalten“, um diesen Umstand kenntlich zu machen.
 
 Die ursprünglich präregistrierte Forschungsfrage F5 („Wie gut eignet sich die LLM-basierte Klassifikation, um Dimensionen der Informationsnutzung in Chatlogs systematisch zu erfassen und mit Surveyangaben zu vergleichen?“) wird nicht mehr als eigenständige inhaltliche Forschungsfrage geführt.
 Da sie die Güte des eingesetzten Messverfahrens betrifft, wird sie im Methodenteil im Rahmen der Validierung der LLM-basierten Klassifikation behandelt.
