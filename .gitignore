@@ -69,8 +69,11 @@ renv/staging/
 # Rohdaten sensibel
 data/raw/data_MP_umfrage_chatbots_2026-07-31_10-12.csv
 
-# Private Adressen
+# Private Adressen und Daten
 private-authors.tex
+manuscript/Eigenst*
+index_final.pdf
+
 
 **/*.quarto_ipynb
 
