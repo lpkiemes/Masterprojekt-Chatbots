@@ -85,4 +85,4 @@ RUN R -e "options(renv.consent = TRUE); renv::restore()"
 # (see README/usage notes) overrides these with your current work.
 COPY --chown=rstudio:rstudio . .
 
-CMD ["sh", "-c", "quarto render index.qmd --to pdf && pdfunite index.pdf manuscript/Eigenstaendigkeit_laura.pdf manuscript/Eigenstaendigkeit_hannah.pdf manuscript/Eigenstaendigkeit_theo.pdf index_final.pdf"]
+CMD ["sh", "-c", "quarto render index.qmd --to pdf"]

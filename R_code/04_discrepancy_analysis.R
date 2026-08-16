@@ -385,6 +385,8 @@ plot_task_differences <- ggplot(
     )
   )
 
+ggsave(here::here("plots", "21_task_differences.png"), plot = plot_task_differences)
+
 plot_task_differences
 
 
@@ -1208,4 +1210,8 @@ plot_agreement <- ggplot(
     )
   )
 
+ggsave(here::here("plots", "22_agreement.png"), plot = plot_agreement)
+
 plot_agreement
+
+
