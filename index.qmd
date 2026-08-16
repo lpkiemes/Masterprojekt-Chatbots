@@ -147,20 +147,7 @@ global_digits <- 2
 
 # Abstract {.unnumbered .unlisted}
 
-Aus anderen Bereichen der digitalen Mediennutzung ist bekannt, dass Selbstauskünfte und beobachtetes Verhalten teils deutlich voneinander abweichen.
-Für die studentische Nutzung generativer KI-Chatbots wurde diese Diskrepanz bislang jedoch kaum erforscht.
-Ziel dieser Arbeit ist es daher, zu untersuchen, inwiefern Selbstauskünfte Studierender zur studienbezogenen Nutzung von generativer KI mit ihrem in gespendeten Chatverläufen beobachtbaren Nutzungsverhalten übereinstimmen.
-Zur Beantwortung wurden in einer Online-Befragung Selbstauskünfte 21 Studierender zu Interaktionsstil, kritischem Prüfen von Chatbot-Antworten und studienbezogener Informationsnutzung erhoben.
-Diese wurden mit freiwillig gespendeten ChatGPT-Chatverläufen verglichen, die mittels eines Large Language Models hinsichtlich derselben Konstrukte klassifizierten wurden.
-Bei Schreib- und Lernaufgaben stimmen die Angaben der Studierenden weitgehend mit den beobachteten Chatlogs überein.
-Görßere Abweichungen zeigen sich bei der Informationssuche, praktischer und technischer Unterstützung, beim Interaktionsstil und insbesondere beim kritischen Prüfen von Antworten.
-Speziell kritisches Prüfen wird im wird im Fragebogen häufiger angegeben, als es in den Chatverläufen beobachtbar ist.
-Eine explorative PAM-Clusteranalyse identifiziert vier Cluster, die sich vor allem in der Richtung und Kombination der Diskrepanzen unterscheiden und sich in drei Robustheitschecks als weitgehend stabil erweisen.
-Ergänzende Korrelations- und Gruppenvergleiche ergeben keine statistisch eindeutige Zusammenhänge mit Alter, der Erfahrung mit KI oder sozialer Erwünschtheit, zeigen jedoch deskriptiv erkennbare Muster und unterschiedliche Kontextprofile der Cluster.
-Diese Befunde legen nahe, dass die Übereinstimmung von Selbstauskünften und Chatlogdaten zur studienbezogenen KI-Nutzung vom untersuchten Konstrukt und möglicherweise auch von persönlichen Merkmalen abhängt.
-Eine einheitliche Korrektur von Selbstauskünften erscheint daher nicht angemessen.
-<!-- @Hannah: würde ich hier rausnhemen, was meinst du?
-Für künftige Forschung wird empfohlen, Selbstauskünfte systematisch durch Verhaltensdaten zu ergänzen und größere, breiter zusammengesetzte Stichproben sowie weitere KI-Anwendungen einzubeziehen. -->
+Aus anderen Bereichen der digitalen Mediennutzung ist bekannt, dass Selbstauskünfte und beobachtetes Verhalten teils deutlich voneinander abweichen. Für die studentische Nutzung generativer KI-Chatbots wurde diese Diskrepanz bislang jedoch kaum erforscht. Ziel dieser Arbeit ist es daher, zu untersuchen, inwiefern Selbstauskünfte Studierender mit ihrem in gespendeten Chatverläufen beobachtbaren Nutzungsverhalten übereinstimmen. Hierzu wurden in einer Onlinebefragung Selbstauskünfte von 21 Studierenden zur Informationsnutzung, zum Interaktionsstil und zum kritischen Prüfen von Chatbot-Antworten erhoben. Diese wurden mit freiwillig gespendeten ChatGPT-Chatverläufen verglichen, die mithilfe eines Large Language Models hinsichtlich derselben Konstrukte klassifiziert wurden. Bei Schreib- und Lernaufgaben stimmen beide Datenquellen vergleichsweise stark überein. Größere Abweichungen zeigen sich bei der Informationssuche, der praktischen und technischen Unterstützung sowie beim Interaktionsstil. Besonders deutlich fallen sie beim kritischen Prüfen aus, das im Fragebogen häufiger angegeben wird, als es in den Chatverläufen beobachtbar ist. Eine explorative PAM-Clusteranalyse identifiziert vier Diskrepanzmuster, die sich vor allem in der Richtung und Kombination ihrer Abweichungen unterscheiden und sich in drei Robustheitsanalysen weitgehend bestätigen. Ergänzende Korrelations- und Gruppenvergleiche ergeben keine statistisch eindeutigen Zusammenhänge mit Alter, KI-Erfahrung oder sozialer Erwünschtheit, zeigen jedoch einzelne deskriptive Tendenzen. Insgesamt deuten die Ergebnisse darauf hin, dass die Übereinstimmung von Selbstauskünften und Chatlogdaten vom untersuchten Konstrukt und möglicherweise auch von personenbezogenen Merkmalen abhängt. Eine einheitliche Korrektur von Selbstauskünften erscheint daher nicht angemessen.
 
 \clearpage
 
@@ -314,7 +301,7 @@ Entsprechend bleibt bislang offen, in welchem Ausmaß Selbstauskünfte über die
 ## KI-Nutzung im Studium {#sec-ki-nutzung}
 
 Seit der Veröffentlichung von ChatGPT Ende 2022 haben sich generative KI-Systeme innerhalb kurzer Zeit zu einem festen Bestandteil des Hochschulalltags entwickelt.
-Zahlreiche Studien zeigen, dass Studierende diese Werkzeuge regelmäßig zur Unterstützung verschiedener studienbezogener Aufgaben einsetzen ([@garrel2025; @balabdaoui2024a]. <!-- @Hannah: Hier noch weitere Studien einfügen, damit die zahlreichen Studien rüberkommen ---> Gleichzeitig wird generative KI zunehmend nicht mehr als kurzfristiger Technologietrend, sondern als dauerhafte Veränderung akademischer Lehr- und Lernprozesse betrachtet [@kasneci2023]. Aktuelle Befragungen verdeutlichen die hohe Verbreitung generativer KI unter Studierenden. So berichteten @garrel2025 auf Grundlage einer deutschlandweiten Längsschnittstudie mit rund 5.000 Studierenden, dass mittlerweile über 90 % der Befragten KI-basierte Werkzeuge im Studium nutzen. Im Vergleich zu einer Erhebung aus dem Jahr 2023, in der noch 63 % der Studierenden entsprechende Anwendungen verwendeten, zeigt sich damit ein deutlicher Anstieg innerhalb kurzer Zeit. Auch internationale Studien bestätigen diese Entwicklung. So zeigten @balabdaoui2024a anhand einer Befragung von etwa 4.800 Studierenden, dass generative KI an Hochschulen inzwischen breit akzeptiert, und von vielen Studierenden als hilfreiche Unterstützung im Lernprozess wahrgenommen wird.
+Zahlreiche Studien zeigen, dass Studierende diese Werkzeuge regelmäßig zur Unterstützung verschiedener studienbezogener Aufgaben einsetzen ([@garrel2025; @balabdaoui2024a]. Gleichzeitig wird generative KI zunehmend nicht mehr als kurzfristiger Technologietrend, sondern als dauerhafte Veränderung akademischer Lehr- und Lernprozesse betrachtet [@kasneci2023]. Aktuelle Befragungen verdeutlichen die hohe Verbreitung generativer KI unter Studierenden. So berichteten @garrel2025 auf Grundlage einer deutschlandweiten Längsschnittstudie mit rund 5.000 Studierenden, dass mittlerweile über 90 % der Befragten KI-basierte Werkzeuge im Studium nutzen. Im Vergleich zu einer Erhebung aus dem Jahr 2023, in der noch 63 % der Studierenden entsprechende Anwendungen verwendeten, zeigt sich damit ein deutlicher Anstieg innerhalb kurzer Zeit. Auch internationale Studien bestätigen diese Entwicklung. So zeigten @balabdaoui2024a anhand einer Befragung von etwa 4.800 Studierenden, dass generative KI an Hochschulen inzwischen breit akzeptiert, und von vielen Studierenden als hilfreiche Unterstützung im Lernprozess wahrgenommen wird.
 
 Neben der steigenden Verbreitung haben sich auch die Einsatzbereiche generativer KI deutlich erweitert.
 Während Chatbots zunächst vor allem genutzt wurden, um Verständnisfragen zu klären oder fachliche Inhalte erklären zu lassen, unterstützen sie Studierende inzwischen in nahezu allen Phasen des wissenschaftlichen Arbeitsprozesses.
@@ -346,7 +333,7 @@ F1: Inwiefern unterscheiden sich Selbstauskünfte Studierender zur studienbezoge
 F1a: Bei welchen Dimensionen der Informationsnutzung zeigen sich besonders häufig Übereinstimmungen beziehungsweise Diskrepanzen zwischen Surveyangaben und Chatlogdaten?
 
 F1b: Welche Arten studienbezogener Informationsnutzung lassen sich in den Chatlogs identifizieren?
-Inwiefern stimmen diese mit den Survey angegebenen Nutzungsarten überein?
+Inwiefern stimmen diese mit den im Survey angegebenen Nutzungsarten überein?
 
 F1c: Inwiefern geben Studierende an, KI-Antworten kritisch zu prüfen?
 Inwiefern stimmen diese Angaben mit den Chatlogs überein?
@@ -356,7 +343,7 @@ Inwiefern stimmen diese Angaben mit den beobachteten Chats überein?
 
 F1e: Welche typischen personenbezogenen Diskrepanzmuster lassen sich über die untersuchten Nutzungsdimensionen hinweg explorativ identifizieren?
 
-Da bislang kaum empirische Erkenntnisse zu Diskrepanzen zwischen berichteter und beobachtbarere Nutzung generativer KI vorliegen, dient die Untersuchung dieser Forschungsfragen zunächst der Exploration möglicher Unterschiede und Muster auf deren Grundlage in zukünftiger Forschung spezifischere Hypothesen entwickelt werden können.
+Da bislang kaum empirische Erkenntnisse zu Diskrepanzen zwischen berichteter und beobachtbarer Nutzung generativer KI vorliegen, dient die Untersuchung dieser Forschungsfragen zunächst der Exploration möglicher Unterschiede und Muster auf deren Grundlage in zukünftiger Forschung spezifischere konfirmatorische Hypothesen entwickelt werden können.
 
 # Methodisches Vorgehen {#sec-methode}
 
@@ -365,11 +352,8 @@ Dazu werden das Forschungsdesign, der Fragebogen, die Durchführung von Pretest 
 
 ## Forschungsdesign und Erstellung des Fragebogens {#sec-erstellung-fragebogen}
 
-Da der Fokus auf personenbezogenen Diskrepanzen zwischen beiden Datenquellen liegt, wurden mit der Nutzungsart, dem kritischen Prüfen und dem Interaktionsstil drei komplementäre Bereiche ausgewählt.
-Diese bilden funktionale, epistemische und kommunikative Aspekte der Nutzung generativer KI ab und wurden aufgrund ihrer Relevanz für die Forschungsfrage sowie ihrer Erfassbarkeit durch Selbstauskünfte und Chatlogdaten berücksichtigt.
-Für jedes Konstrukt wurden Kategorien im Fragebogen und in der Chatlogklassifikation eingebunden.
+Da der Fokus auf personenbezogenen Diskrepanzen zwischen beiden Datenquellen liegt wurde für jedes Konstrukt eine Kategorie im Fragebogen und in der Chatlogklassifikation eingebunden.
 Anschließend wurden die klassifizierten Chatdaten auf Personenebene aggregiert, sodass sie den Selbstauskünften gegenübergestellt werden konnten.
-Dadurch wurde eine strukturelle Vergleichbarkeit.
 Die konkrete Operationalisierung wird in @sec-operationalisierung beschrieben.
 
 Der Fragebogen wurde auf Grundlage der Forschungsfragen entwickelt und zielt darauf ab, die studienbezogene Nutzung von ChatGPT strukturiert zu erfassen.
@@ -383,15 +367,15 @@ Personen, die nicht allen Angaben zugestimmt haben, wurden von der Erhebung ausg
 Anschließend wurden weitere zu einem Screenout führende Fragen gestellt.
 Die Screeningfragen wurden bewusst zu Beginn des Fragebogens platziert, um Personen außerhalb der Zielgruppe frühzeitig ausschließen zu können und überflüssige Bearbeitungszeiten für diese zu vermeiden.
 Die Fragen zum Screenout betrafen den Studierendenstatus, die allgemeine Nutzung verschiedener KI-Tools [vgl. @falk2025] und die Nutzungshäufigkeit von ChatGPT [vgl. @köhler2024] im Rahmen des Studiums.
-Wer angab, nicht an einer Hochschule immatrikuliert zu sein, ChatGPT generell nicht, oder nicht im Studienkontext zu nutzen, wurde vom weiteren Aufüllen des Fragebogens ausgeschlossen.
+Wer angab, nicht an einer Hochschule immatrikuliert zu sein, ChatGPT generell nicht, oder nicht im Studienkontext zu nutzen, wurde vom weiteren Ausfüllen des Fragebogens ausgeschlossen.
 
 Zur Beschreibung der Stichprobe und zur Einordnung der späteren Ergebnisse wurden des Weiteren Angaben zur allgemeinen Nutzung generativer KI-Systeme erhoben.
-Dazu gehören zum einen die Vertrautheit und die Erfahrung im Umgang mit generativer KI, angelehnt an @shin2022, um die Charakterisierung der Stichprobe und eine Einordung der später beobachteten Nutzungsmuster zu ermöglichen.
+Dazu gehören zum einen die Vertrautheit und die Erfahrung im Umgang mit generativer KI, angelehnt an @shin2022, um die Charakterisierung der Stichprobe und eine Einordnung der später beobachteten Nutzungsmuster zu ermöglichen.
 Im Hauptteil des Fragebogens wurden die drei zentralen Untersuchungsdimensionen erhoben: Interaktionsstil, kritisches Prüfen von KI-Antworten sowie studienbezogene Informationsnutzung.
 Die konkrete Operationalisierung dieser Konstrukte wird in @sec-operationalisierung beschrieben.
 Anschließend wurden die Teilnehmenden gebeten, freiwillig ihre fünf zuletzt genutzten studienbezogenen Chatverläufe mit ChatGPT hochzuladen.
 Dafür wurde eine separate Einwilligung eingeholt nach welcher der Upload stattfand.
-Dieser erfolgte erst nach Abschluss der Befragung, um eine Beeinflussung der Sebsteinkünfte durch Einsicht in die eigenen Chatverläufe möglichst zu reduzieren.
+Dieser erfolgte erst nach Abschluss der Befragung, um eine Beeinflussung der Selbsteinkünfte durch Einsicht in die eigenen Chatverläufe möglichst zu reduzieren.
 Jedoch kann eine Beeinflussung durch die Auseinandersetzung mit dem Fragebogen nicht vollends ausgeschlossen werden.
 Der Upload sollte im Idealfall als von ChatGPT erstellter Text im JSON Format erfolgen, falls dies den Teilnehmenden nicht möglich war, wurden die Chatlogs als HTML Datei eingespeist.
 Zur Bewertung der Datenqualität wurden mögliche technische Probleme beim Export oder Upload der Chatverläufe erhoben.
@@ -402,7 +386,7 @@ Diese Angaben dienen der späteren Einordnung möglicher Verzerrungen der gespen
 Die abschließenden Items dienten der Erhebung soziodemographischer Merkmale.
 Diese Variablen erfordern in der Regel nur einen geringen kognitiven Aufwand und wurden daher bewusst an das Ende des Fragebogens gestellt.
 Erfasst wurden Alter, Geschlecht nach @ZA10100, Studienfach, angestrebter Studienabschluss sowie soziale Erwünschtheit nach @kemper2014.
-Diese Merkmale könnten damit zusmmenhängen in welchem Ausmaß die Selbstauskünfte aufgrund sozialer Erwünschtheit verzerrt angegeben wierden.
+Diese Merkmale könnten damit zusammenhängen in welchem Ausmaß die Selbstauskünfte aufgrund sozialer Erwünschtheit verzerrt angegeben würden.
 Personen mit unterschiedlicher Erfahrung oder Nutzungshäufigkeit könnten ihre eigene Nutzung unterschiedlich einschätzen und entsprechend unterschiedlich berichten.
 Auch Alter und Informationskompetenz könnten beeinflussen, wie sicher Personen ihre eigene Nutzung einordnen und inwieweit sie sich der möglichen sozialen Bewertung ihrer Angaben bewusst sind.
 Für Alter wurden in der bisherigen Forschung bereits systematische Unterschiede in sozialer Erwünschtheit festgestellt, wobei ältere Personen tendenziell stärker zu sozial erwünschten Angaben neigen [@ausmees2022].
@@ -410,7 +394,7 @@ Die Einbeziehung dieser Merkmale ermöglicht zu prüfen, ob Unterschiede in den 
 
 ## Durchführung von Pretest und Haupterhebung {#sec-pretest-haupterhebung}
 
-Um den Fragebogen zu optimieren, wurden vor Beginn der tatsächlichen Erhebung Personen aus dem persönlichen Umfeld der Autor:innen für einen Pretest rekrutiert Diese Personen waren kein Teil der Erhebungszielgruppe, da sie zum Erhebungszeitraum kein Studium an einer Hochschule absolvierten.
+Um den Fragebogen zu optimieren, wurden vor Beginn der tatsächlichen Erhebung Personen aus dem persönlichen Umfeld der Autor:innen für einen Pretest rekrutiert. Diese Personen waren kein Teil der Erhebungszielgruppe, da sie zum Erhebungszeitraum kein Studium an einer Hochschule absolvierten.
 Ziel des Pretests war es, mögliche Probleme hinsichtlich Verständlichkeit, Benutzerfreundlichkeit und technischer Umsetzung des Fragebogens zu identifizieren.
 Die Teilnehmenden wurden gebeten, den Fragebogen vollständig auszufüllen und sowohl während der Bearbeitung als auch im Anschluss daran Rückmeldung an die Autor:innen zu geben.
 Der Fragebogen wurde in zwei Pretestrunden auf Verständlichkeit, Benutzerfreundlichkeit und technische Funktionsfähigkeit geprüft.
@@ -422,7 +406,7 @@ Die Feldphase startete am 09.
 Juli 2026 und endete am 31.
 Juli 2026.
 Teilnehmende wurden über den E-Mail-Verteiler der Studierenden im Masterprojekt und im Whatsapp-Kanal des Masters Computational Social Science mit weiteren Studierenden zur Teilnahme eingeladen, welche insgesamt 27 Studierende umfasst.
-Aufgrund der geringen Zahl der beantworteten Fragebögen, wurden weitere Teilnehmende im privaten Umfeld, über die Whatsapp Kanäle der Soziologie Studiengänge und über den Instagram-Kanal der Fachschftsinitiative Soziologie rekrutiert.
+Aufgrund der geringen Zahl der beantworteten Fragebögen, wurden weitere Teilnehmende im privaten Umfeld, über die Whatsapp Kanäle der Soziologie Studiengänge und über den Instagram-Kanal der Fachschaftsinitiative Soziologie rekrutiert.
 Die Teilnahme war freiwillig und anonym.
 
 Während der Feldphase zeigte sich in drei Fällen, dass Texteingaben in SoSci Survey einem internen Zeichenlimit unterlagen und beim Absenden gekürzt wurden.
@@ -757,7 +741,7 @@ Die vollständige Beschreibung der Analysestichprobe sowie der Vergleich mit aus
 ## Aufbereitung und Klassifikation der Chatlogs
 
 Um die erhobenen Chatlogs für die statistische Analyse vorzubereiten, mussten diese zuerst aufbereitet und klassifiziert werden, um anschließend mit den Selbstauskünften aus dem Fragebogen vergleichbar gemacht zu werden.
-Da die gespendeten Chatverläufe im Fragebogen entweder in den Formaten JSON und HTML gespendet wurden, wurden diese beiden Dateiformate in einem ersten Schritt separat aufbereitet, vereinheitlich und ausschließlich auf User-Nachrichten gefiltert.
+Da die gespendeten Chatverläufe im Fragebogen entweder in den Formaten JSON und HTML gespendet wurden, wurden diese beiden Dateiformate in einem ersten Schritt separat aufbereitet, vereinheitlicht und ausschließlich auf User-Nachrichten gefiltert.
 Anschließend wurden diese Daten für jeden Chat jeder Person mit OpenAIs GPT-5.5 nach Interaktionsstil, kritischem Prüfen und Nutzungsart klassifiziert.
 Für die Klassifikation wurde ein generatives Large Language Model im Zero-Shot-Verfahren[^1] eingesetzt.
 Solche Modelle ermöglichen Textklassifikationen ohne aufgabenspezifisches Training des Modells und erreichten in früheren Studien teilweise eine mit überwachten Lernverfahren oder menschlichen Annotationen vergleichbare Leistung [@wang2023; @anglin2025; @gilardi2023].
@@ -797,8 +781,9 @@ Dieser Aspekt ist daher bei der Interpretation der Ergebnisse zu berücksichtige
 
 ## Operationalisierung {#sec-operationalisierung}
 
-Die drei zentralen Konstrukte wurden so operationalisiert, dass sie sowohl durch Selbstauskünfte im Survey als auch durch die Klassifikation durch ein Large Language Model der Chatlogdaten erfasst werden konnten.
-Die Kategorien wurden so gewählt, dass sie sowohl von den Teilnehmenden zuverlässig berichtet als auch aus den Chatverläufen extrahiert werden konnten.
+Die drei zentralen Konstrukte der Nutzungsart, dem kritischen Prüfen und dem Interaktionsstil bilden funktionale, epistemische und kommunikative Aspekte der Nutzung generativer KI ab und wurden aufgrund ihrer Relevanz für die Forschungsfrage sowie ihrer Erfassbarkeit durch Selbstauskünfte und Chatlogdaten berücksichtigt.
+Diese wurden so operationalisiert, dass sie sowohl durch Selbstauskünfte im Fragebogen als auch durch die Klassifikation durch ein Large Language Model der Chatlogdaten erfasst werden konnten.
+Die Kategorien wurden so gewählt, dass sie sowohl von den Teilnehmenden zuverlässig berichtet als auch aus den Chatverläufen extrahiert werden konnten. 
 Dadurch wurde eine direkte Vergleichbarkeit beider Datenquellen auf Personenebene ermöglicht.
 @tbl-operationalisierung gibt einen Überblick über die Operationalisierung.
 
@@ -848,7 +833,7 @@ Ihre zehn verschiedenen Nutzungsarten fassten wir aufgrund der nicht allzu hohen
 Die Teilnehmenden verteilten insgesamt zehn Punkte auf diese fünf Kategorien, sodass ihre typische Nutzung als relative Verteilung verschiedener Nutzungsarten erfasst wurde.
 So ergibt sich eine quasi-metrische Skala, die die subjektive Gewichtung der einzelnen Nutzungsarten zwischen den Teilnehmenden vergleichbar macht.
 Der Anteil eines Aufgabenbereichs ergibt sich, indem die für diesen Bereich vergebene Punktzahl durch die maximal mögliche Gesamtpunktzahl (zehn) dividiert wird.
-Analog dazu werden die Klassifikationen der einzelnen Chats auf denselben Wertebereich $0,1$ überführt: Für jeden Aufgabenbereich wird der Anteil an den insgesamt gespendeten Chats einer Person berechnet und so mit den Selbstauskünften vergleichbar
+Analog dazu werden die Klassifikationen der einzelnen Chats auf denselben Wertebereich $[0;1]$ überführt: Für jeden Aufgabenbereich wird der Anteil an den insgesamt gespendeten Chats einer Person berechnet und so mit den Selbstauskünften vergleichbar
 
 Der *Interaktionsstil* wurde über die Selbsteinschätzung des eigenen Kommunikationsverhaltens gegenüber ChatGPT erhoben.
 Die Teilnehmenden bewerteten auf einer fünfstufigen ordinalen Skala („sehr unfreundlich“ bis „sehr freundlich“), wie freundlich beziehungsweise unfreundlich sie typischerweise mit dem generativen Chatbot kommunizierten.
@@ -968,10 +953,6 @@ Für jede Nutzungsart wurden zudem die vergebenen Punkte in relative Anteile an 
 Dadurch konnte die subjektive Gewichtung der verschiedenen Nutzungsarten zwischen den Teilnehmenden vergleichbar gemacht und den entsprechenden Anteilen aus den Chatlogdaten gegenübergestellt werden.
 Fälle mit fehlenden Werten in zentralen Analysevariablen wurden von der weiteren Analyse ausgeschlossen.
 
-<!-- TODO: hier nch die technische Aufbereitung zu JSON/HTML Aufbereitung -->
-
-<!-- $$$ ist das noch aktuell? -->
-
 ## Statistische Analyse
 
 Die statistische Analyse gliedert sich in deskriptive Vergleiche zwischen Survey- und Chatlogdaten, explorative Zusammenhangsanalysen mit personenbezogenen Merkmalen sowie eine Clusteranalyse personenbezogener Diskrepanzmuster.
@@ -1042,7 +1023,7 @@ Als Clusterzahl wird anschließend derjenige Wert von $k$ verwendet, für den di
 Nachdem die Cluster ermittelt wurden, werden diese auf inhaltliche Unterschiede analysiert.
 Dazu werden die einzelnen Cluster deskriptiv auf Unterschiede in den im Fragebogen erhobenen Kontextvariablen, wie Studienrichtung oder soziale Erwünschtheit, untersucht.
 Ergänzend werden Unterschiede in nicht zur Clusterbildung verwendeten Kontextvariablen explorativ untersucht.
-Für soziale Erwünschtheit wird eine Welch-ANOVA und für die ordinalen Variablen wird ein Kruskal-Wallis-Tests durchgeführt.
+Für soziale Erwünschtheit wird eine Welch-ANOVA und für die ordinalen Variablen ein Kruskal-Wallis-Tests durchgeführt.
 Nominale Merkmale werden aufgrund der kleinen Zellbesetzungen mit Pearson-Chi-Quadrat-Tests und simulierten p-Werten verglichen.
 
 Im nächsten Abschnitt werden zunächst die einzelnen Teilfragen nacheinander beantwortet.
@@ -1328,7 +1309,7 @@ Dabei ist zu beachten, dass die multidimensionale Darstellung die tatsächlichen
 Die gefundenen vier Cluster liegen räumlich weitgehend getrennt voneinander, wobei sie unterschiedliche Bereiche des Merkmalsraums einnehmen.
 Zudem sind einzelne Beobachtungen erkennbar, die deutlich von ihrem jeweiligen Clusterzentrum entfernt liegen.
 Die beiden Beobachtungen im unteren rechten Bereich der Projektion würden bei einer Fünf-Cluster-Lösung ein eigenes zusätzliches Cluster bilden.
-Die personenbezogenen Silhouettenwerte (@figb-silhouette-person und @tbla-silhouette-person) bestätigen dies: Zwei Personen weisen negative Silhuettenwerte auf und sind damit ihrem jeweils nächstgelegenen Nachbarcluster näher als ihrem zugewiesenen Cluster.
+Die personenbezogenen Silhouettenwerte (@figb-silhouette-person und @tbla-silhouette-person) bestätigen dies: Zwei Personen weisen negative Silhouettenwerte auf und sind damit ihrem jeweils nächstgelegenen Nachbarcluster näher als ihrem zugewiesenen Cluster.
 Diese Fälle sind bei der Interpretation der Clusterprofile als potenziell unsichere Zuordnungen zu berücksichtigen.
 
 ```{r}
@@ -1388,7 +1369,7 @@ p_sent_cl
 
 ```
 
-Bei der Diskrepanz des kritischen Prüfens konzentrieren sich die Abweichung stärker auf einzelne Cluster (@fig-krit).
+Bei der Diskrepanz des kritischen Prüfens konzentrierten sich die Abweichung stärker auf einzelne Cluster (@fig-krit).
 Cluster zwei hebt sich deutlich ab: Sämtliche Personen dieses Clusters geben an, KI-Antworten kritisch zu hinterfragen, dies wird der Mehrheit der Chatlogs jedoch nicht beobachtet.
 Cluster drei zeigt als einziges Cluster den umgekehrten Typ, ein Viertel dieser Personen fragt in den Chats kritischer nach, als es die Selbstauskunft nahelegt.
 In den Clustern eins und vier stimmt die Selbstauskunft mehrheitlich mit dem beobachteten Verhalten überein.
@@ -1425,7 +1406,7 @@ p_profil
 
 Am deutlichsten unterscheiden sich die Cluster bei der sozialen Erwünschtheit und der Nutzungshäufigkeit.
 In beiden Fällen bildet Cluster drei einen Pol, allerdings in entgegengesetzter Richtung.
-Bei der sozialen Erwünschtheit liegt Cluster drei mit 40 % Prozent des Skalenbereichs deutlich unter den anderen drei Clustern, die sich zwischen 60 und 73 % bewegen.
+Bei der sozialen Erwünschtheit liegt Cluster drei mit 40 % des Skalenbereichs deutlich unter den anderen drei Clustern, die sich zwischen 60 und 73 % bewegen.
 Bei der Nutzungshäufigkeit dagegen liegt Cluster drei mit rund 75 % an der Spitze, während Cluster zwei mit knapp 40 % das untere Ende bildet.
 Cluster drei nutzt ChatGPT demnach am häufigsten und zeigt zugleich die geringste Neigung zu sozial erwünschtem Antwortverhalten.
 Das passt zu dem Befund, dass die Teilnehmenden in diesem Cluster ihren Umgangston in beiden Datenquellen gleich angeben.
@@ -1499,7 +1480,7 @@ Beide Quellen beziehen sich demnach nicht zwingend auf denselben Zeitraum und de
 Im Fragebogen können sich die Anteile zu den fünf Nutzungsarten in Zehn-Prozent-Schritten ändern, während sich die Chatloganteile bei den fünf Chats nur in Zwanzig-Prozent-Schritten bewegen.
 Identifizierte exakte Übereinstimmungen sind daher teilweise durch unterschiedliche Messraster erschwert.
 
-Die Stichprobengröße von n = 21 erlaubt zwar eine explorative Clusteranalyse, jedoch sind die Gruppenvergleiche mit den Kontextvariablen jedoch statistisch unterpowert.
+Die Stichprobengröße von n = 21 erlaubt zwar eine explorative Clusteranalyse, jedoch sind die Gruppenvergleiche mit den Kontextvariablen statistisch unterpowert.
 Keiner der berichteten deskriptiven Unterschiede erreichte statistische Signifikanz, sodass sie als Tendenzen und nicht als gesicherte Gruppenunterschiede zu lesen sind.
 Auch die durchschnittliche Silhouettenweite von 0,46 liegt nach @kaufman1990a unterhalb der Schwelle für eine ausreichende Clusterstruktur, was für eine vorsichtige, eher typologisierende als kategorial-trennscharfe Interpretation der vier Gruppen spricht.
 Eine weitere, direktere potentielle Fehlerquelle liegt in der LLM-Klassifikation selbst.
@@ -1866,9 +1847,12 @@ tibble::tribble(
   kableExtra::column_spec(3, width = "3.2cm") |>
   kableExtra::column_spec(4, width = "4.5cm") |>
   kableExtra::row_spec(
-    1:6,
+    1:7,
     extra_latex_after = "\\midrule"
-  )
+  ) |>
+kableExtra::kable_styling(
+  latex_options = "hold_position"
+)
 ```
 
 \newpage
