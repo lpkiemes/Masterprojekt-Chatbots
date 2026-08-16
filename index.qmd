@@ -67,6 +67,7 @@ execute:
   warning: false
   message: false
   cache: false
+  freeze: false
 
 editor:
   markdown:
@@ -1741,11 +1742,6 @@ tibble::tribble(
   ~`Abschnitt der Arbeit`,
   ~Promptbeispiel,
   
-  "Claude (Opus 4.8) und GitHub Copilot",
-  "Unterstützung beim Programmieren",
-  "R-, Python- und Jupyter-Notebook-Skripte",
-  "Warum funktioniert dieser JSON-Parser bei diesem JSON-Dokument nicht?",
-  
   "Claude (Opus 4.8)",
   "Rechtschreib- und Grammatikkorrektur",
   "Methode und Ergebnisteil",
@@ -1793,7 +1789,7 @@ tibble::tribble(
   kableExtra::column_spec(3, width = "3.2cm") |>
   kableExtra::column_spec(4, width = "4.5cm") |>
   kableExtra::row_spec(
-    1:7,
+    1:6,
     extra_latex_after = "\\midrule"
   ) |>
 kableExtra::kable_styling(

@@ -60,6 +60,7 @@ index.docx
 *-preview.html
 *.out.ipynb
 *_files/
+_freeze/
 
 # renv
 renv/library/

@@ -1,6 +1,6 @@
 # Tabellenanhang
 
-Automatisch erzeugt von `Python_code/data_analasys.R` am 15.08.2026 (N = 21).
+Automatisch erzeugt von `Python_code/data_analasys.R` am 16.08.2026 (N = 21).
 
 ## T00a – Stichprobe: Geschlecht
 
