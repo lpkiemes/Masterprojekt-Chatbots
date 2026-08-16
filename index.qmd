@@ -86,6 +86,24 @@ crossref:
       latex-env: figb
 ---
 
+```{r packages}
+#| warning: true
+#| include: false
+
+library(here)
+library(readr)
+# Einzelne tidyverse-Pakete statt des Meta-Pakets: nur diese stehen in renv.lock
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(stringr)
+library(purrr)
+library(forcats)
+library(gt)
+library(kableExtra)
+library(psych)
+```
+
 ```{r}
 #| label: setup
 #| include: false
@@ -120,23 +138,6 @@ theme_set(
 )
 ```
 
-```{r packages}
-#| warning: true
-#| include: false
-
-library(here)
-library(readr)
-# Einzelne tidyverse-Pakete statt des Meta-Pakets: nur diese stehen in renv.lock
-library(dplyr)
-library(tidyr)
-library(ggplot2)
-library(stringr)
-library(purrr)
-library(forcats)
-library(gt)
-library(kableExtra)
-library(psych)
-```
 
 ```{r globals}
 #| include: false
@@ -147,12 +148,13 @@ global_digits <- 2
 
 # Abstract {.unnumbered .unlisted}
 
-Ziel dieser Arbeit ist es, zu untersuchen, inwiefern sich Selbstauskünfte Studierender zur studienbezogenen Nutzung generativer KI-Chatbots von ihrem in gespendeten Chatverläufen beobachtbaren Nutzungsverhalten unterscheiden.
-Zur Beantwortung wurden in einer Online-Befragung Selbstauskünfte 21 Studierender zu Interaktionsstil, kritischem Prüfen von Chatbot-Antworten und studienbezogener Informationsnutzung erhoben und mit freiwillig gespendeten, mittels eines Large Language Models hinsichtlich der drei Konstrukte klassifizierten Chatverläufen abgeglichen.
-Während Angaben zu Schreib- und Lernaufgaben weitgehend zutreffend berichtet wurden, zeigen sich deutliche Abweichungen bei der Informationssuche sowie praktischer und technischer Unterstützung, beim Umgangston und insbesondere beim kritischen Prüfen von Antworten, das im Survey deutlich häufiger berichtet als in den Logs sichtbar wird.
-Eine explorative PAM-Clusteranalyse ordnet die Stichprobe vier über drei Robustheitschecks hinweg stabilen Clustern mit unterschiedlichen Diskrepanzmustern zu, die sich weniger im Ausmaß als in der Richtung ihrer Abweichungen unterscheiden.
-Ergänzende, für die geringe Stichprobengröße explorative Korrelations- und Gruppenvergleiche zeigen keine statistisch robusten, aber deskriptiv erkennbare Zusammenhänge der Diskrepanzen mit Alter, Erfahrung mit KI und sozialer Erwünschtheit sowie unterschiedliche Kontextprofile der Cluster.
-Diese Befunde legen nahe, dass Selbstauskünfte zur KI-Nutzung konstrukt- und gruppenspezifisch verzerrt sind und nicht gleichmäßig korrigiert werden können.
+Aus anderen Bereichen der digitalen Mediennutzung ist bekannt, dass Selbstauskünfte und beobachtetes Verhalten teils deutlich voneinander abweichen. Für die studentische Nutzung generativer KI-Chatbots wurde diese Diskrepanz bislang jedoch kaum erforscht.
+Ziel dieser Arbeit ist es daher, zu untersuchen, inwiefern Selbstauskünfte Studierender zur studienbezogenen Nutzung von generativer KI mit ihrem in gespendeten Chatverläufen beobachtbaren Nutzungsverhalten übereinstimmen.
+Zur Beantwortung wurden in einer Online-Befragung Selbstauskünfte 21 Studierender zu Interaktionsstil, kritischem Prüfen von Chatbot-Antworten und studienbezogener Informationsnutzung erhoben. Diese wurden mit freiwillig gespendeten ChatGPT-Chatverläufen verglichen, die mittels eines Large Language Models hinsichtlich derselben Konstrukte klassifizierten wurden.
+Bei Schreib- und Lernaufgaben stimmen die Angaben der Studierenden weitgehend mit den beobachteten Chatlogs überein. Görßere Abweichungen zeigen sich bei der Informationssuche, praktischer und technischer Unterstützung, beim Interaktionsstil und insbesondere beim kritischen Prüfen von Antworten. Speziell kritisches Prüfen wird im wird im Fragebogen häufiger angegeben, als es in den Chatverläufen beobachtbar ist.
+Eine explorative PAM-Clusteranalyse identifiziert vier Cluster, die sich vor allem in der Richtung und Kombination der Diskrepanzen unterscheiden und sich in drei Robustheitschecks als weitgehend stabil erweisen.
+Ergänzende Korrelations- und Gruppenvergleiche ergeben keine statistisch eindeutige Zusammenhänge mit Alter, der Erfahrung mit KI oder sozialer Erwünschtheit, zeigen jedoch deskriptiv erkennbare Muster und unterschiedliche Kontextprofile der Cluster.
+Diese Befunde legen nahe, dass die Übereinstimmung von Selbstauskünften und Chatlogdaten zur studienbezogenen KI-Nutzung vom untersuchten Konstrukt und möglicherweise auch von persönlichen Merkmalen abhängt. Eine einheitliche Korrektur von Selbstauskünften erscheint daher nicht angemessen.
 <!-- @Hannah: würde ich hier rausnhemen, was meinst du?
 Für künftige Forschung wird empfohlen, Selbstauskünfte systematisch durch Verhaltensdaten zu ergänzen und größere, breiter zusammengesetzte Stichproben sowie weitere KI-Anwendungen einzubeziehen. -->
 
@@ -321,11 +323,12 @@ Ob die berichteten Nutzungsarten sowie Angaben zur kritischen Prüfung KI-generi
 
 ## Forschungslücke und Forschungsfragen {#sec-forschungsfragen}
 
-Obwohl inzwischen umfangreiche Erkenntnisse zur Verbreitung generativer KI sowie zu den berichteten Nutzungsweisen im Studium vorliegen, fehlen bislang Studien, die Selbstauskünfte mit tatsächlich beobachteten KI-Interaktionen vergleichen.
+Obwohl inzwischen umfangreiche Erkenntnisse zur Verbreitung generativer KI sowie zu den berichteten Nutzungsweisen im Studium vorliegen, fehlen bislang Studien, die Selbstauskünfte mit beobachteten KI-Interaktionen vergleichen.
 Während sich digitale Verhaltensdaten in der Forschung zu Internet- und Social-Media-Nutzung bereits als wertvolle Ergänzung von Surveydaten etabliert haben [@ohme2024; @parry2021], wurde dieser Ansatz auf generative KI bislang nicht übertragen.
 Insbesondere ist bislang weitgehend ungeklärt, inwiefern Studierende ihre tatsächlichen Nutzungsarten oder die kritische Prüfung von KI-generierten Antworten zutreffend berichten.
 Dort setzt die vorliegende Studie an, indem sie Selbstauskünfte aus einer Onlinebefragung mit tatsächlich geführten Chatverläufen generativer KI-Systeme vergleicht und diese mithilfe einer Klassifikation durch ein Large Language Model systematisch auswertet.
 
+Die vorliegende Studie betrachtet hierzu drei Konzepte der KI-Nutzung. Die Informationsnutzung erfasst den Zweck der Interaktion, das kritische Prüfen den evaluativen Umgang mit KI-generierten Antworten und der Interaktionsstil beschreibt die Art und Weise, wie Studierende mit dem Chatbot kommunizieren. Diese Konstrukte wurden ausgewählt, weil sie inhaltliche, epistemische und interaktionale Aspekte der Nutzung abbilden und im Fragebogen erhoben als auch in Chatverläufen klassifiziert werden können.
 Daraus ergeben sich folgende Forschungsfragen, die explorativ im Rahmen der Studie untersucht werden:
 
 F1: Inwiefern unterscheiden sich Selbstauskünfte Studierender zur studienbezogenen Nutzung generativer KI-Chatbots von der in gespendeten Chatlogs beobachteten Nutzung?
@@ -400,7 +403,7 @@ Daraufhin wurden die Anleitung und Antwortoptionen überarbeitet, Exporthinweise
 In der zweiten Runde traten keine weiteren grundlegenden Bedienprobleme auf, sodass der Fragebogen für die Haupterhebung freigegeben wurde.
 
 Die Feldphase startete am 09.
-Juli 2026 und endete am 30.
+Juli 2026 und endete am 31.
 Juli 2026.
 Teilnehmende wurden über den E-Mail-Verteiler der Studierenden im Masterprojekt und im Whatsapp-Kanal des Masters Computational Social Science mit weiteren Studierenden zur Teilnahme eingeladen, welche insgesamt 27 Studierende umfasst.
 Aufgrund der geringen Zahl der beantworteten Fragebögen, wurden weitere Teilnehmende im privaten Umfeld, über die Whatsapp Kanäle der Soziologie Studiengänge und über den Instagram-Kanal der Fachschftsinitiative Soziologie rekrutiert.
@@ -1177,6 +1180,8 @@ Die restlichen Teilnehmenden unterschätzen und überschätzen sich fast gleiche
 \FloatBarrier
 
 ## Diskrepanzmuster: F1e
+
+Um typische personenbezogene Diskrepanzmuster zu untersuchen werden zunächst die Zusammenhänge zwischen den Diskrepanzmaßen und den personenbezogenen Merkmalen untersucht. Anschließend werden die Diskrepanzmaße in einer Clusteranalyse analysiert und anschließend mit weiteren Kontextvariablen verglichen.
 
 ### Zusammenhangsmaße
 
