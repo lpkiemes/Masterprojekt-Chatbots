@@ -148,7 +148,7 @@ global_digits <- 2
 
 # Abstract {.unnumbered .unlisted}
 
-Aus anderen Bereichen der digitalen Mediennutzung ist bekannt, dass Selbstauskünfte und beobachtetes Verhalten teils deutlich voneinander abweichen. Für die studentische Nutzung generativer KI-Chatbots wurde diese Diskrepanz bislang jedoch kaum erforscht.
+Aus anderen Bereichen der digitalen Mediennutzung ist bekannt, dass Selbstauskünfte und beobachtetes Verhalten teils deutlich voneinander abweichen. Für die studentische Nutzung generativer KI-Chatbots wurde diese Diskrepanz bislang jedoch kaum erforscht. 
 Ziel dieser Arbeit ist es daher, zu untersuchen, inwiefern Selbstauskünfte Studierender zur studienbezogenen Nutzung von generativer KI mit ihrem in gespendeten Chatverläufen beobachtbaren Nutzungsverhalten übereinstimmen.
 Zur Beantwortung wurden in einer Online-Befragung Selbstauskünfte 21 Studierender zu Interaktionsstil, kritischem Prüfen von Chatbot-Antworten und studienbezogener Informationsnutzung erhoben. Diese wurden mit freiwillig gespendeten ChatGPT-Chatverläufen verglichen, die mittels eines Large Language Models hinsichtlich derselben Konstrukte klassifizierten wurden.
 Bei Schreib- und Lernaufgaben stimmen die Angaben der Studierenden weitgehend mit den beobachteten Chatlogs überein. Görßere Abweichungen zeigen sich bei der Informationssuche, praktischer und technischer Unterstützung, beim Interaktionsstil und insbesondere beim kritischen Prüfen von Antworten. Speziell kritisches Prüfen wird im wird im Fragebogen häufiger angegeben, als es in den Chatverläufen beobachtbar ist.
@@ -213,7 +213,7 @@ Nach dem Modell von @tourangeau2000 müssen Befragte zunächst relevante Informa
 Fehler können auf jeder dieser Stufen entstehen.
 Erinnerungen an vergangenes Verhalten sind häufig unvollständig oder verzerrt, insbesondere wenn Ereignisse länger zurückliegen oder regelmäßig auftreten.
 Darüber hinaus ist die Fähigkeit zur korrekten Selbstauskunft grundsätzlich begrenzt.
-Bereits @nisbett1977 <!-- $$$ checke nicht wie man die Zitation zu "und" statt "&" wechseln kann --> zeigten, dass Menschen häufig keinen direkten introspektiven Zugang zu den kognitiven Prozessen haben, die ihr Verhalten steuern.
+Bereits Nisbett und Wilson [@nisbett1977] zeigten, dass Menschen häufig keinen direkten introspektiven Zugang zu den kognitiven Prozessen haben, die ihr Verhalten steuern.
 Selbstauskünfte beruhen demnach oft eher auf impliziten Kausaltheorien darüber, was eine plausible Erklärung für das eigene Verhalten wäre, als auf tatsächlicher Introspektion.
 
 Neben Erinnerungs- und Introspektionsfehlern stellen sozial erwünschte Antworttendenzen eine weitere zentrale Fehlerquelle von Selbstauskünften dar.
@@ -235,7 +235,7 @@ Die beschriebenen Einschränkungen von Selbstauskünften haben dazu geführt, da
 Als Verhaltensdaten werden dabei Daten verstanden, die durch die tatsächliche Interaktion von Personen mit ihrer Umwelt oder digitalen Anwendungen entstehen.
 Hierzu zählen beispielsweise Beobachtungsdaten sowie digitale Logdaten, die Interaktionen wie Suchanfragen, Klicks oder die Nutzung digitaler Anwendungen dokumentieren.
 Während Selbstauskünfte erfassen, wie Personen ihr eigenes Verhalten wahrnehmen oder erinnern, bilden Beobachtungs- oder Logdaten tatsächliches Verhalten unmittelbar ab.
-Beide Datenquellen liefern dabei unterschiedliche Informationen und sollten laut @nielsen2015 nicht als konkurrierende, sondern als komplementäre Messansätze verstanden werden.
+Beide Datenquellen liefern dabei unterschiedliche Informationen und sollten laut Nielsen und Wæhrens [@nielsen2015] nicht als konkurrierende, sondern als komplementäre Messansätze verstanden werden.
 Vergleichsstudien aus unterschiedlichen Anwendungsbereichen zeigen, dass Selbstauskünfte häufig nur begrenzt mit beobachtetem Verhalten übereinstimmen.
 So fanden @nielsen2015 für die Beurteilung von Alltagskompetenzen bei Personen mit Depression, dass zwischen Selbstauskunft und Beobachtung nur ein geringer Zusammenhang bestand, was die Autorinnen als Argument für die Kombination beider Erhebungsmethoden werteten.
 Ähnliche Ergebnisse zeigen sich auch in anderen Forschungsbereichen.
@@ -353,13 +353,10 @@ Da bislang kaum empirische Erkenntnisse zu Diskrepanzen zwischen berichteter und
 Im Folgenden wird das methodische Vorgehen beschrieben, mit dem die Forschungsfragen untersucht werden.
 Dazu werden das Forschungsdesign, der Fragebogen, die Durchführung von Pretest und Haupterhebung, die Stichprobe, die Klassifizierung, die Operationalisierung der zentralen Untersuchungsvariablen sowie die statistische Analyse erläutert.
 
-<!-- $$$ Ich finde es fehlt noch ein Part in dem wir sagen wie wir die Items ausgewählt haben und wie die miteinander vereinbar sind -->
 
 ## Forschungsdesign und Erstellung des Fragebogens {#sec-erstellung-fragebogen}
 
-Da der Fokus auf der Beschreibung von Diskrepanzen zwischen beiden Datenquellen innerhalb derselben Person liegt, wurden die drei Konstrukte (Art der Informationsnutzung, kritische Prüfung und Interaktionsstil) in beiden Erhebungsformen abgefragt und unterschiedlich verarbeitet.
-So wird es in der Analyse möglich, die Daten auf Personenebene miteinander zu vergleichen.
-Auf die Art der Erhebung und Operationalisierung der beiden Datenquellen wird nun eingegangen.
+Da der Fokus auf personenbezogenen Diskrepanzen zwischen beiden Datenquellen liegt, wurden mit der Nutzungsart, dem kritischen Prüfen und dem Interaktionsstil drei komplementäre Bereiche ausgewählt. Diese bilden funktionale, epistemische und kommunikative Aspekte der Nutzung generativer KI ab und wurden aufgrund ihrer Relevanz für die Forschungsfrage sowie ihrer Erfassbarkeit durch Selbstauskünfte und Chatlogdaten berücksichtigt. Für jedes Konstrukt wurden Kategorien im Fragebogen und in der Chatlogklassifikation eingebunden. Anschließend wurden die klassifizierten Chatdaten auf Personenebene aggregiert, sodass sie den Selbstauskünften gegenübergestellt werden konnten. Dadurch wurde eine strukturelle Vergleichbarkeit. Die konkrete Operationalisierung wird in @sec-operationalisierung beschrieben.
 
 Der Fragebogen wurde auf Grundlage der Forschungsfragen entwickelt und zielt darauf ab, die studienbezogene Nutzung von ChatGPT strukturiert zu erfassen.
 Der Aufbau des Fragebogens folgte einer inhaltlich-logischen Reihenfolge: Zunächst wurden die Teilnahmevoraussetzungen geprüft, anschließend die zentralen Untersuchungsvariablen erhoben und abschließend Angaben zur Stichprobenbeschreibung erfasst.
@@ -1034,8 +1031,6 @@ Anschließend werden die Ergebnisse zur Beantwortung der übergeordneten Forschu
 
 # Ergebnisse
 
-<!-- ??? Wenn wir im Ergebnissteil lauter neue statistischen mehtoden verwednen die davor nicht in der Methode bereichtet wurden, sollten wir das noch in der Methode erwähnen sonst ist das einfach merkwürdig -> müssen auch noch erwähenen das wir hier dann von unserer Preregestreirung abgewichen sind -->
-
 ## Nutzungsarten: F1a und F1b
 
 In @tbl-nutzungsarten wird die Verteilung der Nutzungsarten vorgestellt.
@@ -1081,7 +1076,6 @@ Hinsichtlich F1b lässt sich festhalten, dass sich alle Nutzungsarten in den Cha
 Auf Aggregatebene berichteten die Teilnehmenden technische und analytische Unterstützung im Fragebogen seltener als in den Chatlogs beobachtet.
 Schreiben und Textarbeit wurden dagegen häufiger berichtet, während sich die Anteile bei Informationssuche und Verständnis kaum unterschieden.
 
-<!-- ??? Abbildung 2 hat zwei title -> einen entfernen, man sollte auch die nummerichen werte in den appendix tun --->
 
 Sowohl Häufigkeit als auch Ausmaß der Übereinstimmung zwischen Surveyangaben und Chatlogs unterscheiden sich deutlich zwischen den fünf Nutzungsarten.
 Die größte Übereinstimmung zeigt sich dabei bei *`r as.character(task_agreement_summary[[1, "task"]])`* mit `r formatC(task_agreement_summary[[1, "exact_agreement_percent"]], format = "f", decimal.mark = ",", digits = global_digits)` % und einer mittleren absoluten Abweichung von `r formatC(task_agreement_summary[[1, "mean_absolute_difference_pp"]], format = "f", decimal.mark = ",", digits = global_digits)` Prozentpunkten.
@@ -1151,7 +1145,6 @@ Im Hinblick auf F1a zeigt sich, dass sich Teilnehmende innerhalb der Nutzungsart
 
 ## Interaktionsstil und Kritisches Prüfen: F1c und F1d
 
-<!--??? braucht tabelle im appendix aus der das zitiert werden kann. Die zahlen können nicht einfach so im text stehen ohne refrenzierunt--->
 
 Knapp die Hälfte der Teilnehmenden gibt an, ChatGPT-Antworten im Chat kritisch zu prüfen (`r formatC(mean(df_analysis$SA_krit_code == 1, na.rm = TRUE) * 100, digits = global_digits, decimal.mark = ",", format = "f")` %).
 Ein in der Mehrheit der gespendeten Chatlogs sichtbares Prüfverhalten zeigt sich in den gespendeten Chatlogs dagegen nur bei `r df_analysis |> count(       Modus_Kritik, Modus_Kritik_Label) |> mutate(percent = n /21 * 100) |> filter(Modus_Kritik_Label == "Ja") |> select(percent) |> pull() |> formatC(format = "f", decimal.mark = ",", digits = global_digits)` % der Personen.
@@ -1170,7 +1163,7 @@ Eine relative Ausnahme bestand darin, dass Teilnehmende ihr kritisches Prüfen u
 plot_agreement
 ```
 
-In Hinblick auf F1c deuten die Ergebnisse der kritischen Prüfung darauf hin, dass die Selbsteinschätzung der Teilnehmenden tendenziell korrekt ausfiel, bei Abweichungen aber insgesamt optimistischer angegeben wurde als das Verhalten in den Chatlogs zeigte.<!--??? braucht tabelle im appendix aus der das zitiert werden kann. Die zahlen können nicht einfach so im text stehen ohne refrenzierunt---> Vergleicht man die Angaben zur Art der Interaktion mit den beobachteten Interaktionsstilen in den Chatlogs, werden einige Abweichungen ersichtlich.
+In Hinblick auf F1c deuten die Ergebnisse der kritischen Prüfung darauf hin, dass die Selbsteinschätzung der Teilnehmenden tendenziell korrekt ausfiel, bei Abweichungen aber insgesamt optimistischer angegeben wurde als das Verhalten in den Chatlogs zeigte. Vergleicht man die Angaben zur Art der Interaktion mit den beobachteten Interaktionsstilen in den Chatlogs, werden einige Abweichungen ersichtlich.
 Der selbstberichtete und der in den Chatlogs beobachtete Interaktionsstil stimmen bei `r sentiment_summary |> filter(discrepancy == "korrekt") |> select(Prozent) |> pull() |> formatC(digits = global_digits, format = "f", decimal.mark = ",")` % der Personen überein.
 In `r sentiment_summary |> filter(discrepancy == "unfreundlicher") |> select(Prozent) |> pull() |> formatC(digits = global_digits, format = "f", decimal.mark = ",")` % der Chatlogs fällt der beobachtete Interaktionsstil unfreundlicher und bei `r sentiment_summary |> filter(discrepancy == "freundlicher") |> select(Prozent) |> pull() |> formatC(digits = global_digits, format = "f", decimal.mark = ",")` % freundlicher aus als selbst angegeben.
 Anders als beim kritischen Prüfen zeigt sich somit keine eindeutig vorherrschende Richtung der Abweichung.
@@ -1461,7 +1454,6 @@ Dies könnte auf eine optimistischere Selbstdarstellung hindeuten, lässt sich a
 Beim Interaktionsstil (F1d) zeigt sich dagegen keine klare Richtung.
 Einige Teilnehmende kommunizieren in den Chatlogs freundlicher, andere unfreundlicher als angegeben.
 Beide Abweichsrichtungen halten sich etwa die Waage, was dafür sprechen könnte, dass der Umgangston im Gegensatz zum kritischen Prüfen nicht als ein besonders sozial erwünschtes Thema wahrgenommen wird.
-<!--$$$ Ist ein hot take meinerseits-->
 
 Die Clusteranalyse deutet darauf hin, dass sich die Diskrepanzen nicht gleichmäßig über die Stichprobe verteilen, sondern in unterschiedlichen Kombinationen und Richtungen auftreten.
 Der Kontrast zwischen Cluster 2 und 3 spricht dabei explorativ dafür, dass KI-Erfahrung und soziale Erwünschtheit mit bestimmten Diskrepanzmustern zusammenhängen könnten.
@@ -1474,10 +1466,6 @@ Ausmaß und Richtung der Diskrepanzen unterscheiden sich vielmehr zwischen den u
 Ein pauschaler Zusammenhang mit sozialer Erwünschtheit, der die Selbstauskunft der eigenen KI-Nutzung durchgehend gleichermaßen beinhaltet, lässt sich nicht ableiten.
 Die Ergebnisse lassen sich vielmehr mit dem mehrstufigen Antwortmodell von @tourangeau2000 vereinbaren, bei dem Erinnerung, Urteilsbildung und die Übertragung auf Antwortkategorien je nach Konstrukt und Person unterschiedlich fehleranfällig sein können.
 
-```{=html}
-<!-- Werte in anzahl ihrer tatsächlichen ausprägungen interpretieren
-ist halt irgendwie fehleranfällig ne -> vielleicht noch totale abweichung für so allgemeine feleinschätzungen das plaktivere maß-->
-```
 
 ## Limitationen
 
