@@ -37,6 +37,7 @@ Die Chatlogs wurden mithilfe eines Large Language Models klassifiziert. Die Güt
 
 | Pfad | Inhalt |
 |------------------------------------|------------------------------------|
+| `Dockerfile` | Reproduzierbare Umgebung zum Rendern des Projektberichts |
 | `index.qmd` | Hauptdokument des Projektberichts |
 | `_quarto.yml` | Quarto-Konfiguration für die PDF-Ausgabe |
 | `R_code/01_data_prep.R` | Aufbereitung und Verknüpfung der Analysedaten |
@@ -57,7 +58,7 @@ Die Chatlogs wurden mithilfe eines Large Language Models klassifiziert. Die Güt
 
 ### Voraussetzungen
 
-- R und RStudio. Die Analysen wurden mit R 4.6.0 durchgeführt
+- R 4.6.0 
 - Quarto
 - eine LaTeX-Installation mit XeLaTeX, beispielsweise TinyTeX
 - das R-Paket `renv`
@@ -83,7 +84,24 @@ Rscript R_code/03_sample_modification.R
 Rscript R_code/04_discrepancy_analysis.R
 ```
 
-Die vollständige Verarbeitung ab den Rohdaten erfordert zusätzlich Python, Zugriff auf die privaten Erhebungsdaten und lokal hinterlegte Zugangsdaten. Einzelheiten enthält [`WORKFLOW.md`](WORKFLOW.md).
+### Reproduktion mit Docker
+
+Alternativ können die R-Analysen und der Projektbericht in einer Docker-Umgebung reproduziert werden. Dadurch ist keine lokale Installation von R, Quarto, LaTeX oder den verwendeten R-Paketen erforderlich. Benötigt wird lediglich Docker.
+
+Das Docker-Image wird im Hauptverzeichnis des Repositoriums erstellt:
+
+```bash
+docker build -t masterprojekt-chatbots .
+```
+
+Anschließend wird der vollständige Bericht gerendert:
+
+```bash
+docker run --rm -v "$(pwd):/project" masterprojekt-chatbots
+```
+
+Die erzeugte Datei `index.pdf` wird im lokalen Projektverzeichnis gespeichert. Der erstmalige Aufbau des Images kann aufgrund der Installation der R-Pakete und LaTeX-Abhängigkeiten einige Zeit beanspruchen. Nachfolgende Builds verwenden den Docker-Cache.
+
 
 ## Zentrale erzeugte Dateien
 
@@ -103,9 +121,6 @@ Die Rohdaten enthalten freiwillig gespendete Chatverläufe und potenziell sensib
 - Veröffentlichte oder weitergegebene Datensätze dürfen nur anonymisierte beziehungsweise ausreichend aggregierte Informationen enthalten.
 - Eine Reproduktion ab den Rohdaten ist nur mit entsprechender Zugangsberechtigung möglich.
 
-## Grenzen der Analyse
-
-Die Ergebnisse sind explorativ zu interpretieren. Die Stichprobe ist klein und nicht repräsentativ. Zudem stellen die gespendeten Chats lediglich einen ausgewählten Ausschnitt der individuellen Nutzung dar. Auch die LLM-basierte Klassifikation ist mit Messunsicherheit verbunden.
 
 ## Weitere Materialien
 
